@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://i.postimg.cc/jdMhhYmM/Portada.png" />
+</p>
+
 ## Cursada 2023
 
 Universidad Nacional del Comahue
