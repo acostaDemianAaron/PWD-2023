@@ -7,7 +7,7 @@
 Universidad Nacional del Comahue
 Facultad de Informatica (FAI)
 Tecnicatura Universitaria en Desarrollo Web
-Introducción a la Programación Orientada a Objetos(IPOO)
+Programación Web Dinámica (PWD)
 
 ## Alumno
 
