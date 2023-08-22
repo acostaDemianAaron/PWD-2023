@@ -1,0 +1,25 @@
+input {
+    margin-top: 15px;
+}
+
+#caja1 {
+    height: 130px;
+    width: 250px;
+    margin-top: 15px;
+}
+
+#caja2 {
+    height: 70px;
+    width: 500px;
+    margin-top: 15px;
+}
+
+#caja3 {
+    height: 70px;
+    width: 500px;
+    margin-top: 15px;
+}
+
+div {
+    margin-left: 25px;
+}
