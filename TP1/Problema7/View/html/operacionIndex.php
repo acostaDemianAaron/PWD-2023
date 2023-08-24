@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <?php include("../../../../header.php"); ?>
 
     <form action="../../Controller/operacion.php" method="GET">
         <fieldset id="caja1" name="caja1">

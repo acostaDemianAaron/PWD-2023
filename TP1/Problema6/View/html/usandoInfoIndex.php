@@ -9,6 +9,8 @@
 </head>
 
 <body>
+    <?php include("../../../../header.php"); ?>
+
     <!-- Problema 3 del Trabajo Práctico Nº 1 de PHP -->
     <!-- Formulario por metodo POST -->
     <form action="../../Controller/usandoInfo.php" method="POST">
@@ -50,13 +52,13 @@
         <fieldset id="caja3" name="caja3">
             <legend>Seleccione los deportes que realiza</legend>
             <div>
-                <input id="deportes[]" name="deportes[]" value="Futbol" type="checkbox"/>
+                <input id="deportes[]" name="deportes[]" value="Futbol" type="checkbox" />
                 <label>Futbol</label>
-                <input id="deportes[]" name="deportes[]" value="Basket" type="checkbox"/>
+                <input id="deportes[]" name="deportes[]" value="Basket" type="checkbox" />
                 <label>Basket</label>
-                <input id="deportes[]" name="deportes[]" value="Tennis" type="checkbox"/>
+                <input id="deportes[]" name="deportes[]" value="Tennis" type="checkbox" />
                 <label>Tennis</label>
-                <input id="deportes[]" name="deportes[]" value="Voley" type="checkbox"/>
+                <input id="deportes[]" name="deportes[]" value="Voley" type="checkbox" />
                 <label>Voley</label>
             </div>
         </fieldset>
