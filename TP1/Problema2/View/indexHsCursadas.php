@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../libs/Bootstrap5.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/estilos.css">
     <title>Problema2</title>
 </head>
 
 <body>
-    <?php include("../../../../header.php"); ?>
-
-    <!-- Problema 2 del Trabajo Práctico Nº 1 de PHP -->
     <form action="../../Controller/horaDeCursada.php" method="GET">
 
         <label>Lunes: </label> <input name="lunes" id="lunes" type="time"><br>

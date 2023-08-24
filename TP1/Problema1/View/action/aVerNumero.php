@@ -1,5 +1,5 @@
 <?php
-include("../../../Controller/cVerNumero.php");
+include("../../Controller/cVerNumero.php");
 if ($_GET) {
     $num = $_GET['num'];
     $obj = new cVerNumero();
@@ -31,7 +31,7 @@ if ($_GET) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/estilos.css">
-    <link rel="stylesheet" href="../../../../../libs/Bootstrap5.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../../libs/Bootstrap5.3.1/css/bootstrap.min.css">
     <title>Resultado</title>
 </head>
 
@@ -45,7 +45,6 @@ if ($_GET) {
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card shadow-lg p-3 mb-5 bg-white ">
-                        <div class="card-header" style="color:white;">Formulario de prueba</div>
                         <div class="card-body">
 
                             <?php

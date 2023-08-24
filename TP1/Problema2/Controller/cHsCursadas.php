@@ -1,8 +1,7 @@
 <?php
-include("../../../../header.php");
 
-//Problema 2 del Trabajo Práctico Nº 1 de PHP
-//Array de las horas
+
+
 $indices = [];
 $horasCursadas = $_GET;
 

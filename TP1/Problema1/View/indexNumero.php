@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../../libs/Bootstrap5.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../../utils/css/estilos.css">
+
+    <link rel="stylesheet" href="../../../libs/Bootstrap5.3.1/css/bootstrap.min.css">
     <title>Problema1</title>
 </head>
 
@@ -19,7 +20,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card shadow-lg p-3 mb-5 bg-white ">
-                        <div class="card-header">Formulario de prueba</div>
+                        <div class="card-header" style="color:white;">Positivo, negativo o cero</div>
                         <div class="card-body">
                             <form action="action/aVerNumero.php" method="GET" class="needs-validation" novalidate>
                                 <div class="form-row">
@@ -38,7 +39,7 @@
             </div>
         </div>
     </main>
-    <script src="../../../utils/campoVacio.js"></script>
+    <script src="../../utils/js/campoVacio.js"></script>
 
 </body>
 
