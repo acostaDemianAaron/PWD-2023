@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="auto">
 
 <head>
     <meta charset="UTF-8">
@@ -8,6 +8,8 @@
 </head>
 
 <body>
+    <?php include("../../../../header.php"); ?>
+
     <!-- Problema 1 del Trabajo Práctico Nº 1 de PHP -->
     <form name="formNum" id="formNum" action="../../Controller/verNumero.php" method="GET">
         <!--Comprueba si el número ingresado es positivo, negativo o cero-->
