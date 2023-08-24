@@ -9,6 +9,8 @@
 </head>
 
 <body>
+    <?php include("../../../../header.php"); ?>
+
     <!-- Problema 3 del Trabajo Práctico Nº 1 de PHP -->
     <!-- Formulario por metodo GET -->
     <form action="../../Controller/usandoInfo.php" method="GET">
