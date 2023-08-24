@@ -21,6 +21,7 @@
                 <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
                         <div class="btn-group" role="group" aria-label="Basic example">
+                            <!-- Ejercicios del TP 1 -->
                             <button type="button" class="btn btn-primary redirect-button" onclick="location.href='/TP1/Problema1/View/html/verNumeroIndex.php'">EJ1</button>
                             <button type="button" class="btn btn-primary redirect-button" onclick="location.href='/TP1/Problema2/View/html/horaDeCursadaIndex.php'">EJ2</button>
                             <button type="button" class="btn btn-primary redirect-button" onclick="location.href='/TP1/Problema3/View/html/usandoInfoGETIndex.php'">EJ3 GET</button>
@@ -42,19 +43,18 @@
                 </h2>
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
+                        <!-- Ejercicio 1 del TP 2 -->
                         <button type="button" class="btn btn-primary redirect-button disabled" onclick="location.href='/TP2/Problema1/View/html/verNumeroIndex.php'">EJ1</button>
                         <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                    EJ 2
-                                </button>
-                            </h2>
                             <div id="flush-collapseTwo" class="accordion-collapse" data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body">
+                                    <h5 class="card-title">EJ 2</h5>
+                                    <!-- Ejercicios del ejercicio 2 del TP 2 -->
+                                    <!-- TODO Enable buttons when ready -->
                                     <button type="button" class="btn btn-primary redirect-button disabled" onclick="location.href='/TP2/Problema2/Problema1/View/html/verNumeroIndex.php'">EJ1</button>
                                     <button type="button" class="btn btn-primary redirect-button disabled" onclick="location.href='/TP2/Problema2/Problema2/View/html/horaDeCursadaIndex.php'">EJ2</button>
-                                    <button type="button" class="btn btn-primary redirect-button disabled" onclick="location.href='/TP2/Problema2/Problema3/View/html/usandoInfoGETIndex.php'">EJ3 GET</button>
-                                    <button type="button" class="btn btn-primary redirect-button disabled" onclick="location.href='/TP2/Problema2/Problema3/View/html/usandoInfoPOSTIndex.php'">EJ3 POST</button>
+                                    <button type="button" class="btn btn-primary redirect-button" onclick="location.href='/TP2/Problema2/Problema3/View/html/usandoInfoGETIndex.php'">EJ3 GET</button>
+                                    <button type="button" class="btn btn-primary redirect-button" onclick="location.href='/TP2/Problema2/Problema3/View/html/usandoInfoPOSTIndex.php'">EJ3 POST</button>
                                     <button type="button" class="btn btn-primary redirect-button disabled" onclick="location.href='/TP2/Problema2/Problema4/View/html/usandoInfoIndex.php'">EJ4</button>
                                     <button type="button" class="btn btn-primary redirect-button disabled" onclick="location.href='/TP2/Problema2/Problema5/View/html/usandoInfoIndex.php'">EJ5</button>
                                     <button type="button" class="btn btn-primary redirect-button disabled" onclick="location.href='/TP2/Problema2/Problema6/View/html/usandoInfoIndex.php'">EJ6</button>
@@ -63,6 +63,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Ejercicio 3 del TP 2 -->
                         <button type="button" class="btn btn-primary redirect-button disabled" onclick="location.href='/TP2/Problema1/View/html/verNumeroIndex.php'">EJ3</button>
                     </div>
                 </div>

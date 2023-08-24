@@ -9,6 +9,8 @@
 </head>
 
 <body>
+    <?php include("../../../../header.php"); ?>
+
     <fieldset id="caja1" name="caja1">
         <legend>Precios de las entradas de Cinem@s</legend>
         <form action="../../Controller/tarifaEntrada.php" method="GET">
