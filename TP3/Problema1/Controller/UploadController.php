@@ -4,7 +4,7 @@
 
 class UploadController {
     public function validarArchivo() {
-        $salida = "";
+        $res = "";
         if (isset($_POST['subir'])) {
             $nombreArchivo = $_FILES['archivo']['name'];
             $tipoArchivo = $_FILES['archivo']['type'];
@@ -15,15 +15,15 @@ class UploadController {
 
             if (($tipoArchivo == "application/msword" || $tipoArchivo == "application/pdf") && $tamanoArchivo <= 2097152) {
                 if (move_uploaded_file($_FILES['archivo']['tmp_name'], $ruta)) {
-                    $salida = "El archivo se subió correctamente. Puedes <a href='$ruta' target='_blank'>descargarlo aquí</a>.";
+                    $res = 1;
                 } else {
-                    $salida = "Hubo un error al subir el archivo.";
+                    $res = 0;
                 }
             } else {
-                $salida = "El archivo no cumple con los requisitos de tipo o tamaño.";
+                $res = -1;
             }
         }
-        return $salida;
+        return $res;
     }
 }
 
