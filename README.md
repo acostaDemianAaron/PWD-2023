@@ -4,7 +4,7 @@
 
 ## Instrucciones de uso
 
-Requisito: Tener una version de php instalada. (Esta la posibilidad de que versiones viejas no funcionen correctamente)
+Requisito: Tener una version de php instalada. (Version testeada: 8.1)
 
 1. Desde un terminal ingresar a la carpeta inicial del Repositorio.
    - Por Ejemplo: Si la carpeta se encuentra en "C:/usuario/descargas/PWD-2023" entonces ejecutar el comando "cd C:/usuario/descargas/PWD-2023"
