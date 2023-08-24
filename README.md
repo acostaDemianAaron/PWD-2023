@@ -18,7 +18,7 @@ Facultad de Informatica (FAI)
 Tecnicatura Universitaria en Desarrollo Web
 Programación Web Dinámica (PWD)
 
-## Alumno
+## Alumnos
 
 - **Acosta Demian Aaron**
 
@@ -33,6 +33,13 @@ Programación Web Dinámica (PWD)
   - Usuario GitHub: veraAlan
 
 - **Yaitul Santiago Alejo**
+
   - Legajo FAI - 2339
   - Mail Personal: santiago.yaitul@est.fi.uncoma.edu.ar
   - Usuario GitHub: SantiagoYaitul
+
+- **Mauricio Sawicki**
+
+  - Legajo FAI - 2256
+  - Mail Personal: mauricio.sawicki@est.fi.uncoma.edu.ar
+  - Usuario GitHub: mausawicki7 
