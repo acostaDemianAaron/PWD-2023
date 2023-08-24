@@ -2,6 +2,13 @@
   <img src="https://i.postimg.cc/jdMhhYmM/Portada.png" />
 </p>
 
+## Instrucciones de uso
+Requisito: Tener una version de php instalada. (Esta la posibilidad de que versiones viejas no funcionen correctamente)
+1. Desde un terminal ingresar a la carpeta inicial del Repositorio.
+   - Por Ejemplo: Si la carpeta se encuentra en "C:/usuario/descargas/PWD-2023" entonces ejecutar el comando "cd C:/usuario/descargas/PWD-2023"
+2. Abrir un servidor php con el comando: php -S localhost:4040
+3. Entrar desde un navegador a http://localhost:4040/
+
 ## Cursada 2023
 
 Universidad Nacional del Comahue
