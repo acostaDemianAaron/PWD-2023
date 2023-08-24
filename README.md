@@ -36,3 +36,8 @@ Programación Web Dinámica (PWD)
   - Legajo FAI - 2339
   - Mail Personal: santiago.yaitul@est.fi.uncoma.edu.ar
   - Usuario GitHub: SantiagoYaitul
+
+ - **Mauricio Sawicki**
+  - Legajo FAI - 2256
+  - Mail Personal: mauricio.sawicki@est.fi.uncoma.edu.ar
+  - Usuario GitHub: mausawicki7 
