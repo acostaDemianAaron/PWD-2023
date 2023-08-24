@@ -1,4 +1,6 @@
 <?php
+include("../../../../header.php");
+
 // Problema 1 del Trabajo Práctico Nº 1 de PHP
 $num = $_GET['num'];
 switch ($num) {
@@ -14,4 +16,3 @@ switch ($num) {
     default:
         echo "No se recibieron datos";
 }
-

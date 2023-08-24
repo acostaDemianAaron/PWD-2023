@@ -1,4 +1,5 @@
 <?php
+include("../../../../header.php");
 
 $edad = $_GET['edad'];
 $estudiante = $_GET['estudiante'];
