@@ -1,5 +1,5 @@
 <?php
-include ("../../../Controller/verificarCuenta.php");
+include("../../../Controller/verificarCuenta.php");
 $cuentas = [
     [
         "username" => "Usuario",
@@ -16,17 +16,17 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 $resp = $obj->verificar($cuentas, $username, $password);
 
-switch($resp){
+switch ($resp) {
 
-case 1:
-    $salida = "<h1><strong>Bienvenido " . $_POST["username"] .".</strong></h1>";
-    break;
-case 2:
-    $salida = "<h1><strong>Contraseña Incorrecta.</strong></h1>";
-    break;
-case 0:
-    $salida = "<h1><strong>Usuario no existe.</strong></h1>";
-    break;
+    case 1:
+        $salida = "<h1><strong>Bienvenido " . $_POST["username"] . ".</strong></h1>";
+        break;
+    case 2:
+        $salida = "<h1><strong>Contraseña Incorrecta.</strong></h1>";
+        break;
+    case 0:
+        $salida = "<h1><strong>Usuario no existe.</strong></h1>";
+        break;
 }
 ?>
 
@@ -43,19 +43,35 @@ case 0:
 </head>
 
 <body>
-    <?php
-    echo $salida;
-    ?>
 
-<div class="col-auto pt-2">
-        <form action="../login.php">
-            <button type="submit" class="btn btn-primary">Unlog</button>
-        </form>
-    </div>
+    <main>
+        <header style="height: 70px">
+        </header>
+        <div style="height: 30px;"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card shadow-lg p-3 mb-5 bg-white ">
+                        <div class="card-body">
+
+                            <?php
+                            echo $salida;
+                            ?>
+
+                            <div class="col-auto pt-2">
+                                <form action="../login.php">
+                                    <button type="submit" class="btn btn-primary">Unlog</button>
+                                </form>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
 </body>
 
 </html>
-
-
-
-
