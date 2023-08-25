@@ -3,7 +3,7 @@ include("../../../../home/View/header.php");
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -13,7 +13,7 @@ include("../../../../home/View/header.php");
 
 <body>
     <div class="container">
-        <form id="form-peliculas" name="form-peliculas" action="POST">
+        <form id="form-peliculas" name="form-peliculas" action="action/aCinemas.php" method="POST" novalidate>
             <div class="fs-2">Cinem@s</div>
             <!-- Table for inputs -->
             <div class="row">
@@ -26,7 +26,7 @@ include("../../../../home/View/header.php");
                 <div class="col-6">
                     <div class="mb-3">
                         <label for="inputActores" class="form-label">Actores</label>
-                        <input type="text" class="form-control" id="inputActores">
+                        <input type="text" class="form-control" id="inputActores" name="inputActores">
                     </div>
                 </div>
             </div>
@@ -34,13 +34,13 @@ include("../../../../home/View/header.php");
                 <div class="col-6">
                     <div class="mb-3">
                         <label for="inputDirector" class="form-label">Director</label>
-                        <input type="text" class="form-control" id="inputDirector">
+                        <input type="text" class="form-control" id="inputDirector" name="inputDirector">
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="mb-3">
                         <label for="inputGuion" class="form-label">Guion</label>
-                        <input type="text" class="form-control" id="inputGuion">
+                        <input type="text" class="form-control" id="inputGuion" name="inputGuion">
                     </div>
                 </div>
             </div>
@@ -48,13 +48,13 @@ include("../../../../home/View/header.php");
                 <div class="col-6">
                     <div class="mb-3">
                         <label for="inputProduccion" class="form-label">Produccion</label>
-                        <input type="text" class="form-control" id="inputProduccion">
+                        <input type="text" class="form-control" id="inputProduccion" name="inputProduccion">
                     </div>
                 </div>
                 <div class="col-6">
-                    <div class="mb-3 col-2">
+                    <div class="mb-3 col-3">
                         <label for="inputAno" class="form-label">Año</label>
-                        <input type="number" class="form-control" id="inputAno">
+                        <input type="number" class="form-control" id="inputAno" name="inputAno">
                     </div>
                 </div>
             </div>
@@ -62,47 +62,49 @@ include("../../../../home/View/header.php");
                 <div class="col-6">
                     <div class="mb-3 col-4">
                         <label for="inputNacionalidad" class="form-label">Nacionalidad</label>
-                        <input type="text" class="form-control" id="inputNacionalidad">
+                        <input type="text" class="form-control" id="inputNacionalidad" name="inputNacionalidad">
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="col-3">
                         <label for="form-select" class="form-label">Genero</label>
-                        <select class="form-select" id="form-select">
+                        <select class="form-select" id="form-select" name="inputGenero">
                             <option selected value="Comedia">Comedia</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="Drama">Drama</option>
+                            <option value="Terror">Terror</option>
+                            <option value="Romantico">Romantico</option>
+                            <option value="Suspenso">Suspenso</option>
+                            <option value="Otras">Otras</option>
                         </select>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-6">
-                    <div class="mb-3 col-2">
+                    <div class="mb-3 col-3">
                         <label for="inputDuracion" class="form-label">Duracion</label>
-                        <input type="number" class="form-control" id="inputDuracion">
+                        <input type="number" class="form-control" id="inputDuracion" name="inputDuracion">
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                        <label class="form-check-label" for="inlineRadio1">Todo los publicos</label>
+                        <input class="form-check-input" type="radio" name="inputRestriccion" id="radioInput1" value="Todo publico" checked>
+                        <label class="form-check-label" for="radioInput1">Todo los publicos</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                        <label class="form-check-label" for="inlineRadio2">Mayores de 7 años</label>
+                        <input class="form-check-input" type="radio" name="inputRestriccion" id="radioInput2" value="Mayores de 7">
+                        <label class="form-check-label" for="radioInput2">Mayores de 7 años</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                        <label class="form-check-label" for="inlineRadio3">Mayores de 18 años</label>
+                        <input class="form-check-input" type="radio" name="inputRestriccion" id="radioInput3" value="Mayores de 18">
+                        <label class="form-check-label" for="radioInput3">Mayores de 18 años</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
                         <div class="mb-3 col-8">
-                            <label for="formControlTextarea" class="form-label">Sinopsis</label>
-                            <textarea class="form-control" id="formControlTextarea" rows="5"></textarea>
+                            <label for="inputSinopsis" class="form-label">Sinopsis</label>
+                            <textarea class="form-control" id="inputSinopsis" name="inputSinopsis" rows="5"></textarea>
                         </div>
                     </div>
                 </div>
