@@ -1,4 +1,4 @@
-<?php include("../../../home/View/header.php"); ?>
+<?php include("../../../../home/View/header.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,13 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../libs/Bootstrap5.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../libs/Bootstrap5.3.1/css/bootstrap.css">
-    <script src="../../../libs/Bootstrap5.3.1/js/bootstrap.js" type="text/javascript"></script>
     <script src="https://kit.fontawesome.com/030b0c9fc7.js" crossorigin="anonymous"></script>
-    <script src="../../../libs/jQuary/jquery-3.7.0.min.js"></script>
-    <script src="../../../libs/jQuary/jquery.validate.min.js"></script>
-    <script src="../../../libs/jQuary/translate-jQuery.js"></script>
 </head>
 
 <body>
@@ -29,7 +23,7 @@
                     <div class="modal-body px-5">
 
                         <h2 class=" mx-auto mt-3 mb-5 text-center">Member Login</h2>
-                        <form class="needs-validation" action="action/verificaPass.php" method="POST">
+                        <form class="needs-validation" action="action/verificaPass.php" method="POST" name="form-login" id="form-login">
                             <div class="form-floating mb-4 p-1">
                                 <i class="fa fa-user fa-xl position-absolute top-50 ms-2"></i>
                                 <input type="text" class="form-control ps-5 py-2" id="username" name="username" placeholder="Username" required>
@@ -45,13 +39,15 @@
                                 <div id="feedback" class="invalid-feedback position-absolute"></div>
                             </div>
 
-                            <button class="w-100 btn btn-lg text-white mb-5" id="submit" type="submit" style="background-color: #04AA6D" disabled>Login</button>
+                            <button class="w-100 btn btn-lg text-white mb-5" id="submit" name="submit" type="button" style="background-color: #04AA6D">Login</button>
                         </form>
                     </div>
                 </div>
             </div>
 
-            <script>
+            <script src="../js/validar.js"></script>
+
+            <!-- <script>
                 (function() {
                     const inputs = document.querySelectorAll('.form-control')
 
@@ -112,8 +108,7 @@
 
                     return (hasNum && hasLet);
                 }
-            </script>
-
+            </script> -->
 
 </body>
 

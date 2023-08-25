@@ -59,7 +59,7 @@
                             </div>
                         </div>
                         <!-- Ejercicio 3 y 4 del TP 2 -->
-                        <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP2/Problema3/view/login.php'">EJ3</button>
+                        <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP2/Problema3/View/html/login.php'">EJ3</button>
                         <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP2/Problema4/View/html/cinemas.php'">EJ4</button>
                     </div>
                 </div>
