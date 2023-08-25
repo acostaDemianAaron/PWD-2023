@@ -9,16 +9,18 @@ $("#form-login").validate({
         }
     },
     messages: {
-        username: "",
+        username: "Complete este campo",
         password: {
-            required: "",
-            minlength: "",
-            letandnum: ""
+            required: "Complete este campo",
+            minlength: "Debe ser un minimo de 8 caracteres",
+            letandnum: "Debe poseer letras y numeros"
         }
     },
+    errorElement: 'span',
     errorClass: "is-invalid",
     validClass: "is-valid"
 })
+
 
 $("#submit").click(function () {
     // Debug para probar si el formulario es valido.
