@@ -1,27 +1,15 @@
 <?php
-include("../../Controller/cVerNumero.php");
-if ($_GET) {
-    $num = $_GET['num'];
-    $obj = new cVerNumero();
+include("../../Controller/cInfoPOST.php");
+if ($_POST) {
+    $nombre = $_POST['nombre'];
+    $apellido = $_POST['apellido'];
+    $edad = $_POST['edad'];
+    $direccion = $_POST['direccion'];
 
-    $res = $obj->comprobarNumero($num);
-
-
-    switch ($res) {
-        case 0:
-            $respuesta = "<h3><strong>El número " . $num . " es cero</strong></h3>";
-            break;
-        case $res > 0:
-            $respuesta = "<h3><strong>El número " . $num . " es positivo</strong></h3>";
-            break;
-        case $res < 0:
-            $respuesta = "<h3><strong>El número " . $num . " es negativo</strong></h3>";
-            break;
-    }
+    $obj = new cInfoPOST;
+    $respuesta = $obj->armarTexto($nombre, $apellido, $edad, $direccion);
 }
 ?>
-
-
 
 
 <!DOCTYPE html>
@@ -32,12 +20,11 @@ if ($_GET) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../utils/css/estilos.css">
     <link rel="stylesheet" href="../../../../home/libs/Bootstrap5.3.1/css/bootstrap.min.css">
-    <title>Respuesta1</title>
+    <title>Respuesta3-POST</title>
 </head>
 
 <body>
-
-    <main>
+<main>
         <header style="height: 70px">
         </header>
         <div style="height: 30px;"></div>
@@ -52,7 +39,8 @@ if ($_GET) {
                             ?>
                             <br>
 
-                            <form action="../indexNumero.php">
+                            <form action="../indexInfoPOST.php">
+                                <br>
                                 <button class="btn btn-primary" type="submit">Volver</button>
                             </form>
 
@@ -63,7 +51,6 @@ if ($_GET) {
             </div>
         </div>
     </main>
-
 
 </body>
 

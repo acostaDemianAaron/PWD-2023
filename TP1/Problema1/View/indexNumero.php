@@ -25,7 +25,7 @@
                             <form action="action/aVerNumero.php" method="GET" class="needs-validation" novalidate>
                                 <div class="form-row">
                                     <div class="col-md-4 mb-3">
-                                        <label for="num">Ingrese un número: </label>
+                                        <label class="mb-2" for="num">Ingrese un número: </label><br>
                                         <input id="num" name="num" type="number" class="form-control" placeholder="Ej: -1, 0, 1" value="" required>
                                         <div class="valid-feedback">¡Ok válido!</div>
                                         <div class="invalid-feedback">Complete el campo.</div>

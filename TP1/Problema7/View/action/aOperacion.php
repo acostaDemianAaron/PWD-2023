@@ -1,28 +1,24 @@
 <?php
-include("../../Controller/cVerNumero.php");
-if ($_GET) {
-    $num = $_GET['num'];
-    $obj = new cVerNumero();
+include("../../Controller/cOperacion.php");
+$num1 = $_GET['num1'];
+$num2 = $_GET['num2'];
+$operacion = $_GET['operacion'];
 
-    $res = $obj->comprobarNumero($num);
+$obj = new cOperacion;
+$res = $obj->operar($operacion, $num1, $num2);
 
-
-    switch ($res) {
-        case 0:
-            $respuesta = "<h3><strong>El número " . $num . " es cero</strong></h3>";
-            break;
-        case $res > 0:
-            $respuesta = "<h3><strong>El número " . $num . " es positivo</strong></h3>";
-            break;
-        case $res < 0:
-            $respuesta = "<h3><strong>El número " . $num . " es negativo</strong></h3>";
-            break;
-    }
+switch ($operacion) {
+    case 1:
+        $respuesta = "El resultado de sumar el " . $num1 . " con " . $num2 . " da como resultado: " . $res . ".";
+        break;
+    case 2:
+        $respuesta = "El resultado de restar el " . $num1 . " con " . $num2 . " da como resultado: " . $res . ".";
+        break;
+    case 3:
+        $respuesta = "El resultado de multiplicar el " . $num1 . " con " . $num2 . " da como resultado: " . $res . ".";
+        break;
 }
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,11 +28,10 @@ if ($_GET) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../utils/css/estilos.css">
     <link rel="stylesheet" href="../../../../home/libs/Bootstrap5.3.1/css/bootstrap.min.css">
-    <title>Respuesta1</title>
+    <title>Respuesta7</title>
 </head>
 
 <body>
-
     <main>
         <header style="height: 70px">
         </header>
@@ -52,8 +47,8 @@ if ($_GET) {
                             ?>
                             <br>
 
-                            <form action="../indexNumero.php">
-                                <button class="btn btn-primary" type="submit">Volver</button>
+                            <form action="../operacionIndex.php">
+                                <br><button class="btn btn-primary" type="submit">Volver</button>
                             </form>
 
 
@@ -63,8 +58,6 @@ if ($_GET) {
             </div>
         </div>
     </main>
-
-
 </body>
 
 </html>

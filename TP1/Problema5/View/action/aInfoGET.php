@@ -1,27 +1,21 @@
 <?php
-include("../../Controller/cVerNumero.php");
+include("../../Controller/cInfoGET.php");
 if ($_GET) {
-    $num = $_GET['num'];
-    $obj = new cVerNumero();
+    $nombre = $_GET['nombre'];
+    $apellido = $_GET['apellido'];
+    $edad = $_GET['edad'];
+    $direccion = $_GET['direccion'];
+    $estudio = $_GET['estudio'];
+    $genero = $_GET['genero'];
 
-    $res = $obj->comprobarNumero($num);
 
-
-    switch ($res) {
-        case 0:
-            $respuesta = "<h3><strong>El número " . $num . " es cero</strong></h3>";
-            break;
-        case $res > 0:
-            $respuesta = "<h3><strong>El número " . $num . " es positivo</strong></h3>";
-            break;
-        case $res < 0:
-            $respuesta = "<h3><strong>El número " . $num . " es negativo</strong></h3>";
-            break;
-    }
+    $obj = new cInfoGET;
+    $resEdad = $obj->validaEdad($edad);
+    $resEstudios = $obj->validaEstudios($estudio);
+    $resGenero = $obj->validaGenero($genero);
+    $respuesta = $obj->textoFormado($resEdad, $resEstudios, $resGenero, $nombre, $apellido, $edad, $direccion);
 }
 ?>
-
-
 
 
 <!DOCTYPE html>
@@ -32,11 +26,10 @@ if ($_GET) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../utils/css/estilos.css">
     <link rel="stylesheet" href="../../../../home/libs/Bootstrap5.3.1/css/bootstrap.min.css">
-    <title>Respuesta1</title>
+    <title>Respuesta5</title>
 </head>
 
 <body>
-
     <main>
         <header style="height: 70px">
         </header>
@@ -52,7 +45,8 @@ if ($_GET) {
                             ?>
                             <br>
 
-                            <form action="../indexNumero.php">
+                            <form action="../indexInfoGET.php">
+                                <br>
                                 <button class="btn btn-primary" type="submit">Volver</button>
                             </form>
 
@@ -63,8 +57,6 @@ if ($_GET) {
             </div>
         </div>
     </main>
-
-
 </body>
 
 </html>

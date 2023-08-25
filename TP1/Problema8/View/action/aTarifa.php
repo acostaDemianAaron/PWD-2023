@@ -1,26 +1,17 @@
 <?php
-include("../../Controller/cVerNumero.php");
+include("../../Controller/cTarifa.php");
+
+$res = "";
 if ($_GET) {
-    $num = $_GET['num'];
-    $obj = new cVerNumero();
+    $edad = $_GET['edad'];
+    $estudiante = $_GET['estudiante'];
 
-    $res = $obj->comprobarNumero($num);
-
-
-    switch ($res) {
-        case 0:
-            $respuesta = "<h3><strong>El número " . $num . " es cero</strong></h3>";
-            break;
-        case $res > 0:
-            $respuesta = "<h3><strong>El número " . $num . " es positivo</strong></h3>";
-            break;
-        case $res < 0:
-            $respuesta = "<h3><strong>El número " . $num . " es negativo</strong></h3>";
-            break;
-    }
+    $obj = new cTarifa;
+    $res = $obj->calcularEdad($edad, $estudiante);
+    $respuesta = "El precio de la entrada es de " . $res;
 }
-?>
 
+?>
 
 
 
@@ -32,7 +23,7 @@ if ($_GET) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../utils/css/estilos.css">
     <link rel="stylesheet" href="../../../../home/libs/Bootstrap5.3.1/css/bootstrap.min.css">
-    <title>Respuesta1</title>
+    <title>Respuesta8</title>
 </head>
 
 <body>
@@ -52,8 +43,8 @@ if ($_GET) {
                             ?>
                             <br>
 
-                            <form action="../indexNumero.php">
-                                <button class="btn btn-primary" type="submit">Volver</button>
+                            <form action="../indexTarifa.php">
+                                <br><button class="btn btn-primary" type="submit">Volver</button>
                             </form>
 
 
@@ -63,8 +54,6 @@ if ($_GET) {
             </div>
         </div>
     </main>
-
-
 </body>
 
 </html>
