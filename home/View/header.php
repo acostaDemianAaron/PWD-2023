@@ -3,7 +3,9 @@
     <link rel="stylesheet" href="/home/libs/Bootstrap5.3.1/css/bootstrap.min.css">
     <script src="/home/libs/Bootstrap5.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="/home/libs/Bootstrap5.3.1/js/bootstrap.min.js"></script>
-    <script src="/home/libs/jQuery/jQuery-3.7.0.js"></script>
+    <script src="/home/libs/jQuery/jquery-3.7.0.min.js"></script>
+    <script src="/home/libs/jQuery/jquery.validate.min.js"></script>
+    <script src="/home/libs/jQuery/translate-jQuery.js"></script>
 </head>
 
 <div class="container">
