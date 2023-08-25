@@ -1,14 +1,20 @@
 $("#form-login").validate({
     rules: {
-        username: {
+        username: "required",
+        password: {
             required: true,
             minlength: 8,
-            depends: function(){
-                console.log($("#username"));
-                return /^[A-Za-z0-9]*$/.test($("#username"));
-            }
+            
         }
-    }
+    },
+    messages: {
+        username: "",
+        password: {
+            required: ""
+        }
+    },
+    errorClass: "is-invalid",
+    validClass: "is-valid"
 })
 
 $("#submit").click(function () {
