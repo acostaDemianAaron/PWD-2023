@@ -119,8 +119,6 @@ include("../../../../home/View/header.php");
             </div>
         </form>
     </div>
-    <script src="../js/jquery-3.7.0.min.js"></script>
-    <script src="../js/jquery.validate.min.js"></script>
     <script src="../js/validarFormulario.js"></script>
 </body>
 
