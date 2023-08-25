@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../utils/css/estilos.css">
 
-    <link rel="stylesheet" href="../../../libs/Bootstrap5.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../home/libs/Bootstrap5.3.1/css/bootstrap.min.css">
     <title>Problema1</title>
 </head>
 

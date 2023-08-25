@@ -4,22 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../../libs/Bootstrap5.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../../utils/css/estilos.css">
+
+    <link rel="stylesheet" href="../../../home/libs/Bootstrap5.3.1/css/bootstrap.min.css">>
     <title>Problema2</title>
 </head>
 
 <body>
-    <form action="../../Controller/horaDeCursada.php" method="GET">
 
-        <label>Lunes: </label> <input name="lunes" id="lunes" type="time"><br>
-        <label>Martes: </label> <input name="martes" id="martes" type="time"><br>
-        <label>Miercoles: </label> <input name="miercoles" id="miercoles" type="time"><br>
-        <label>Jueves: </label><input name="jueves" id="jueves" type="time"><br>
-        <label>Viernes: </label> <input name="viernes" id="viernes" type="time"><br>
-        <input type="submit" value="Calcular">
+    <main>
+        <header style="height: 70px">
+        </header>
+        <div style="height: 30px;"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card shadow-lg p-3 mb-5 bg-white ">
+                        <div class="card-header" style="color:white;">Ingresa las horas cursadas de la semana:</div>
+                        <div class="card-body">
+                            <form action="action/aHsCursadas.php" method="GET" class="needs-validation" novalidate>
+                                <div class="form-row">
 
-    </form>
+                                    <div class="mb-3">
+
+                                        <div class="mb-3" style="color:black;">Lunes</div>
+                                        <input id="lunes" name="lunes" type="time" class="form-control" value="" required>
+
+                                        <div class="mb-3" style="color:black;">Martes</div>
+                                        <input id="martes" name="martes" type="time" class="form-control" value="" required>
+
+                                        <div class="mb-3" style="color:black;">Miercoles</div>
+                                        <input id="miercoles" name="miercoles" type="time" class="form-control" value="" required>
+
+                                        <div class="mb-3" style="color:black;">Jueves</div>
+                                        <input id="jueves" name="jueves" type="time" class="form-control" value="" required>
+
+                                        <div class="mb-3" style="color:black;">Viernes</div>
+                                        <input id="viernes" name="viernes" type="time" class="form-control" value="" required>
+
+                                    </div>
+                                    <button class="btn btn-primary" type="submit">Calcular</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="../../utils/js/campoVacio.js"></script>
 </body>
 
 </html>
