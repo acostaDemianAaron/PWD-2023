@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../../../utils/css/estilos.css">
     <link rel="stylesheet" href="../../../../../home/libs/Bootstrap5.3.1/css/bootstrap.min.css">
 
-    <title>Problema7</title>
+    <title>Problema3-GET</title>
 </head>
 
 <body>
@@ -21,34 +21,34 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card shadow-lg p-3 mb-5 bg-white ">
-                        <div class="card-header" style="color:white;">Calcular</div>
+                        <div class="card-header" style="color:white;">Ingrese sus datos</div>
                         <div class="card-body">
-                            <form action="action/aOperacion.php" method="GET" id="form_control" name="form_control">
+                            <form action="action/aInfoGET.php" method="GET" id="form_control" name="form_control">
                                 <div class="form-row">
                                     <div class="col-md-4 mb-3">
-                                        <label class="mb-2" for="num1">Ingrese el primer numero</label><br>
-                                        <input id="num1" name="num1" type="number" class="form-control" value="" required>
+                                        <label class="mb-2" for="nombre">Ingrese su nombre: </label><br>
+                                        <input id="nombre" name="nombre" type="text" class="form-control" value="" required>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-4 mb-3">
-                                        <label class="mb-2" for="num2">Ingrese el segundo numero</label><br>
-                                        <input id="num2" name="num2" type="number" class="form-control" value="" required>
+                                        <label class="mb-2" for="apellido">Ingrese su apellido: </label><br>
+                                        <input id="apellido" name="apellido" type="text" class="form-control" value="" required>
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="col-6">
-                                        <div class="col-3">
-                                            <label for="form-select" class="form-label">Operacion</label>
-                                            <select class="form-select" id="operacion" name="operacion">
-                                                <option selected value="1">Sumar</option>
-                                                <option value="2">Restar</option>
-                                                <option value="3">Multiplicar</option>
-                                            </select>
-                                        </div>
+                                    <div class="col-md-4 mb-3">
+                                        <label class="mb-2" for="edad">Ingrese su edad: </label><br>
+                                        <input id="edad" name="edad" type="number" class="form-control" value="" required>
                                     </div>
-                                </div><br>
-                                <button class="btn btn-primary" type="submit" id="enviar" name="enviar">Calcular</button>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-4 mb-3">
+                                        <label class="mb-2" for="direccion">Ingrese su direccion: </label><br>
+                                        <input id="direccion" name="direccion" type="text" class="form-control" value="" required>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary" type="submit" id="enviar" name="enviar">Enviar</button>
                             </form>
                         </div>
                     </div>
@@ -61,6 +61,7 @@
     <script src="../../../../../home/libs/jQuery/jquery.validate.min.js"></script>
     <script src="../../../../../home/libs/jQuery/translate-jQuery.js"></script>
     <script src="../js/formValidation.js"></script>
+
 </body>
 
 </html>
