@@ -1,9 +1,7 @@
-<?php
-include("../../../../home/View/header.php");
-?>
+<?php include("../../../../home/View/header.php"); ?>
 
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">

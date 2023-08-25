@@ -1,3 +1,5 @@
+<?php include("../../../home/View/header.php"); ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
