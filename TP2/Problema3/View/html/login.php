@@ -26,7 +26,7 @@
                         <form class="needs-validation" action="action/verificaPass.php" method="POST" name="form-login" id="form-login">
                             <div class="form-floating mb-4 p-1">
                                 <i class="fa fa-user fa-xl position-absolute top-50 ms-2"></i>
-                                <input type="text" class="form-control ps-5 py-2" id="username" name="username" placeholder="Username" required>
+                                <input type="text" class="form-control ps-5 py-2" id="username" name="username" placeholder="Username">
                                 <label for="username" class="ps-5">Username</label>
                                 <div class="invalid-feedback position-absolute">
                                     Completa este campo
@@ -34,7 +34,7 @@
                             </div>
                             <div class="form-floating mb-4 p-1">
                                 <i class="fa fa-lock fa-xl position-absolute top-50 ms-2"></i>
-                                <input type="password" class="form-control ps-5 py-2" id="password" name="password" placeholder="Password" required>
+                                <input type="password" class="form-control ps-5 py-2" id="password" name="password" placeholder="Password">
                                 <label for="password" class="ps-5">Password</label>
                                 <div id="feedback" class="invalid-feedback position-absolute"></div>
                             </div>
