@@ -1,15 +1,31 @@
 <?php
-// include("../../../Controller/cCinemas.php");
+include("../../../Controller/cCinemas.php");
 require("../../../../../home/View/header.php");
 
-if (isset($_POST)) {
-    $datos = $_POST;
-    print_r($datos);
+$control = new cinemas_control();
+$datos = $control->datos();
+if ($datos == null) {
+    echo '
+    <!-- Error jumbotron -->
+    <div class="my-5">
+        <div class="p-5 text-center bg-body-tertiary">
+            <div class="container py-5">
+                <h1 class="text-body-emphasis">Algo salio mal :&#x28;</h1>
+                <p class="col-lg-8 mx-auto lead">
+                    Intentelo nuevamente
+                </p>
+
+                <a class="btn btn-primary" href="../cinemas.php">Volver</a>
+            </div>
+        </div>
+    </div>
+    ';
+    exit();
 }
 ?>
 
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">

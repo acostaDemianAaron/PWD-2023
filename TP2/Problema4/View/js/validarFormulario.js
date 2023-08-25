@@ -43,7 +43,9 @@ $("#form-peliculas").validate({
         inputNacionalidad: "Ingrese la nacionalidad",
         inputDuracion: "Ingrese la duracion en minutos (Maxiimo 3 digitos)",
         inputSinopsis: "Ingrese una breve descripcion."
-    }
+    },
+    errorClass: "is-invalid",
+    validClass: "is-valid"
 })
 
 $("#enviar").click(function () {
