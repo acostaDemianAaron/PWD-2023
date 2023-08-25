@@ -20,7 +20,7 @@ include("../../../../home/View/header.php");
                 <div class="col-6">
                     <div class="mb-3 form-inputs">
                         <label for="inputTitulo" class="form-label">Titulo</label>
-                        <input type="text" class="form-control" id="inputTitulo">
+                        <input type="text" class="form-control" id="inputTitulo" name="inputTitulo">
                     </div>
                 </div>
                 <div class="col-6">
@@ -117,7 +117,8 @@ include("../../../../home/View/header.php");
             </div>
         </form>
     </div>
-
+    <script src="../js/jquery-3.7.0.min.js"></script>
+    <script src="../js/jquery.validate.min.js"></script>
     <script src="../js/validarFormulario.js"></script>
 </body>
 

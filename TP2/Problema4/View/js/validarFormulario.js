@@ -1,4 +1,4 @@
-$("#form-inputs").validate({
+$("#form-peliculas").validate({
     rules:{
         inputTitulo: {
             required: true,
@@ -18,10 +18,11 @@ $("#form-inputs").validate({
 //     }
 // })
 
-$("#enviar").click(function(){
-    if($("#formpelicula") == false){
+$("#enviar").click(function () {
+    if($("#form-peliculas").valid() == false){
         return;
     }
 
     console.log()
 });
+
