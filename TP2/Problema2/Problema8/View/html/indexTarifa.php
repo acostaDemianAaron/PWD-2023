@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="../../../utils/css/estilos.css">
     <link rel="stylesheet" href="../../../../../home/libs/Bootstrap5.3.1/css/bootstrap.min.css">
 
-    <title>Problema7</title>
+    <title>Problema8</title>
 </head>
 
 <body>
+
 
     <main>
         <header style="height: 70px">
@@ -21,29 +22,22 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card shadow-lg p-3 mb-5 bg-white ">
-                        <div class="card-header" style="color:white;">Calcular</div>
+                        <div class="card-header" style="color:white;">Precios de las entradas de Cinem@s</div>
                         <div class="card-body">
-                            <form action="action/aOperacion.php" method="GET" id="form_control" name="form_control">
+                            <form action="action/aTarifa.php" method="GET" id="form_control" name="form_control">
                                 <div class="form-row">
                                     <div class="col-md-4 mb-3">
-                                        <label class="mb-2" for="num1">Ingrese el primer numero</label><br>
-                                        <input id="num1" name="num1" type="number" class="form-control" value="" required>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-md-4 mb-3">
-                                        <label class="mb-2" for="num2">Ingrese el segundo numero</label><br>
-                                        <input id="num2" name="num2" type="number" class="form-control" value="" required>
+                                        <label class="mb-2" for="edad">Ingrese la edad</label><br>
+                                        <input id="edad" name="edad" type="number" class="form-control" value="" required>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col-6">
                                         <div class="col-3">
-                                            <label for="form-select" class="form-label">Operacion</label>
-                                            <select class="form-select" id="operacion" name="operacion">
-                                                <option selected value="1">Sumar</option>
-                                                <option value="2">Restar</option>
-                                                <option value="3">Multiplicar</option>
+                                            <label for="form-select" class="form-label">¿Eres estudiante?</label>
+                                            <select class="form-select" id="estudiante" name="estudiante">
+                                                <option selected value="No">No</option>
+                                                <option value="Si">Si</option>
                                             </select>
                                         </div>
                                     </div>
