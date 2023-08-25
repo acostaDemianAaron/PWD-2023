@@ -46,15 +46,15 @@
                                 <div class="accordion-body">
                                     <h5 class="card-title">EJ 2</h5>
                                     <!-- Ejercicios del ejercicio 2 del TP 2 -->
-                                    <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP2/Problema2/Problema1/View/html/verNumeroIndex.php'">EJ1</button>
-                                    <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP2/Problema2/Problema2/View/html/horaDeCursadaIndex.php'">EJ2</button>
-                                    <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP2/Problema2/Problema3/View/html/usandoInfoGETIndex.php'">EJ3 GET</button>
-                                    <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP2/Problema2/Problema3/View/html/usandoInfoPOSTIndex.php'">EJ3 POST</button>
-                                    <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP2/Problema2/Problema4/View/html/usandoInfoIndex.php'">EJ4</button>
-                                    <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP2/Problema2/Problema5/View/html/usandoInfoIndex.php'">EJ5</button>
-                                    <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP2/Problema2/Problema6/View/html/usandoInfoIndex.php'">EJ6</button>
+                                    <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP2/Problema2/Problema1/View/html/indexNumero.php'">EJ1</button>
+                                    <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP2/Problema2/Problema2/View/html/indexHsCursadas.php'">EJ2</button>
+                                    <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP2/Problema2/Problema3/View/html/indexInfoGET.php'">EJ3 GET</button>
+                                    <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP2/Problema2/Problema3/View/html/indexInfoPOST.php'">EJ3 POST</button>
+                                    <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP2/Problema2/Problema4/View/html/indexInfoGET.php.php'">EJ4</button>
+                                    <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP2/Problema2/Problema5/View/html/indexInfoGET.php'">EJ5</button>
+                                    <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP2/Problema2/Problema6/View/html/indexInfoGET.php'">EJ6</button>
                                     <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP2/Problema2/Problema7/View/html/operacionIndex.php'">EJ7</button>
-                                    <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP2/Problema2/Problema8/View/html/tarifaEntradaIndex.php'">EJ8</button>
+                                    <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP2/Problema2/Problema8/View/html/indexTarifa.php'">EJ8</button>
                                 </div>
                             </div>
                         </div>
