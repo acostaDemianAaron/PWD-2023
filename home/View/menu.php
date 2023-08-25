@@ -50,7 +50,7 @@
                                     <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP2/Problema2/Problema2/View/html/indexHsCursadas.php'">EJ2</button>
                                     <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP2/Problema2/Problema3/View/html/indexInfoGET.php'">EJ3 GET</button>
                                     <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP2/Problema2/Problema3/View/html/indexInfoPOST.php'">EJ3 POST</button>
-                                    <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP2/Problema2/Problema4/View/html/indexInfoGET.php.php'">EJ4</button>
+                                    <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP2/Problema2/Problema4/View/html/indexInfoGET.php'">EJ4</button>
                                     <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP2/Problema2/Problema5/View/html/indexInfoGET.php'">EJ5</button>
                                     <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP2/Problema2/Problema6/View/html/indexInfoGET.php'">EJ6</button>
                                     <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP2/Problema2/Problema7/View/html/operacionIndex.php'">EJ7</button>

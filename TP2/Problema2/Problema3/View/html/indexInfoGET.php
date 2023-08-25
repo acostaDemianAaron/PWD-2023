@@ -4,15 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="../../../utils/css/estilos.css">
-    <link rel="stylesheet" href="../../../../../home/libs/Bootstrap5.3.1/css/bootstrap.min.css">
 
     <title>Problema3-GET</title>
 </head>
 
 <body>
-
+    <?php include("../../../../../home/View/header.php"); ?>
     <main>
         <header style="height: 70px">
         </header>
@@ -56,10 +54,6 @@
             </div>
         </div>
     </main>
-    <script src="../../../../../home/libs/Bootstrap5.3.1/js/bootstrap.bundle.min.js"></script>
-    <script src="../../../../../home/libs/jQuery/jquery-3.7.0.min.js"></script>
-    <script src="../../../../../home/libs/jQuery/jquery.validate.min.js"></script>
-    <script src="../../../../../home/libs/jQuery/translate-jQuery.js"></script>
     <script src="../js/formValidation.js"></script>
 
 </body>

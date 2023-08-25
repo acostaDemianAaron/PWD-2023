@@ -4,18 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="../../../utils/css/estilos.css">
-    <link rel="stylesheet" href="../../../../../home/libs/Bootstrap5.3.1/css/bootstrap.min.css">
 
     <title>Problema1</title>
 </head>
 
 <body>
-
-    <main>
-        <header style="height: 70px">
-        </header>
+    <?php include("../../../../../home/View/header.php"); ?>
+    <div>
         <div style="height: 30px;"></div>
         <div class="container">
             <div class="row">
@@ -37,11 +33,7 @@
                 </div>
             </div>
         </div>
-    </main>
-    <script src="../../../../../home/libs/Bootstrap5.3.1/js/bootstrap.bundle.min.js"></script>
-    <script src="../../../../../home/libs/jQuery/jquery-3.7.0.min.js"></script>
-    <script src="../../../../../home/libs/jQuery/jquery.validate.min.js"></script>
-    <script src="../../../../../home/libs/jQuery/translate-jQuery.js"></script>
+    </div>
     <script src="../js/formValidation.js"></script>
 
 </body>
