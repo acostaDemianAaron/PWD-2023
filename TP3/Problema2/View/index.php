@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subir Archivo de Texto</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subir Archivo al Servidor</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Subir Archivo de Texto</h1>
-    <form action="procesar.php" method="post" enctype="multipart/form-data">
-        <label for="archivo">Selecciona un archivo de texto (txt):</label>
-        <input type="file" name="archivo" id="archivo" accept=".txt" required>
-        <button type="submit" name="subir">Subir</button>
-    </form>
 
-    <h2>Contenido del Archivo:</h2>
-    <textarea id="contenido" name="contenido" rows="10" cols="40" readonly></textarea>
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Subir Archivo TXT al Servidor</h2>
+  <form action="a_upload_form.php" method="post" enctype="multipart/form-data" >
+    <div class="mb-3">
+      <label for="archivo" class="form-label">Seleccionar Archivo</label>
+      <input type="file" class="form-control" id="myFile" name="myFile">
+    </div>
+    <button type="submit" class="btn btn-primary" value="Enviar">Enviar</button>
+  </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
