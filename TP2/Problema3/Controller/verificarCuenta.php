@@ -1,19 +1,19 @@
 <?php
 class cuenta
 {
-    
 
-    public function verificar($data)
+
+    public function verificar($cuentas, $username, $password)
     {
-        $length = count($data);
+        $length = count($cuentas);
         $i = 0;
 
         while ($i < $length) {
-            if ($data[$i]["username"] == $_POST["username"]) {
-                if ($data[$i]["password"] == $_POST["password"]) {
+            if ($cuentas[$i]["username"] == $username) {
+                if ($cuentas[$i]["password"] == $password) {
 
                     $resp = 1;
-                    //Respuesta a 
+                    //Respuesta a
                 } else {
                     $resp = 2;
                     //Respuesta a Contraseña incorrecta
@@ -28,3 +28,5 @@ class cuenta
         return $resp;
     }
 }
+
+?>

@@ -27,7 +27,7 @@ $("#submit").click(function () {
         return;
     }
 
-    $("#form-login").trigger("submit");
+    //$("#form-login").trigger("submit");
 });
 
 // Only let letters and nums be true.

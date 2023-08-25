@@ -1,5 +1,5 @@
 <?php
-include ("../../Controller/verificarCuenta.php");
+include ("../../../Controller/verificarCuenta.php");
 $cuentas = [
     [
         "username" => "Usuario",
@@ -11,8 +11,10 @@ $cuentas = [
     ]
 ];
 
-$obj = new Cuenta();
-$resp = $obj->verificar($cuentas);
+$obj = new cuenta();
+$username = $_POST['username'];
+$password = $_POST['password'];
+$resp = $obj->verificar($cuentas, $username, $password);
 
 switch($resp){
 
@@ -28,15 +30,15 @@ case 0:
 }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../../libs/Bootstrap5.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../../libs/Bootstrap5.3.1/css/bootstrap.css">
-    <script src="../../../libs/Bootstrap5.3.1/js/bootstrap.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../../../../../home/libs/Bootstrap5.3.1/css/bootstrap.min.css">
+    <script src="../../../../../home/libs/Bootstrap5.3.1/js/bootstrap.min.js" type="text/javascript"></script>
     <title>Bienvenido</title>
 </head>
 

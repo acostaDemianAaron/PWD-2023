@@ -39,7 +39,7 @@
                                 <div id="feedback" class="invalid-feedback position-absolute"></div>
                             </div>
 
-                            <button class="w-100 btn btn-lg text-white mb-5" id="submit" name="submit" type="button" style="background-color: #04AA6D">Login</button>
+                            <button class="w-100 btn btn-lg text-white mb-5" id="submit" name="submit" type="submit" style="background-color: #04AA6D">Login</button>
                         </form>
                     </div>
                 </div>
