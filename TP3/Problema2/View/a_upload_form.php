@@ -12,7 +12,7 @@ include_once('../Controller/UploadController.php');
 <body class="bg-light">
 
     <div class="container-fluid h-100 d-flex flex-column justify-content-center align-items-center">
-        <h2 class="mb-4 text-center"><?php echo $resultado?></h2>
+        <h2 class="mb-4 text-center"><?php echo $res?></h2>
         <h4 class="text-center">Texto contenido en el TXT</h4>
         <div class="w-100 text-center">
             <textarea class="form-control" rows="10"><?php echo $texto?></textarea>

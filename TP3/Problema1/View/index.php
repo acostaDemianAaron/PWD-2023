@@ -13,15 +13,15 @@
 
   <div class="container mt-5">
     <h2 class="text-center mb-4">Subir Archivo DOC o PDF al Servidor</h2>
-    <form action="a_upload_form.php" method="post" enctype="multipart/form-data">
+    <form id="form-documentos" action="a_upload_form.php" method="post" enctype="multipart/form-data">
       <div class="mb-3">
         <label for="archivo" class="form-label">Seleccionar Archivo</label>
         <input type="file" class="form-control" id="myFile" name="myFile">
       </div>
-      <button type="submit" class="btn btn-primary" value="Enviar">Enviar</button>
+      <button id="enviar" type="submit" class="btn btn-primary" value="Enviar">Enviar</button>
     </form>
   </div>
-
+  <script src="js/validarFormulario.js"></script>"
 </body>
 
 </html>

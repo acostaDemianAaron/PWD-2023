@@ -73,8 +73,9 @@
                         <div class="accordion-body">
                             <div class="accordion-item">
                                 <!-- Ejercicios del TP 3 -->
-                                <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP3/Problema1/View/'">EJ1</button>
-                                <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP3/Problema2/View/'">EJ2</button>
+                                <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP3/Problema1/View/index.php'">EJ1</button>
+                                <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP3/Problema2/View/index.php'">EJ2</button>
+                                <button type="button" class="btn btn-primary redirect-button" onclick="location.href='../../TP3/Problema3/View/html/cinemas.php'">EJ3</button>
                             </div>
                         </div>
                     </div>

@@ -1,1 +1,40 @@
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+*Reunión 25/08/2023*
+
+- Rush order de tanda anterior (poner +120usd cualq medida hasta encontrar la otra solucion)
+
+- Trust badges
+   - Mau: enviar tamaños ideales para los sellos
+   - Brandon: enviar sellos
+
+- En el product layout: Hipervínculo de Want to add lights? See Examples y que te lleve a una landing con los desplegables de las explicaciones (Tamaño / luces / soporte / logo nuevo)
+   - Brandon: enviar el contenido de esa nueva página
+
+- En el product layout: Do you need a new logo? Lleva a la misma landing de arriba pero con ancla al desplegable que explica lo del logo design
+
+- Agregar cinta o icono de Most Popular (solo en product Custom Multilayer Signs): unicamente a esta medida 40in / 100cm
+
+- Eliminar categoría de CANVAS de la home, solo dejar TRY CANVAS
+
+- Agregar 2 categorías nuevas TROPHIES y Acrylic Signs sin relieve 
+   - Brandon: enviar imagenes, titulos y textos para esas 2 nuevas categorias
+
+- Estandarizar medidas de todos los productos
+   - Mau: enviar la medida y reemplazar las imgs en la tienda 
+   - Brandon: pasarle a el diseñador la medida y enviar todas las imagenes en un .zip o drive *
+
+- Reemplazar Hero por un Hero Slider, el primer slide debe ser el video y despues tienen que poder meter imágenes, hacerlo personalizable.
+   - Mau: enviar medidas del slide
+   - Brandon: pasarle al diseñador y enviar imgs + titulo del slide + texto descrip + CTA
+
+- Eliminar 3 deslizables en bring your design y reemplazarlos por las reviews de la home 
+   - Brandon: Enviar 2 reviews más para reemplazar las 2 que no van
+
+- Poner CTA en la home en un slide del Hero que te lleve a página Types of Art (3ds) (*para hacer esto primero hay que hacer lo de mas arriba)
+
+- Agrandar Navbar, links y logo
+
+- Cambiar Google reviews de Bring your design por las reviews de la home
+
+- Cambiar Google reviews de los product layout por las reviews de la home 
+
+- Grabar loom para cambiar reviews
