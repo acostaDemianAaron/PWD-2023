@@ -1,11 +1,11 @@
-<p align="center">
-  <img src="https://i.postimg.cc/jdMhhYmM/Portada.png" />
-</p>
+## Instrucciones de uso
 
-## Estructura de las carpetas
+Requisito: Tener una version de php instalada. (Version testeada: 8.1)
 
-En proceso de agregar imagen...
-
+1. Desde un terminal ingresar a la carpeta inicial del Repositorio.
+   - Por Ejemplo: Si la carpeta se encuentra en "C:/usuario/descargas/PWD-2023" entonces ejecutar el comando "cd C:/usuario/descargas/PWD-2023"
+2. Abrir un servidor php con el comando: _php -S localhost:4040_
+3. Entrar desde un navegador a _http://localhost:4040/_
 
 ## Cursada 2023
 
@@ -38,4 +38,4 @@ Programación Web Dinámica (PWD)
 
   - Legajo FAI - 2256
   - Mail Personal: mauricio.sawicki@est.fi.uncoma.edu.ar
-  - Usuario GitHub: mausawicki7 
+  - Usuario GitHub: mausawicki7
