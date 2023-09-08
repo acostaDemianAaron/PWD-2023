@@ -13,6 +13,9 @@
 --
 -- Estructura de tabla para la tabla `auto`
 --
+CREATE DATABASE infoautos;
+USE infoautos;
+
 CREATE TABLE
   `auto` (
     `Patente` varchar(10) character set utf8 collate utf8_unicode_ci NOT NULL,
