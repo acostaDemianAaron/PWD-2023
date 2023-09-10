@@ -1,13 +1,13 @@
 <?php
-// Include from WAMP64
-include("../Config/configuracion.php");
-include_once("../View/Structure/header.php");
-// Include from PHP -S
+// For now the include that works
+require_once("../Config/configuracion.php");
+require_once("../View/Structure/header.php");
 ?>
 
 <head>
    <title>Test page</title>
 </head>
+
 <body>
    <div class="container">
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@aaron">Open modal for <i class="fa-brands fa-github"></i>Aaron</button>

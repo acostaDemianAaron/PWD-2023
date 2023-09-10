@@ -6,17 +6,14 @@ header ("Cache-Control: no-cache, must-revalidate ");
 /////////////////////////////
 
 // Multiples formas de hacer funcionar la variable PROYECTO.
-// Si se modifica el httpd-vhost.conf para que apunte a Project-2, entonces $PROYECTO no necesita nada
-// WAMP
 // $PROYECTO = 'Project-2';
 $PROYECTO ='';
 $ROOT = $_SERVER['DOCUMENT_ROOT'].$PROYECTO;
-// php -S
-// $PROYECTO ='';
-// $ROOT = '';
+$view = "View/";
 
-include_once($ROOT.'Function/funciones.php');
+$FUNCIONES = $ROOT.'/Function/funciones.php';
 
+require($FUNCIONES);
 // Variable que define la pagina de autenticacion del proyecto
 $INICIO = "Location:http://". $_SERVER['HTTP_HOST'] . "/$PROYECTO/View/index.php";
 
@@ -25,5 +22,5 @@ $PRINCIPAL = "Location:http://". $_SERVER['HTTP_HOST'] . "/$PROYECTO/View/index.
 
 $_SESSION['ROOT']=$ROOT;
 // Debug every variable on screen.
-print_r("Getting PROYECTO: $PROYECTO <br>Getting ROOT: $ROOT <br>Getting INICIO: $INICIO <br>Getting PRINCIPAL: $PRINCIPAL <br>Getting functions: {$ROOT}Function/funciones.php");
+// print_r("Getting PROYECTO: $PROYECTO <br>Getting ROOT: $ROOT <br>Getting INICIO: $INICIO <br>Getting PRINCIPAL: $PRINCIPAL <br>Getting functions: $FUNCIONES");
 ?>
