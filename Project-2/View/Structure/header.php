@@ -28,15 +28,15 @@
 
          <ul class="nav nav-pills">
             <li class="nav-item"><a href="/View/" class="nav-link active" aria-current="page">Home</a></li>
-            <li class="nav-item disabled"><a href="/View/viewDB.php" class="nav-link">Database View</a></li>
-            <li class="nav-item disabled"><a href="#" class="nav-link">MySQL query exec</a></li>
+            <li class="nav-item disabled"><a href="/Test/viewDB.php" class="nav-link">Database View</a></li>
+            <li class="nav-item disabled"><a href="/Test/execQuery.php" class="nav-link">MySQL query exec</a></li>
          </ul>
       </header>
    </div>
 
 <!-- Theme Changer button -->
    <div class="position-fixed bottom-0 end-0 mb-3 me-3">
-      <button class="btn btn-dark btn-outline-light" id="toggle-theme"><i class="fa-regular fa-sun fs-3"></i></button>
+      <button class="btn btn-dark btn-outline-light" id="toggle-theme"><i class="fa-regular fa-moon fs-4"></i></button>
    </div>
 
    <script>

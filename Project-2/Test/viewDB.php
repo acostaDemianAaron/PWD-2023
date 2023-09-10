@@ -37,7 +37,6 @@ $objBd = new BaseDatos();
                         if($res) $array = $objBd->Registro();
 
                         while($array != null){
-                           // print_r($array);
                            echo "
                            <tr>
                               <td>{$array['Patente']}</td>
