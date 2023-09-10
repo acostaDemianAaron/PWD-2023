@@ -1,15 +1,13 @@
-<?php header('Content-Type: text/html; charset=utf-8');
+<?php header('Content-Type: text/html; charset=utf-8;');
 header ("Cache-Control: no-cache, must-revalidate ");
 
 /////////////////////////////
 // CONFIGURACION APP //
 /////////////////////////////
 
-// Multiples formas de hacer funcionar la variable PROYECTO.
-// $PROYECTO = 'Project-2';
+// Si no funciona probar $PROYECTO = 'Project-2';
 $PROYECTO ='';
 $ROOT = $_SERVER['DOCUMENT_ROOT'].$PROYECTO;
-$view = "View/";
 
 $FUNCIONES = $ROOT.'/Function/funciones.php';
 

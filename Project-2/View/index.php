@@ -5,62 +5,56 @@ require_once("../View/Structure/header.php");
 ?>
 
 <head>
-   <title>Test page</title>
+   <title>Pagina principal</title>
 </head>
 
 <body>
-   <div class="container">
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@aaron">Open modal for <i class="fa-brands fa-github"></i>Aaron</button>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@alan">Open modal for <i class="fa-brands fa-github"></i>Alan</button>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@santi">Open modal for <i class="fa-brands fa-github"></i>Santi</button>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mausa">Open modal for <i class="fa-brands fa-github"></i>Mausa</button>
+<div class="container px-4 py-5">
+    <h2 class="pb-2 border-bottom">Features with title</h2>
 
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-         <div class="modal-dialog">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-               </div>
-               <div class="modal-body">
-                  <form>
-                     <div class="mb-3">
-                        <label for="recipient-name" class="col-form-label">Recipient:</label>
-                        <input type="text" class="form-control" id="recipient-name">
-                     </div>
-                     <div class="mb-3">
-                        <label for="message-text" class="col-form-label">Message:</label>
-                        <textarea class="form-control" id="message-text"></textarea>
-                     </div>
-                  </form>
-               </div>
-               <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Send message</button>
-               </div>
-            </div>
-         </div>
+    <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+      <div class="col d-flex flex-column align-items-start gap-2">
+        <h2 class="fw-bold text-body-emphasis">Trabajo Practico N4</h2>
+        <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+        <a href="./testPage.php" class="btn btn-primary btn-lg">Ir a opciones</a>
       </div>
-   </div>
 
-   <script>
-   const exampleModal = document.getElementById('exampleModal')
-   if (exampleModal) {
-      exampleModal.addEventListener('show.bs.modal', event => {
-         // Button that triggered the modal
-         const button = event.relatedTarget
-         // Extract info from data-bs-* attributes
-         const recipient = button.getAttribute('data-bs-whatever')
-         // If necessary, you could initiate an Ajax request here
-         // and then do the updating in a callback.
+      <div class="col">
+        <div class="row row-cols-1 row-cols-sm-2 g-4">
+          <div class="col d-flex flex-column gap-2">
+            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+              <i class="fa-brands fa-square-github"></i>
+            </div>
+            <h4 class="fw-semibold mb-0 text-body-emphasis">Aaron Acosta</h4>
+            <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
+          </div>
 
-         // Update the modal's content.
-         const modalTitle = exampleModal.querySelector('.modal-title')
-         const modalBodyInput = exampleModal.querySelector('.modal-body input')
+          <div class="col d-flex flex-column gap-2">
+            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+               <i class="fa-brands fa-square-github"></i>
+            </div>
+            <h4 class="fw-semibold mb-0 text-body-emphasis">Alan Vera</h4>
+            <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
+          </div>
 
-         modalTitle.textContent = `New message to ${recipient}`
-         modalBodyInput.value = recipient
-      })
-   }
-   </script>
+          <div class="col d-flex flex-column gap-2">
+            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+              <i class="fa-brands fa-square-github"></i>
+            </div>
+            <h4 class="fw-semibold mb-0 text-body-emphasis">Santiago Yaitul</h4>
+            <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
+          </div>
+
+          <div class="col d-flex flex-column gap-2">
+            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+              <i class="fa-brands fa-square-github"></i>
+            </div>
+            <h4 class="fw-semibold mb-0 text-body-emphasis">Mauricio Sawicki</h4>
+            <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>

@@ -18,21 +18,35 @@
  
 <!-- Actual body of nav-bar -->
 
-<body>
+<body data-bs-theme="dark">
    <div class="container">
       <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
          <a href="/View/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
             <i class="fa-brands fa-bootstrap me-4" style="transform: scale(3);"></i>
-            <span class="fs-4">Simple header</span>
+            <span class="fs-4">Trabajo Practico 4</span>
          </a>
 
          <ul class="nav nav-pills">
-            <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="/View/" class="nav-link active" aria-current="page">Home</a></li>
+            <li class="nav-item disabled"><a href="#" class="nav-link">Database View</a></li>
+            <li class="nav-item disabled"><a href="#" class="nav-link">MySQL query exec</a></li>
          </ul>
       </header>
    </div>
+
+<!-- Theme Changer button -->
+   <div class="position-fixed bottom-0 end-0 mb-3 me-3">
+      <button class="btn btn-dark btn-outline-light" id="toggle-theme"><i class="fa-regular fa-sun fs-3"></i></button>
+   </div>
+
+   <script>
+      // Toggle theme
+      $("button#toggle-theme").on("click", function(){
+         if (document.querySelector("body").getAttribute('data-bs-theme') == 'dark') {
+            document.querySelector("body").setAttribute('data-bs-theme','light')
+         } else {
+            document.querySelector("body").setAttribute('data-bs-theme','dark')
+         }
+      })
+   </script>
 </body>
