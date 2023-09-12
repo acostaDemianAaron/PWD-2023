@@ -4,7 +4,7 @@ require_once("../Config/configuracion.php");
 require_once("../View/Structure/header.php");
 require_once('../Model/Connection/BaseDatos.php');
 
-$objBd = new BaseDatos();
+$objBd = new Database();
 ?>
 
 <head>
@@ -33,8 +33,8 @@ $objBd = new BaseDatos();
                   <tbody id="table-body">
                      <?php
                         $query = "SELECT * FROM auto";
-                        $res = $objBd->Ejecutar($query);
-                        if($res) $array = $objBd->Registro();
+                        $res = $objBd->Execute($query);
+                        if($res) $array = $objBd->Register();
 
                         while($array != null){
                            echo "
@@ -44,7 +44,7 @@ $objBd = new BaseDatos();
                               <td>{$array['Modelo']}</td>
                               <td>{$array['DniDuenio']}</td>
                            </tr>";
-                           $array = $objBd->Registro();
+                           $array = $objBd->Register();
                         }
                      ?>
                   </tbody>
@@ -69,8 +69,8 @@ $objBd = new BaseDatos();
                   <tbody id="table-body">
                      <?php
                         $query = "SELECT * FROM persona";
-                        $res = $objBd->Ejecutar($query);
-                        if($res) $array = $objBd->Registro();
+                        $res = $objBd->Execute($query);
+                        if($res) $array = $objBd->Register();
 
                         while($array != null){
                            echo "
@@ -82,7 +82,7 @@ $objBd = new BaseDatos();
                               <td>{$array['Telefono']}</td>
                               <td>{$array['Domicilio']}</td>
                            </tr>";
-                           $array = $objBd->Registro();
+                           $array = $objBd->Register();
                         }
                      ?>
                   </tbody>
