@@ -1,7 +1,6 @@
 <?php
 require_once("../../Config/configuracion.php");
 require_once("../../View/Structure/header.php");
-require_once("../../Controller/AbmAuto.php");
 if(isset($_GET['test'])){
     $arregloAutos = null;
 } else {
@@ -34,7 +33,7 @@ if(isset($_GET['test'])){
                               <th scope="col">Dueño</th>
                            </tr>
                         </thead>
-                        <tbody id="table-body">';
+                    <tbody id="table-body">';
                 foreach($arregloAutos as $auto){
                     echo "
                     <tr>
@@ -44,9 +43,9 @@ if(isset($_GET['test'])){
                         <td>{$auto->getObjDuenio()->getNombre()} {$auto->getObjDuenio()->getApellido()}</td>
                     </tr>";
                 }
-                echo '  </tbody>
-                     </table>
-                  </div>';
+                echo '</tbody>
+                    </table>
+                </div>';
                 } else {
                 echo '<h2 class="pb-3 fs-1 fw-bolder border-bottom">No hay ningun auto cargado en la base de datos.</h2>';
                 }
