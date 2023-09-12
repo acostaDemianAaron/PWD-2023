@@ -200,7 +200,7 @@ class Auto
             if ($res > 0) {
                 while ($row = $database->Register()) {
                     $objAuto = new Auto();
-                    $objDuenio = new Auto();
+                    $objDuenio = new Persona();
                     $objDuenio->setNroDni($row['DniDuenio']);
                     $objDuenio->Load();
 
