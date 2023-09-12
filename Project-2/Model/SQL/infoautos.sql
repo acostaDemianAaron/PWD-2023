@@ -15,6 +15,7 @@
 --
 CREATE DATABASE infoautos;
 USE infoautos;
+SET SQL_MODE='ALLOW_INVALID_DATES';
 
 CREATE TABLE
   `auto` (
