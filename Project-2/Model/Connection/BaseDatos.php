@@ -11,15 +11,18 @@ class BaseDatos extends PDO
     private $conec;
     private $indice;
     private $resultado;
+    private $error;
+    private $sql;
+
 
     public function __construct()
     {
-        error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
+        // error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
         $this->engine = 'mysql';
         $this->host = 'localhost';
-        $this->database = 'PWD';
-        $this->user = 'root';
-        $this->pass = '140519';
+        $this->database = ''; // Agregar nombre de la base de datos
+        $this->user = ''; // Agregar usuario para ingresar a la base de datos
+        $this->pass = ''; // Agregar contraseña para ingresar a la base de datos
         $this->debug = true;
         $this->error = "";
         $this->sql = "";
@@ -45,19 +48,10 @@ class BaseDatos extends PDO
         return $this->getConec();
     }
 
-
-
-
-
-
-
     public function getConec()
     {
         return $this->conec;
     }
-
-
-
 
     public function setDebug($debug)
     {
@@ -115,7 +109,6 @@ class BaseDatos extends PDO
         if (stristr($sql, "update") or stristr($sql, "delete")) {
             $resp =  $this->EjecutarDeleteUpdate($sql);
         }
-
         // se desea ejecutar un select
         if (stristr($sql, "select")) {
             $resp =  $this->EjecutarSelect($sql);
@@ -236,7 +229,6 @@ class BaseDatos extends PDO
     }
     private function getResultado()
     {
-
         return $this->resultado;
     }
 }
