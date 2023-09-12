@@ -19,74 +19,82 @@ $objBd = new Database();
                <h1 class="h2">Datos en la base de datos</h1>
             </div>
 
-            <h2>Tabla de autos</h2>
-            <div class="table-responsive small">
-               <table class="table table-striped table-sm">
-                  <thead id="table-header">
-                     <tr>
-                        <th scope="col">Patente</th>
-                        <th scope="col">Marca</th>
-                        <th scope="col">Modelo</th>
-                        <th scope="col">DNI dueño</th>
-                     </tr>
-                  </thead>
-                  <tbody id="table-body">
-                     <?php
-                        $query = "SELECT * FROM auto";
-                        $res = $objBd->Execute($query);
-                        if($res) $array = $objBd->Register();
-
-                        while($array != null){
-                           echo "
+            <div class="card shadow-lg p-3 mb-5">
+               <div class="card-body">
+                  <h2 class="pb-3 fs-1 fw-bolder border-bottom">Tabla de autos</h2>
+                  <div class="table-responsive small">
+                     <table class="table table-striped table-sm fs-4">
+                        <thead id="table-header">
                            <tr>
-                              <td>{$array['Patente']}</td>
-                              <td>{$array['Marca']}</td>
-                              <td>{$array['Modelo']}</td>
-                              <td>{$array['DniDuenio']}</td>
-                           </tr>";
-                           $array = $objBd->Register();
-                        }
-                     ?>
-                  </tbody>
-               </table>
+                              <th scope="col">Patente</th>
+                              <th scope="col">Marca</th>
+                              <th scope="col">Modelo</th>
+                              <th scope="col">DNI dueño</th>
+                           </tr>
+                        </thead>
+                        <tbody id="table-body">
+                           <?php
+                              $query = "SELECT * FROM auto";
+                              $res = $objBd->Execute($query);
+                              if($res) $array = $objBd->Register();
+
+                              while($array != null){
+                                 echo "
+                                 <tr>
+                                    <td>{$array['Patente']}</td>
+                                    <td>{$array['Marca']}</td>
+                                    <td>{$array['Modelo']}</td>
+                                    <td>{$array['DniDuenio']}</td>
+                                 </tr>";
+                                 $array = $objBd->Register();
+                              }
+                           ?>
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
             </div>
-            
-            <div class="by-2 py-2"></div>
-            
-            <h2>Tabla de personas</h2>
-            <div class="table-responsive small">
-               <table class="table table-striped table-sm">
-                  <thead id="table-header">
-                     <tr>
-                        <th scope="col">DNI</th>
-                        <th scope="col">Apellido</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Fecha Nacimiento</th>
-                        <th scope="col">Telefono</th>
-                        <th scope="col">Domicilio</th>
-                     </tr>
-                  </thead>
-                  <tbody id="table-body">
-                     <?php
-                        $query = "SELECT * FROM persona";
-                        $res = $objBd->Execute($query);
-                        if($res) $array = $objBd->Register();
-
-                        while($array != null){
-                           echo "
+                  
+                  <div class="by-2 py-2"></div>
+                  
+            <div class="card shadow-lg p-3 mb-5">
+               <div class="card-body">
+                  <h2 class="pb-3 fs-1 fw-bolder border-bottom">Tabla de personas</h2>
+                  <div class="table-responsive small">
+                     <table class="table table-striped table-sm fs-4">
+                        <thead id="table-header">
                            <tr>
-                              <td>{$array['NroDni']}</td>
-                              <td>{$array['Apellido']}</td>
-                              <td>{$array['Nombre']}</td>
-                              <td>{$array['fechaNac']}</td>
-                              <td>{$array['Telefono']}</td>
-                              <td>{$array['Domicilio']}</td>
-                           </tr>";
-                           $array = $objBd->Register();
-                        }
-                     ?>
-                  </tbody>
-               </table>
+                              <th scope="col">DNI</th>
+                              <th scope="col">Apellido</th>
+                              <th scope="col">Nombre</th>
+                              <th scope="col">Fecha Nacimiento</th>
+                              <th scope="col">Telefono</th>
+                              <th scope="col">Domicilio</th>
+                           </tr>
+                        </thead>
+                        <tbody id="table-body">
+                           <?php
+                              $query = "SELECT * FROM persona";
+                              $res = $objBd->Execute($query);
+                              if($res) $array = $objBd->Register();
+
+                              while($array != null){
+                                 echo "
+                                 <tr>
+                                    <td>{$array['NroDni']}</td>
+                                    <td>{$array['Apellido']}</td>
+                                    <td>{$array['Nombre']}</td>
+                                    <td>{$array['fechaNac']}</td>
+                                    <td>{$array['Telefono']}</td>
+                                    <td>{$array['Domicilio']}</td>
+                                 </tr>";
+                                 $array = $objBd->Register();
+                              }
+                           ?>
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
             </div>
          </div>
       </div>

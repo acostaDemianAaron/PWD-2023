@@ -6,18 +6,20 @@ class Auto
     private $marca;
     private $modelo;
     private $dniDuenio;
+    private $objDuenio;
     private $mensaje;
 
 
 
 
     //Magic Methods
-    private function __construct()
+    public function __construct()
     {
         $this->patente = "";
         $this->marca = "";
         $this->modelo = "";
-        $this->dniDuenio = "";
+        $this->objDuenio = "";
+        $this->objDuenio = "";
     }
 
 
@@ -44,6 +46,12 @@ class Auto
         $this->dniDuenio = $dniDuenio;
     }
 
+
+    private function setObjDuenio($objDuenio)
+    {
+        $this->objDuenio = $objDuenio;
+    }
+
     private function setMensaje($mensaje)
     {
         $this->mensaje = $mensaje;
@@ -53,24 +61,29 @@ class Auto
 
 
     //Getters
-    private function getPatente()
+    public function getPatente()
     {
         return $this->patente;
     }
 
-    private function getMarca()
+    public function getMarca()
     {
         return $this->marca;
     }
 
-    private function getModelo()
+    public function getModelo()
     {
         return $this->modelo;
     }
 
-    private function getDniDuenio()
+    public function getDniDuenio()
     {
         return $this->dniDuenio;
+    }
+
+    public function getObjDuenio()
+    {
+        return $this->objDuenio;
     }
 
     public function getMensaje()
@@ -82,12 +95,13 @@ class Auto
 
 
     //Methods
-    public function setValues($patente, $marca, $modelo, $dniDuenio)
+    public function setValues($patente, $marca, $modelo, $objDuenio)
     {
         $this->setPatente($patente);
         $this->setMarca($marca);
         $this->setModelo($modelo);
-        $this->setDniDuenio($dniDuenio);
+        $this->setDniDuenio($objDuenio->getNroDni());
+        $this->setObjDuenio($objDuenio);
     }
 
 
@@ -129,7 +143,7 @@ class Auto
             $this->getPatente() . "', '" .
             $this->getMarca() . "', '" .
             $this->getModelo() . "', '" .
-            $this->getDniDuenio()->getNroDni() . "');";
+            $this->getDniDuenio() . "');";
 
         if ($database->Start()) {
             if ($database->Execute($query)) {
@@ -151,7 +165,7 @@ class Auto
         $query = "UPDATE auto SET
         Marca = '" . $this->getMarca() . "',
         Modelo = '" . $this->getModelo() . "',
-        DniDuenio = '" . $this->getDniDuenio()->getNroDni() . "'
+        DniDuenio = '" . $this->getDniDuenio() . "'
         WHERE Patente = '" . $this->getPatente() . "'";
 
         if ($database->Start()) {
@@ -226,6 +240,6 @@ class Auto
             "\n\tPatente: " . $this->getPatente() .
             "\n\tMarca: " . $this->getMarca() .
             "\n\tModelo: " . $this->getModelo() .
-            "\n\tDueño: " . $this->getDniDuenio() . "\n";
+            "\n\tDueño: " . $this->getObjDuenio() . "\n";
     }
 }

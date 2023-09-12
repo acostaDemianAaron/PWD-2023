@@ -1,9 +1,4 @@
 <?php
-
-use Dflydev\DotAccessData\Data;
-
-$persona->setNroDni;
-
 class Persona {
    private $nroDni;
    private $apellido;
@@ -17,7 +12,7 @@ class Persona {
      * Construct Function.
      * Initializes empty object.
      */
-   protected function __construct() {
+   public function __construct() {
       $this->nroDni = "";
       $this->apellido = "";
       $this->nombre = "";
@@ -74,27 +69,27 @@ class Persona {
    }
 
    // Getters
-   private function getNroDni(){
+   public function getNroDni(){
       return $this->nroDni;
    }
 
-   private function getApellido(){
+   public function getApellido(){
       return $this->apellido;
    }
 
-   private function getNombre(){
+   public function getNombre(){
       return $this->nombre;
    }
 
-   private function getFechaNac(){
+   public function getFechaNac(){
       return $this->fechaNac;
    }
 
-   private function getTelefono(){
+   public function getTelefono(){
       return $this->telefono;
    }
 
-   private function getDomicilio(){
+   public function getDomicilio(){
       return $this->domicilio;
    }
    
@@ -235,7 +230,7 @@ class Persona {
    /**
     * To string function for showing a simpler string of data.
     */
-   public function toStrings(){
+   public function __toStrings(){
       return "Person {$this->getNombre()} {$this->getApellido()}
       \n\tDNI: {$this->getNroDni()}
       \n\tFecha Nacimiento: {$this->getFechaNac()}
