@@ -1,25 +1,24 @@
-<?php header('Content-Type: text/html; charset=utf-8');
+<?php header('Content-Type: text/html; charset=utf-8;');
 header ("Cache-Control: no-cache, must-revalidate ");
 
 /////////////////////////////
-// CONFIGURACION APP//
+// CONFIGURACION APP //
 /////////////////////////////
 
-$PROYECTO ='/PDO';
+// Si no funciona probar $PROYECTO = 'Project-2';
+$PROYECTO ='';
+$ROOT = $_SERVER['DOCUMENT_ROOT'].$PROYECTO;
 
-//variable que almacena el directorio del proyecto
-$ROOT =$_SERVER['DOCUMENT_ROOT']."/$PROYECTO/";
+$FUNCIONES = $ROOT.'/Function/funciones.php';
 
-include_once($ROOT.'util/funciones.php');
-
-
+require($FUNCIONES);
 // Variable que define la pagina de autenticacion del proyecto
-$INICIO = "Location:http://".$_SERVER['HTTP_HOST']."/$PROYECTO/vista/login/login.php";
+$INICIO = "Location:http://". $_SERVER['HTTP_HOST'] . "/$PROYECTO/View/index.php";
 
 // variable que define la pagina principal del proyecto (menu principal)
-$PRINCIPAL = "Location:http://".$_SERVER['HTTP_HOST']."/$PROYECTO/principal.php";
-
+$PRINCIPAL = "Location:http://". $_SERVER['HTTP_HOST'] . "/$PROYECTO/View/index.php";
 
 $_SESSION['ROOT']=$ROOT;
-
+// Debug every variable on screen.
+// print_r("Getting PROYECTO: $PROYECTO <br>Getting ROOT: $ROOT <br>Getting INICIO: $INICIO <br>Getting PRINCIPAL: $PRINCIPAL <br>Getting functions: $FUNCIONES");
 ?>
