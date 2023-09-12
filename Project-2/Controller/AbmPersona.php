@@ -57,7 +57,7 @@ class AbmPersona
         return $resp;
     }
 
-    public function Search($array)
+    public function Search($array = null)
     {
         $on = " true ";
         if ($array <> NULL) {

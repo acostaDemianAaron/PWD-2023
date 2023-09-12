@@ -18,32 +18,32 @@ require_once("../../View/Structure/header.php");
                         <form action="../Action/nuevaPersona.php" method="POST" id="form_control" name="form_control" class="needs-validation" novalidate>
                             <div class="form-row">
                                 <div class="col-md-4 mb-3">
-                                    <label class="mb-2" for="nombre">Ingrese su nombre: </label><br>
-                                    <input id="nombre" name="nombre" type="text" class="form-control" maxlength="25" required>
+                                    <label class="mb-2">Ingrese su nombre: </label><br>
+                                    <input id="Nombre" name="Nombre" type="text" class="form-control" maxlength="25" required>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-md-4 mb-3">
                                     <label class="mb-2">Ingrese su apellido: </label><br>
-                                    <input id="apellido" name="apellido" type="text" class="form-control" maxlength="25" required>
+                                    <input id="Apellido" name="Apellido" type="text" class="form-control" maxlength="25" required>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-md-4 mb-3">
                                     <label class="mb-2">Ingrese su documento: </label><br>
-                                    <input id="nroDni" name="nroDni" type="number" class="form-control" placeholder="EJ: 11.222.333" required>
+                                    <input id="NroDni" name="NroDni" type="number" class="form-control" placeholder="EJ: 11.222.333" required>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-md-4 mb-3">
                                     <label class="mb-2">Ingrese su domicilio: </label><br>
-                                    <input id="domicilio" name="domicilio" type="text" class="form-control" required>
+                                    <input id="Domicilio" name="Domicilio" type="text" class="form-control" required>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-md-4 mb-3">
                                     <label class="mb-2">Ingrese su telefono: </label><br>
-                                    <input id="telefono" name="telefono" type="text" class="form-control" required>
+                                    <input id="Telefono" name="Telefono" type="text" class="form-control" required>
                                 </div>
                             </div>
                             <div class="form-row">
