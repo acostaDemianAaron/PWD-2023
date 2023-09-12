@@ -45,7 +45,7 @@ class Persona {
    }
 
    // Setters
-   protected function setNroDni($nroDni){
+   public function setNroDni($nroDni){
       $this->nroDni = $nroDni;
    }
 
@@ -98,7 +98,7 @@ class Persona {
       return $this->domicilio;
    }
    
-   private function getMensaje(){
+   public function getMensaje(){
       $this->mensaje;
    }
 
