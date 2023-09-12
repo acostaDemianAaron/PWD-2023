@@ -24,7 +24,7 @@ class Auto
 
 
     //Setters
-    protected function setPatente($patente)
+    public function setPatente($patente)
     {
         $this->patente = $patente;
     }
@@ -73,7 +73,7 @@ class Auto
         return $this->dniDuenio;
     }
 
-    private function getMensaje()
+    public function getMensaje()
     {
         return $this->mensaje;
     }
