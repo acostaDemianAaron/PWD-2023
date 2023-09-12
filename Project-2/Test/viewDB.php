@@ -2,7 +2,7 @@
 // For now the include that works
 require_once("../Config/configuracion.php");
 require_once("../View/Structure/header.php");
-require_once('../Model/Connection/BaseDatos.php');
+require_once('../Model/Connection/Database.php');
 
 $objBd = new Database();
 ?>

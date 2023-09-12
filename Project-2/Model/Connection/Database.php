@@ -25,7 +25,7 @@ class Database extends PDO
         // error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
         $this->engine = "mysql";
         $this->host = "localhost";
-        $this->database = ""; // Agregar nombre de la base de datos
+        $this->database = "infoautos";
         $this->user = ""; // Agregar usuario para ingresar a la base de datos
         $this->pass = ""; // Agregar contraseña para ingresar a la base de datos.
         $this->debug = true;
