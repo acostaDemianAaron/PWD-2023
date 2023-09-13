@@ -18,7 +18,13 @@ require_once("../View/Structure/header.php");
             <p class="text-body-secondary">Texto descriptivo.
             <br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis maiores molestiae enim eius beatae placeat nisi dignissimos, 
             quaerat iure architecto ipsam unde ex dicta! Accusantium iste repellendus fugit voluptatum modi!</p>
-            <a href="./testPage.php" class="btn btn-primary btn-lg">Ir a opciones</a>
+            <a href="./html/verAutos.php" class="btn btn-primary btn-lg">Ver Autos</a>
+            <a href="./html/verPersonas.php" class="btn btn-primary btn-lg">Ver Personas</a>
+            <a href="./html/buscarAuto.php" class="btn btn-primary btn-lg">Buscar Auto</a>
+            <a href="./html/buscarPersona.php" class="btn btn-primary btn-lg">Buscar Persona</a>
+            <a href="./html/nuevaAuto.php" class="btn btn-primary btn-lg">Agregar Nueva Auto</a>
+            <a href="./html/nuevaPersona.php" class="btn btn-primary btn-lg">Agregar Nueva Persona</a>
+            <a href="./html/cambioDuenio.php" class="btn btn-primary btn-lg">Cambiar Dueño de Auto</a>
          </div>
       </div>
    </div>
