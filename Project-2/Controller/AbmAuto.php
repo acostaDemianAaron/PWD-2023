@@ -2,8 +2,6 @@
 
 class AbmAuto
 {
-
-
     public function loadObj($array)
     {
         $auto = null;
@@ -68,7 +66,7 @@ class AbmAuto
         return $resp;
     }
 
-    public function Search($array)
+    public function Search($array = null)
     {
         $on = " true ";
         if ($array <> null) {

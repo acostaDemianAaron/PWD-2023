@@ -3,7 +3,7 @@ require_once("../../Config/configuracion.php");
 require_once("../../View/Structure/header.php");
 $persona = new AbmPersona;
 $data = data_submitted();
-
+print_r($data);
 ?>
 
 
@@ -23,7 +23,8 @@ $data = data_submitted();
                         <div class="card-body">
                             <blockquote class="blockquote mb-0">
                                 <?php
-                                if ($persona->Search($data['NroDni']) == null) {
+                                if ($persona->Search($data) == null) {
+                                    echo "Entro";
                                     if ($persona->Add($data)) {
                                         echo '<h6 class="m-4">Se cargo la persona</h6>';
                                     } else {

@@ -147,6 +147,9 @@ class Database extends PDO
      */
     public function Insert($query)
     {
+        echo "<br><br><br><br>";
+        echo $query;
+        echo "<br><br><br><br>";
         $objState = parent::query($query);
         if (!$objState) {
             $this->checkDebug();
