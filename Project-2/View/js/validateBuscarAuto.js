@@ -11,8 +11,7 @@ $("document").ready(function () {
         messages: {
             Patente: {
                 required: "Ingrese una patente.",
-                minlength: "La patente debe ser 3 letras mayusculas, un espacio y 3 numeros.",
-                onlyValidBackplate: "La patente debe ser 3 letras mayusculas, un espacio y 3 numeros."
+                minlength: "La patente debe ser 3 letras mayusculas, un espacio y 3 numeros."
             }
         },
         errorElement: "span",
@@ -31,4 +30,4 @@ $("document").ready(function () {
 
 jQuery.validator.addMethod("onlyValidBackplate", function (value, element) {
     return this.optional(element) || (/([A-Z]{3}\s[0-9]{3})/.test(value));
-}, "* Tiene que ser 3 letras, un espacio y 3 numeros.");
+}, "Tiene que ser 3 letras, un espacio y 3 numeros.");
