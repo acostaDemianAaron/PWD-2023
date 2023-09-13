@@ -18,7 +18,7 @@ require_once("../View/Structure/header.php");
             <br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis maiores molestiae enim eius beatae placeat nisi dignissimos, 
             quaerat iure architecto ipsam unde ex dicta! Accusantium iste repellendus fugit voluptatum modi!</p>
             <a href="./html/verAutos.php" class="btn btn-primary btn-lg">Ver Autos</a>
-            <a href="./html/verPersonas.php" class="btn btn-primary btn-lg">Ver Personas</a> <!-- Falta esta pagina -->
+            <a href="./html/listarPersona.php" class="btn btn-primary btn-lg">Listar Personas</a>
             <a href="./html/buscarAuto.php" class="btn btn-primary btn-lg">Buscar Auto</a>
             <a href="./html/buscarPersona.php" class="btn btn-primary btn-lg">Buscar Persona</a>
             <a href="./html/nuevoAuto.php" class="btn btn-primary btn-lg">Agregar Nuevo Auto</a>
