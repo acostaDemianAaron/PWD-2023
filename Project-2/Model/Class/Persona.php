@@ -108,10 +108,9 @@ class Persona {
 
       if($database->Start()){
          $status = $database->Execute($query);
-         if($status > -1){
+         if($status > 0){
             $row = $database->Register();
             $this->setValues($row['NroDni'], $row['Apellido'], $row['Nombre'], $row['fechaNac'], $row['Telefono'], $row['Domicilio']);
-
             $res = true;
          }
       } else {
