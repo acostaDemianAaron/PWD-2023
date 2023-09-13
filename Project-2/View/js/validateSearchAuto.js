@@ -1,5 +1,5 @@
 $("document").ready(function () {
-    $("#buscar-auto").validate({
+    $("#form-control").validate({
         rules: {
             Patente: {
                 required: true,
