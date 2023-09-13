@@ -49,7 +49,7 @@ class AbmPersona
     {
         $resp = false;
         if ($this->Verify($array)) {
-            $persona = $this->loadObjId($array);
+            $persona = $this->loadObj($array);
             if ($persona != null and $persona->Modify()) {
                 $resp = true;
             }
