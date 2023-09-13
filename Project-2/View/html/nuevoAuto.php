@@ -46,4 +46,5 @@ require_once("../../View/Structure/header.php");
             </div>
         </div>
     </div>
+    <script src="../js/validateNewCar.js"></script>
 </body>
