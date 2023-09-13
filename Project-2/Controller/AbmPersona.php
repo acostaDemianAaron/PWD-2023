@@ -11,7 +11,7 @@ class AbmPersona
         return $Persona;
     }
 
-    public function loadObjId()
+    public function loadObjId($array)
     {
             $persona = null;
             if (isset($array['NroDni'])) {

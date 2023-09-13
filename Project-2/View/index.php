@@ -1,5 +1,4 @@
 <?php
-// For now the include that works
 require_once("../Config/configuracion.php");
 require_once("../View/Structure/header.php");
 ?>
