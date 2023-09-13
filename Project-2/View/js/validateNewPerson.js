@@ -2,15 +2,40 @@ $(document).ready(function () {
     // Agregar reglas de validación a los campos del formulario
     $("#form_control").validate({
         rules: {
-            nombre: {
+            Nombre: {
                 required: true,
                 minlength: 3
+            },
+            Apellido: {
+                required: true,
+                minlength: 3
+            },
+            NroDni: {
+                required: true,
+                maxlength: 8,
+                //Agregar expresion regular
+                number: true
+            },
+            Domicilio: {
+                required: true
+                //Agregar expresion regular
+            },
+            Telefono: {
+                required: true
+                //Agregar expresion regular
+            },
+            fechaNac: {
+                required: true
             }
         },
         messages: {
-            nombre: {
+            Nombre: {
                 required: "El nombre es obligatorio.",
                 minlength: "El nombre debe tener al menos 3 caracteres."
+            },
+            Apellido: {
+                required: "El apellido es obligatorio.",
+                minlength: "El apellido debe tener al menos 3 caracteres."
             }
         },
         errorElement: "span",
