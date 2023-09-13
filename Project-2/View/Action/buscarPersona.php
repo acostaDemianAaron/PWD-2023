@@ -7,7 +7,7 @@ $persona = $AbmPersona->loadObjId($data);
 ?>
 
 <head>
-    <title>Editar Persona</title>
+    <title>Actualizar Persona</title>
 </head>
 
 <body>
@@ -20,7 +20,7 @@ $persona = $AbmPersona->loadObjId($data);
                         <?php
                         if (isset($persona) && gettype($persona) != "boolean") {
                         ?>
-                            <form action="../Action/actualizarDatosPersona.php" method="POST" id="form_control" name="form_control" class="needs-validation">
+                            <form action="../Action/actualizarPersona.php" method="POST" id="form_control" name="form_control" class="needs-validation">
                                 <div class="form-row">
                                     <div class="col-md-4 mb-3">
                                         <label class="mb-2">Ingrese su nombre: </label><br>
@@ -36,7 +36,7 @@ $persona = $AbmPersona->loadObjId($data);
                                 <div class="form-row">
                                     <div class="col-md-4 mb-3">
                                         <label class="mb-2">Ingrese su documento: </label><br>
-                                        <input id="NroDni" name="NroDni" type="text" class="form-control" maxlength="25" value="<?= $persona->getNroDni() ?>">
+                                        <input id="NroDni" name="NroDni" type="text" class="form-control" maxlength="25" value="<?= $persona->getNroDni() ?>" readonly>
                                     </div>
                                 </div>
                                 <div class="form-row">

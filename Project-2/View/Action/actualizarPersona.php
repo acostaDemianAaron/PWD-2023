@@ -5,9 +5,8 @@ $persona = new AbmPersona;
 $data = data_submitted();
 ?>
 
-
 <head>
-    <title>Agregar Persona</title>
+    <title>Persona Actualizada</title>
 </head>
 
 <body>
@@ -22,14 +21,13 @@ $data = data_submitted();
                         <div class="card-body">
                             <blockquote class="blockquote mb-0">
                                 <?php
-                                if ($persona->Search($data) == null) {
-                                    if ($persona->Add($data)) {
-                                        echo '<h6 class="m-4">Se cargo la persona</h6>';
+
+                                if ($persona->Search($data) != null) {
+                                    if ($persona->Edit($data)) {
+                                        echo '<h6 class="m-4">La persona se a modificado correctamente</h6>';
                                     } else {
                                         echo '<h6 class="m-4">No se pudo cargar el dato en la base de datos</h6>';
                                     }
-                                } else {
-                                    echo '<h6 class="m-4">Ya existe una persona con ese DNI</h6>';
                                 }
                                 ?>
                             </blockquote>
