@@ -1,10 +1,9 @@
 $(document).ready(function () {
-    // Agregar reglas de validación a los campos del formulario
     $("#form_control").validate({
         rules: {
             Patente: {
                 required: true,
-                minlength: 7
+                onlyValidBackplate: { onlyValidBackplate: true }
             },
             Marca: {
                 required: true,
@@ -23,7 +22,6 @@ $(document).ready(function () {
         messages: {
             Patente: {
                 required: "La patente es obligatoria.",
-                minlength: "La patente debe poseer un minimo de 6 caracteres con el siguiente formato ABC 123."
             },
             Marca: {
                 required: "La marca es obligatoria.",
@@ -56,4 +54,7 @@ $(document).ready(function () {
         return this.optional(element) || (/^(\d{8})$/.test(value));
     }, "Debe ingresar un documento con 8 caracteres.");
 
+    jQuery.validator.addMethod("onlyValidBackplate", function (value, element) {
+        return this.optional(element) || (/([A-Z]{3}\s[0-9]{3})/.test(value));
+     }, "Tiene que ser 3 letras mayusculas, un espacio y 3 numeros.");
 });
