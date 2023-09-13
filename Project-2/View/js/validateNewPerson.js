@@ -4,38 +4,59 @@ $(document).ready(function () {
         rules: {
             Nombre: {
                 required: true,
+                maxlength: 20,
                 minlength: 3
             },
             Apellido: {
                 required: true,
+                maxlength: 20,
                 minlength: 3
             },
             NroDni: {
                 required: true,
-                maxlength: 8,
-                //Agregar expresion regular
-                number: true
+                number: true,
+                validDni: { validDni: true }
             },
             Domicilio: {
-                required: true
-                //Agregar expresion regular
+                required: true,
+                maxlength: 20,
+                minlength: 3
             },
             Telefono: {
-                required: true
-                //Agregar expresion regular
+                required: true,
+                validTelefono: { validTelefono: true }
             },
             fechaNac: {
-                required: true
+                required: true,
+                validFechaNac: { validFechaNac: true }
             }
         },
         messages: {
             Nombre: {
                 required: "El nombre es obligatorio.",
+                maxlength: "El nombre tiene un maximo de 20 caracteres.",
                 minlength: "El nombre debe tener al menos 3 caracteres."
+
             },
             Apellido: {
                 required: "El apellido es obligatorio.",
+                maxlength: "El apellido tiene un maximo de 20 caracteres.",
                 minlength: "El apellido debe tener al menos 3 caracteres."
+            },
+            NroDni: {
+                required: "El documento es obligatorio.",
+                number: "Solo puede ingresar numeros."
+            },
+            Domicilio: {
+                required: "El domicilio es obligatorio.",
+                maxlength: "El domicilio tiene un maximo de 20 caracteres.",
+                minlength: "El domicilio debe tener al menos 3 caracteres."
+            },
+            Telefono: {
+                required: "El numero de telefono es obligatorio.",
+            },
+            fechaNac: {
+                required: "La fecha de nacimiento es obligatoria."
             }
         },
         errorElement: "span",
@@ -51,3 +72,16 @@ $(document).ready(function () {
         }
     });
 });
+
+jQuery.validator.addMethod("validDni", function (value, element) {
+    return this.optional(element) || (/^(\d{8})$/.test(value));
+}, "Debe ingresar un documento con 8 caracteres.");
+
+jQuery.validator.addMethod("validTelefono", function (value, element) {
+    return this.optional(element) || (/^\d{3}-\d{7}$/.test(value));
+}, "El numero de telefono debe tener este formato: 299-1559354");
+
+jQuery.validator.addMethod("validFechaNac", function (value, element) {
+    return this.optional(element) || (/^(19[5-9]\d|200[0-7])-\d{2}-\d{2}$/.test(value));
+}, "Debe ingresar una fecha con un año entre 1950 al 2007");
+

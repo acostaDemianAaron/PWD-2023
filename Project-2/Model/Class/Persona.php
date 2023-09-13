@@ -133,7 +133,7 @@ class Persona {
       $this->getNombre() . "', '" .
       $this->getFechaNac() . "', '" .
       $this->getTelefono() . "', '"  .
-      $this->getDomicilio() . "'";
+      $this->getDomicilio() . "')";
 
       if ($database->Start()) {
          if ($database->Execute($query)) {
