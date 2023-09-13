@@ -27,6 +27,7 @@ class AbmAuto
                 $auto = null;
             }
         }
+        return $auto;
     }
 
     public function Verify($array)
@@ -59,6 +60,23 @@ class AbmAuto
         $resp = false;
         if ($this->Verify($array)) {
             $auto = $this->loadObjId($array);
+            if ($auto != null && $auto->Modify()) {
+                $resp = true;
+            }
+        }
+        return $resp;
+    }
+
+    public function EditDuenio($array)
+    {
+        $resp = false;
+        if ($this->Verify($array)) {
+            $persona = new AbmPersona;
+            $persona = $persona->loadObjId($array);
+            
+            $auto = $this->loadObjId($array);
+            $auto->setObjDuenio($persona);
+            $auto->setDniDuenio($persona->getNroDni());
             if ($auto != null && $auto->Modify()) {
                 $resp = true;
             }

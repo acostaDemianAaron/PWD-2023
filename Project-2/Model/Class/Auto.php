@@ -41,13 +41,13 @@ class Auto
         $this->modelo = $modelo;
     }
 
-    private function setDniDuenio($dniDuenio)
+    public function setDniDuenio($dniDuenio)
     {
         $this->dniDuenio = $dniDuenio;
     }
 
 
-    private function setObjDuenio($objDuenio)
+    public function setObjDuenio($objDuenio)
     {
         $this->objDuenio = $objDuenio;
     }
@@ -240,6 +240,6 @@ class Auto
             "\n\tPatente: " . $this->getPatente() .
             "\n\tMarca: " . $this->getMarca() .
             "\n\tModelo: " . $this->getModelo() .
-            "\n\tDueño: " . $this->getObjDuenio() . "\n";
+            "\n\tDueño: " . $this->getObjDuenio()->getNombre() . " " . $this->getObjDuenio()->getApellido() . "\n";
     }
 }
