@@ -1,7 +1,7 @@
 <?php
 require_once("../../Config/configuracion.php");
 require_once("../../View/Structure/header.php");
-if(isset($_GET['test'])){
+if(data_submitted()){
     $arregloAutos = null;
 } else {
     $autoObj = new AbmAuto();
