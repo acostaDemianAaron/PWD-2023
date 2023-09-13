@@ -5,7 +5,7 @@ class AbmAuto
     public function loadObj($array)
     {
         $auto = null;
-        if (array_key_exists('NroDni', $array) && array_key_exists('Marca', $array) && array_key_exists('Modelo', $array) && array_key_exists('DniDuenio', $array)) {
+        if (array_key_exists('Marca', $array) && array_key_exists('Modelo', $array) && array_key_exists('DniDuenio', $array)) {
             $persona = new Persona();
             $persona->setNroDni($array['DniDuenio']);
             if ($persona->Load()) {
@@ -15,6 +15,8 @@ class AbmAuto
                 $auto = null;
             }
         }
+
+        return $auto;
     }
 
     public function loadObjId($array)

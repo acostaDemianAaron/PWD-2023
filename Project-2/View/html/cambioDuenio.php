@@ -32,5 +32,5 @@ require_once("../../View/Structure/header.php");
             </div>
         </div>
     </div>
-    <script src="../js/validateCambioDuenio.js"></script>
+    <script src="../js/validateChangeDuenio.js"></script>
 </body>
