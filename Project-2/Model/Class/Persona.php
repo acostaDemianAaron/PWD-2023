@@ -153,6 +153,7 @@ class Persona {
    public function Modify(){
       $res = false;
       $database = new Database();
+      
       $query = "UPDATE persona SET 
       Apellido = '" . $this->getApellido() . "', 
       Nombre = '" . $this->getNombre() . "', 
@@ -160,9 +161,8 @@ class Persona {
       Telefono = '" . $this->getTelefono() . "', 
       Domicilio = '" . $this->getDomicilio() . "' 
       WHERE NroDni = '" . $this->getNroDni() . "'";
-      
       if ($database->Start()) {
-         if ($database->Execute($query)) {
+         if ($database->Execute($query) > -1) {
              $res = true;
          } else {
              $this->setMensaje("Persona->Modify: " . $database->getError());
