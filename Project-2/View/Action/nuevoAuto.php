@@ -22,6 +22,7 @@ $autoObj = new AbmAuto();
                         <div class="card-body">
                             <blockquote class="blockquote mb-0">
                                 <?php
+                                $data['Patente'] = strtoupper($data['Patente']);
                                 if ($autoObj->Search($data) == null) {
                                     if ($autoObj->Add($data)) {
                                         echo "<p>El auto a sido agregado</p>";
