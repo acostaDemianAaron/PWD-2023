@@ -17,7 +17,3 @@
       </footer>
    </div>
 </body>
-
-<?php
-require_once("../View/Structure/footer.php");
-?>
