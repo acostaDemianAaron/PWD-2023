@@ -30,3 +30,7 @@ require_once("../../View/Structure/header.php");
         </div>
     </div>
 </body>
+
+<?php
+require_once("../Structure/footer.php");
+?>

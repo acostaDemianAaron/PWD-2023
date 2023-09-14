@@ -34,3 +34,7 @@ require_once("../../View/Structure/header.php");
     </div>
     <script src="../js/validateChangeDuenio.js"></script>
 </body>
+
+<?php
+require_once("../Structure/footer.php");
+?>

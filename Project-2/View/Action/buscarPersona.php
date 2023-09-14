@@ -71,3 +71,7 @@ $persona = $AbmPersona->loadObjId($data);
     </div>
     <script src="../js/validateNewPerson.js"></script>
 </body>
+
+<?php
+require_once("../Structure/footer.php");
+?>

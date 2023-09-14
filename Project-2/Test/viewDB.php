@@ -100,3 +100,7 @@ $objBd = new Database();
       </div>
    </div>
 </body>
+
+<?php
+require_once("../View/Structure/footer.php");
+?>

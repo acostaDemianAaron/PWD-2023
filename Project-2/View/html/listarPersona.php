@@ -58,3 +58,7 @@ $personas = $AbmPersona->Search();
         </div>
     </div>
 </body>
+
+<?php
+require_once("../Structure/footer.php");
+?>

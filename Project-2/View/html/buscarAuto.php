@@ -30,3 +30,7 @@ require_once("../../View/Structure/header.php");
     </div>
     <script src="../js/validateSearchAuto.js"></script>
 </body>
+
+<?php
+require_once("../Structure/footer.php");
+?>

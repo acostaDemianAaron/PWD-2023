@@ -1,5 +1,5 @@
-<body>
-   <div class="container fixed-bottom">
+<body class="d-flex flex-column min-vh-100">
+   <div class="container mt-auto">
       <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
          <div class="col-md-4 d-flex align-items-center">
             <a href="/View/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
@@ -17,3 +17,7 @@
       </footer>
    </div>
 </body>
+
+<?php
+require_once("../View/Structure/footer.php");
+?>

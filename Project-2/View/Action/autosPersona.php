@@ -77,3 +77,7 @@ $autos = $autos->SearchD($data);
     </div>
     </div>
 </body>
+
+<?php
+require_once("../Structure/footer.php");
+?>
