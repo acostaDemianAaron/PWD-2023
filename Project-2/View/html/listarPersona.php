@@ -16,11 +16,6 @@ $personas = $AbmPersona->Search();
     <div class="container">
         <div class="container-fluid">
             <div class="row">
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Datos en la base de datos</h1>
-                </div>
-                <div class="by-2 py-2"></div>
-
                 <div class="card shadow-lg p-3 mb-5">
                     <div class="card-body">
                         <h2 class="pb-3 fs-1 fw-bolder border-bottom">Tabla de personas</h2>

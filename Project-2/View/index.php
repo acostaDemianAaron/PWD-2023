@@ -8,22 +8,69 @@ require_once("../View/Structure/header.php");
 </head>
 
 <body>
-   <div class="container px-4 py-5">
-      <h2 class="pb-2 border-bottom">Features with title</h2>
 
-      <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
-         <div class="col d-flex flex-column align-items-start gap-2">
-            <h2 class="fw-bold text-body-emphasis">Trabajo Practico N4</h2>
-            <p class="text-body-secondary">Texto descriptivo.
-            <br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis maiores molestiae enim eius beatae placeat nisi dignissimos, 
-            quaerat iure architecto ipsam unde ex dicta! Accusantium iste repellendus fugit voluptatum modi!</p>
-            <a href="./html/verAutos.php" class="btn btn-primary btn-lg">Ver Autos</a>
-            <a href="./html/listarPersona.php" class="btn btn-primary btn-lg">Listar Personas</a>
-            <a href="./html/buscarAuto.php" class="btn btn-primary btn-lg">Buscar Auto</a>
-            <a href="./html/buscarPersona.php" class="btn btn-primary btn-lg">Buscar Persona</a>
-            <a href="./html/nuevoAuto.php" class="btn btn-primary btn-lg">Agregar Nuevo Auto</a>
-            <a href="./html/nuevaPersona.php" class="btn btn-primary btn-lg">Agregar Nueva Persona</a>
-            <a href="./html/cambioDuenio.php" class="btn btn-primary btn-lg">Cambiar Dueño de Auto</a>
+   <div class="container mt-5">
+      <!-- Primera fila con 4 columnas -->
+      <div class="row">
+         <!-- Team Member 1 -->
+         <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-0 shadow">
+               <div class="card-body text-center">
+                  <a href="./html/nuevaPersona.php" class="btn btn-primary">Agregar Persona</a>
+               </div>
+            </div>
+         </div>
+         <!-- Team Member 2 -->
+         <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-0 shadow">
+               <div class="card-body text-center">
+                  <a href="./html/nuevoAuto.php" class="btn btn-primary">Agregar Auto</a>
+               </div>
+            </div>
+         </div>
+         <!-- Team Member 3 -->
+         <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-0 shadow">
+               <div class="card-body text-center">
+                  <a href="./html/buscarPersona.php" class="btn btn-primary">Buscar Persona</a>
+               </div>
+            </div>
+         </div>
+         <!-- Team Member 4 -->
+         <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-0 shadow">
+               <div class="card-body text-center">
+                  <a href="./html/buscarAuto.php" class="btn btn-primary">Buscar Auto</a>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Segunda fila con 3 columnas -->
+      <div class="row">
+         <!-- Team Member 5 -->
+         <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card border-0 shadow">
+               <div class="card-body text-center">
+                  <a href="./html/cambioDuenio.php" class="btn btn-primary">Cambiar Dueño</a>
+               </div>
+            </div>
+         </div>
+         <!-- Team Member 6 -->
+         <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card border-0 shadow">
+               <div class="card-body text-center">
+                  <a href="./html/listarPersona.php" class="btn btn-primary">Listar Personas</a>
+               </div>
+            </div>
+         </div>
+         <!-- Team Member 7 -->
+         <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card border-0 shadow">
+               <div class="card-body text-center">
+                  <a href="./html/verAutos.php" class="btn btn-primary">Ver Autos</a>
+               </div>
+            </div>
          </div>
       </div>
    </div>

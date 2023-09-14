@@ -31,7 +31,6 @@
          <ul class="nav nav-pills">
             <li class="nav-item"><a href="/View/" class="nav-link active" aria-current="page">Home</a></li>
             <li class="nav-item disabled"><a href="/Test/viewDB.php" class="nav-link">Database View</a></li>
-            <li class="nav-item disabled"><a href="/Test/execQuery.php" class="nav-link">MySQL query exec</a></li>
          </ul>
       </header>
    </div>
