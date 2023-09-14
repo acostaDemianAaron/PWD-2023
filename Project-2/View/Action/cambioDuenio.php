@@ -38,7 +38,8 @@ if(data_submitted()){
                            </table>
                         </div>';
                      } else {
-                        if($auto == null) echo '<h2 class="pb-3 fs-1 fw-bolder border-bottom">No se pudo cambiar el dueño</h2>';
+                        if($auto == null) echo '<h2 class="pb-3 fs-1 fw-bolder border-bottom">No se pudo cambiar el dueño.</h2>';
+                        if($auto->getDniDuenio() == $persona->getNroDni()) echo '<h2 class="pb-3 fs-1 fw-bolder border-bottom">El auto tiene el mismo dueño.</h2>';
                      }
                   } else {
                      if($auto == null) echo '<h2 class="pb-3 fs-1 fw-bolder border-bottom">No existe el auto con la patente ingresada</h2>';
