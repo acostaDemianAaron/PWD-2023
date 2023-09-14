@@ -3,8 +3,9 @@
 #### Requisitos:
 - **PHP**
 - **MySQL**
-   - Y en caso de no querer usar el servidor web integrado en php, deberan instalar un stack como WampServer, XAMPP, LAMP, etc.
-- Descargar el repositorio en la carpeta que mas guste.
+  - Para corroborar el correcto funcionamiento de MySQL esta el boton "View Database" en el header de la pagina (En la parte superior izquierda).
+- Y en caso de no querer usar el servidor web integrado en php, deberan instalar un stack como WampServer, XAMPP, LAMP, etc.
+- Descargar el repositorio en la carpeta que mas convenga.
 
 #### **Atencion:** Asegurarse que php tenga la extension de PDO habilitada.
 1. para habilitarlo deben ir a **php.ini**, y encontrar la **extension=pdo_mysql** y descomentarlo _(Eliminar el **";"** al inicio)_.
