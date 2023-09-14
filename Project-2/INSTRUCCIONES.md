@@ -1,22 +1,37 @@
-### Instrucciones para cada metodo de servir el proyecto.
+## Instrucciones estilizada en markdown (.md) o [Version de texto](https://github.com/acostaDemianAaron/PWD-2023/tree/main/Project-2/INSTRUCCIONES.txt)
 
-php -S:
-   1 - Abrir el repo desde cd y llegar a /Project-2
-   2 - Ejecutar php -S localhost:[puerto] donde [puerto] puede ser cualquier numero valido para tu firewall. Se recomienda 8000, 8080 o 4040 que son puertos libres en la mayoria de maquinas.
-   3 - Abrir desde un navegador la pagina http://localhost:[puerto]/View/
+#### Requisitos:
+- **PHP**
+- **MySQL**
+   - Y en caso de no querer usar el servidor web integrado en php, deberan instalar un stack como WampServer, XAMPP, LAMP, etc.
+- Descargar el repositorio en la carpeta que mas guste.
 
-   EJ: 
-   Si se ejecuta "php -S localhost:8080" entonces entrar desde "http://localhost:8080/View/"
+#### **Atencion:** Asegurarse que php tenga la extension de PDO habilitada.
+1. para habilitarlo deben ir a **php.ini**, y encontrar la **extension=pdo_mysql** y descomentarlo _(Eliminar el **";"** al inicio)_.
 
-WAMP:
-   1 - Guardar la carpeta del repo en wamp64/www/ de forma que el directorio para llegar a View sea, por ejemplo: C:/user/servidores/wamp64/www/Project-2/View/
-   2 - Abrir WAMP y ejecutar todos sus servicios.
-   3 - Abrir desde el icono la pagina de wamp y agregar "View/" a la URL o abrir las carpetas Project-2 y View respectivamente.
-      o abrir desde un navegador la URL "http://localhostView/"
+2. El Archivo a modificar: (Normalmente php se instala en **C:\php** )
 
-Falta testear
+- ![archivo php.ini](https://i.imgur.com/snDHxRh.png)
+- Si no se encuentra el archivo **php.ini**, modificar el nombre de **php.ini-development** y eliminar "**-development**" para que quede **php.ini**.
 
-XAMPP:
-   2 - Guardar la carpeta del repo en xampp/htdocs/ de forma que el directorio para llegar a View sea, por ejemplo: C:/user/servidores/xampp/htdocs/Project-2/View/
-   3 - Abrir XAMPP y ejecutar todos sus servicios.
-   4 - Abrir desde un navegador la URL "http://localhostView/"
+3 Se puede encontrar con las teclas **ctrl+F** o la opcion de "**Buscar**" dentro de "**Editar**" y buscar "**extension=pdo_mysql**".
+
+- ![;extension=pdo_mysql a extension=pdo_mysql](https://i.imgur.com/Ewie8vt.png)
+- Quitar el ; al inicio si hay alguno, para que quede igual a la foto anterior.
+## Instrucciones con *PHP* y *MySQL*:
+
+1. Abrir el repo desde cd y llegar a /Project-2/.
+   - Por ejemplo: ![C:/ejemplo/a/carpeta/PWD-2023/Project-2/](https://i.imgur.com/YzXoWyv.png)
+2. Ejecutar _**`php -S localhost:[puerto]`**_ donde `[puerto]` puede ser cualquier puerto habilitado en tu firewall.
+   - Se recomienda **8000**, **8080** o **4040** que son puertos libres en la mayoria de maquinas.
+3. Abrir desde un navegador la pagina _**`http://localhost:[puerto]/View/`**_
+   - EJ: Si se ejecuta ![php -S localhost:8000](https://i.imgur.com/vfvCYQn.png) entonces entrar desde: _**http://localhost:8000/View/**_
+
+## Instrucciones con WAMP, XAMPP y LAMP:
+
+1. Mover los contenidos de la carpeta Project-2 a la carpeta del stack en uso.
+   - Por ejemplo
+      - en WAMP la carpeta es **wamp64/www/** o **wamp32/www/**
+      - en XAMPP la carpeta es **XAMPP/htdocs/**
+2. Ejecutar todos los servicios del stack.
+3. Abrir la pagina _**http://localhost/View/**_
