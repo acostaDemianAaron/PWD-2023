@@ -1,1 +1,35 @@
-v
+-- Requisitos --
+- PHP
+- MySQL
+   - Y en caso de no querer usar el servidor web integrado en php, deberan instalar un stack como WampServer, XAMPP, LAMP, etc.
+- Descargar el repositorio en la carpeta que mas guste.
+
+======> Atencion: Asegurarse que php tenga la extension de PDO habilitada. <======
+1. para habilitarlo deben ir a php.ini, y encontrar la extension=pdo_mysql y descomentarlo (Eliminar el ";" al inicio).
+
+2. El Archivo a modificar: (Normalmente php se instala en C:\php)
+- Si no se encuentra el archivo php.ini, modificar el nombre de php.ini-development y eliminar "-development" para que quede php.ini.
+
+3 Se puede encontrar con las teclas ctrl+F o la opcion de "Buscar" dentro de "Editar" y buscar "extension=pdo_mysql".
+- ;extension=pdo_mysql a extension=pdo_mysql
+- Quitar el ; al inicio si hay alguno, para que quede igual a la foto anterior.
+
+======================================================================================================================
+--- Instrucciones con *PHP* y *MySQL* ---
+
+1. Abrir el repo desde cd y llegar a /Project-2/.
+   - Por ejemplo: C:/ejemplo/a/carpeta/PWD-2023/Project-2/
+2. Ejecutar php -S localhost:[puerto] donde [puerto] puede ser cualquier puerto habilitado en tu firewall.
+   - Se recomienda 8000, 8080 o 4040 que son puertos libres en la mayoria de maquinas.
+3. Abrir desde un navegador la pagina http://localhost:[puerto]/View/
+   - EJ: Si se ejecuta php -S localhost:8000 entonces entrar desde: http://localhost:8000/View/
+
+======================================================================================================================
+--- Instrucciones con WAMP, XAMPP y LAMP ---
+
+1. Mover los contenidos de la carpeta Project-2 a la carpeta del stack en uso.
+   - Por ejemplo
+      - en WAMP la carpeta es wamp64/www/ o wamp32/www/
+      - en XAMPP la carpeta es XAMPP/htdocs
+2. Ejecutar todos los servicios del stack.
+3. Abrir la pagina http://localhost/View/
