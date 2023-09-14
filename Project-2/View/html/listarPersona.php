@@ -25,6 +25,7 @@ $personas = $AbmPersona->Search();
                     <div class="card-body">
                         <h2 class="pb-3 fs-1 fw-bolder border-bottom">Tabla de personas</h2>
                         <div class="table-responsive small">
+                            <form action="../Action/autosPersona.php" method="POST">
                             <table class="table table-striped table-sm fs-4">
                                 <thead id="table-header">
                                     <tr>
@@ -48,12 +49,13 @@ $personas = $AbmPersona->Search();
                                     <td>{$persona->getFechaNac()}</td>
                                     <td>{$persona->getTelefono()}</td>
                                     <td>{$persona->getDomicilio()}</td>
-                                    <td style='text-align: center'><li class='btn btn-secondary'><a href='../Action/autosPersona.php' class='nav-link active'>Ver autos</a></li></td>
+                                    <td style='text-align: center'><button class='btn btn-secondary' type='submit' name='NroDni' id='NroDni' value='{$persona->getNroDni()}'>Ver autos</button></td>
                                     </tr>";
                                     }
                                     ?>
                                 </tbody>
                             </table>
+                            </form>
                         </div>
                     </div>
                 </div>

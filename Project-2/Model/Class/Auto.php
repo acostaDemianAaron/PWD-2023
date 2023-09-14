@@ -208,10 +208,8 @@ class Auto
         if ($condicion != "") {
             $query .= "WHERE " . $condicion;
         }
-
         $res = $database->Execute($query);
-        if ($res > -1) {
-            if ($res > 0) {
+        if ($res > 0) {
                 while ($row = $database->Register()) {
                     $objAuto = new Auto();
                     $objDuenio = new Persona();
@@ -226,7 +224,6 @@ class Auto
                     );
                     array_push($array, $objAuto);
                 }
-            }
         } else {
             $this->setMensaje("Auto->List: " . $database->getError());
         }

@@ -104,7 +104,7 @@ class AbmAuto
         $arrayAuto = [];
         $on = " ";
         if (isset($array)) {
-            $on = "DniDuenio = " . $array["NroDni"];
+            $on = "DniDuenio = '" . $array["NroDni"] . "'";
             $Auto = new Auto();
             $arrayAuto = $Auto->List($on);
         }
