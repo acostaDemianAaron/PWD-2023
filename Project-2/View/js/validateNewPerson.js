@@ -15,7 +15,8 @@ $(document).ready(function () {
             NroDni: {
                 required: true,
                 number: true,
-                validDni: { validDni: true }
+                validDni: { validDni: true },
+                validDniRango: { validDniRango: true}
             },
             Domicilio: {
                 required: true,
@@ -84,4 +85,8 @@ jQuery.validator.addMethod("validTelefono", function (value, element) {
 jQuery.validator.addMethod("validFechaNac", function (value, element) {
     return this.optional(element) || (/^(19[5-9]\d|200[0-7])-\d{2}-\d{2}$/.test(value));
 }, "Debe ingresar una fecha con un año entre 1950 al 2007");
+
+jQuery.validator.addMethod("validDniRango", function (value, element) {
+    return this.optional(element) || (/^([1-9][0-9]{7}$)/.test(value));
+ }, "Tiene que ser mayor a 10.000.000 y menor a 99.999.999.");
 
