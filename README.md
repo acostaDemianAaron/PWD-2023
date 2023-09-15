@@ -7,7 +7,7 @@
 Cada proyecto tiene su propio .md con instrucciones para visualizar en github o tambien se puede encontrar un .txt para ver una version en texto.
 
 <p align="center">
-  <img src="https://postimg.cc/0M8pLTKD" />
+  <img src="https://i.postimg.cc/MTBdjxWP/PWD-1.png" />
 </p>
 
 ## Cursada 2023
