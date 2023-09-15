@@ -16,7 +16,8 @@ $(document).ready(function () {
             DniDuenio: {
                 required: true,
                 number: true,
-                validDni: { validDni: true }
+                validDni: { validDni: true },
+                validDniRango: { validDniRango: true}
             },
         },
         messages: {
@@ -56,5 +57,9 @@ $(document).ready(function () {
 
     jQuery.validator.addMethod("onlyValidBackplate", function (value, element) {
         return this.optional(element) || (/([A-Z]{3}\s[0-9]{3})/.test(value));
-     }, "Tiene que ser 3 letras mayusculas, un espacio y 3 numeros.");
+    }, "Tiene que ser 3 letras mayusculas, un espacio y 3 numeros.");
+
+    jQuery.validator.addMethod("validDniRango", function (value, element) {
+        return this.optional(element) || (/^([1-9][0-9]{7}$)/.test(value));
+    }, "Tiene que ser mayor a 10.000.000 y menor a 99.999.999.");
 });
