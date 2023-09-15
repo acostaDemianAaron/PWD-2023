@@ -3,8 +3,10 @@
 </p>
 
 ## Estructura de las carpetas
-
 Cada proyecto tiene su propio .md con instrucciones para visualizar en github o tambien se puede encontrar un .txt para ver una version en texto.
+
+- Project-1 contiene los TPs 1,2 y 3.
+- Project-2 es todo del TP4
 
 <p align="center">
   <img src="https://i.postimg.cc/MTBdjxWP/PWD-1.png" />
