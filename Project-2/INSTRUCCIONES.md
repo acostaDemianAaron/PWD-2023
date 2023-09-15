@@ -6,6 +6,8 @@
   - Para corroborar el correcto funcionamiento de MySQL esta el boton "View Database" en el header de la pagina (En la parte superior izquierda).
 - Y en caso de no querer usar el servidor web integrado en php, deberan instalar un stack como WampServer, XAMPP, LAMP, etc.
 - Descargar el repositorio en la carpeta que mas convenga.
+- Agregar el usuario y contraseña de la base de datos en las lineas 29 y 30 del archivo _"Model/Connection/Database.php"_. Normalmente el usuario es root, si eligió otro nombre, por favor ingresarlo.
+- Para crear la base de datos, se encuentra la query de MySQL en _"Model/SQL/infoautos.sql"_. Recomendamos su uso para crear la base de datos y sus tablas.
 
 #### **Atencion:** Asegurarse que php tenga la extension de PDO habilitada.
 1. para habilitarlo deben ir a **php.ini**, y encontrar la **extension=pdo_mysql** y descomentarlo _(Eliminar el **";"** al inicio)_.
