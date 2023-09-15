@@ -6,7 +6,9 @@
 
 Cada proyecto tiene su propio .md con instrucciones para visualizar en github o tambien se puede encontrar un .txt para ver una version en texto.
 
-En proceso de agregar imagen...
+<p align="center">
+  <img src="https://postimg.cc/0M8pLTKD" />
+</p>
 
 ## Cursada 2023
 
