@@ -17,7 +17,7 @@
 - ![archivo php.ini](https://i.imgur.com/snDHxRh.png)
 - Si no se encuentra el archivo **php.ini**, modificar el nombre de **php.ini-development** y eliminar "**-development**" para que quede **php.ini**.
 
-3 Se puede encontrar con las teclas **ctrl+F** o la opcion de "**Buscar**" dentro de "**Editar**" y buscar "**extension=pdo_mysql**".
+3. Se puede encontrar con las teclas **ctrl+F** o la opcion de "**Buscar**" dentro de "**Editar**" y buscar "**extension=pdo_mysql**".
 
 - ![;extension=pdo_mysql a extension=pdo_mysql](https://i.imgur.com/Ewie8vt.png)
 - Quitar el ; al inicio si hay alguno, para que quede igual a la foto anterior.
