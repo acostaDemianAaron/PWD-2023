@@ -5,9 +5,16 @@ require_once("../../View/Structure/header.php");
 if(data_submitted()){
    $Abmauto = new AbmAuto;
    $Abmpersona = new AbmPersona;
-
+if($Abmauto->Search(data_submitted()) != array()){
    $auto = $Abmauto->Search(data_submitted())[0];
+} else { 
+   $auto = null;
+}
+if($Abmpersona->Search(data_submitted()) != array()){
    $persona = $Abmpersona->Search(data_submitted())[0];
+} else {
+   $persona = null;
+}
 } else {
    $auto = null;
 }

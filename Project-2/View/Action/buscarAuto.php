@@ -4,17 +4,19 @@ require_once("../../View/Structure/header.php");
 
 $data = data_submitted();
 
-if(data_submitted()){
+if (data_submitted()) {
    $auto = new AbmAuto;
    $res = $auto->Search($data);
-   $auto = $res[0];
-} else {
-   $auto = null;
+   if($res != array()){
+      $auto = $res[0];
+   } else {
+      $auto = null;
+   }
 }
 ?>
 
 <head>
-    <title>Buscar Auto</title>
+   <title>Buscar Auto</title>
 </head>
 
 <body>
@@ -23,9 +25,9 @@ if(data_submitted()){
          <div class="col-lg-12">
             <div class="card shadow-lg p-3 mb-5">
                <div class="card-body">
-               <?php
-                  if($auto != null){
-                  echo '
+                  <?php
+                  if ($auto != null) {
+                     echo '
                   <h2 class="pb-3 fs-1 fw-bolder border-bottom">' . $auto->getObjDuenio()->getNombre() . " " . $auto->getObjDuenio()->getApellido() . '</h2>
                   <div class="table-responsive small">
                      <table class="table table-striped table-sm fs-3">
@@ -46,9 +48,9 @@ if(data_submitted()){
                      </table>
                   </div>';
                   } else {
-                  echo '<h2 class="pb-3 fs-1 fw-bolder border-bottom">No se pudo encontrar el auto con la patente: ' . $data['Patente'] . '</h2>';
+                     echo '<h2 class="pb-3 fs-1 fw-bolder border-bottom">No se pudo encontrar el auto con la patente: ' . $data['Patente'] . '</h2>';
                   }
-               ?>
+                  ?>
                </div>
             </div>
          </div>
