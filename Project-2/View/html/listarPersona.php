@@ -3,7 +3,6 @@ require_once("../../Config/configuracion.php");
 require_once("../../View/Structure/header.php");
 $AbmPersona = new AbmPersona;
 $personas = $AbmPersona->Search();
-//print_r($personas);
 ?>
 
 

@@ -5,12 +5,14 @@ $(document).ready(function () {
             Nombre: {
                 required: true,
                 maxlength: 20,
-                minlength: 3
+                minlength: 3,
+                validAlfaNumerico: { validAlfaNumerico: true}
             },
             Apellido: {
                 required: true,
                 maxlength: 20,
-                minlength: 3
+                minlength: 3,
+                validAlfaNumerico: { validAlfaNumerico: true}
             },
             NroDni: {
                 required: true,
@@ -21,7 +23,8 @@ $(document).ready(function () {
             Domicilio: {
                 required: true,
                 maxlength: 20,
-                minlength: 3
+                minlength: 3,
+                validAlfaNumerico: { validAlfaNumerico: true}
             },
             Telefono: {
                 required: true,
@@ -90,3 +93,6 @@ jQuery.validator.addMethod("validDniRango", function (value, element) {
     return this.optional(element) || (/^([1-9][0-9]{7}$)/.test(value));
  }, "Tiene que ser mayor a 10.000.000 y menor a 99.999.999.");
 
+ jQuery.validator.addMethod("validAlfaNumerico", function (value, element) {
+    return this.optional(element) || (/^([a-zA-Z0-9]+$)/.test(value));
+ }, "Solo se aceptan valores alfanumérico");

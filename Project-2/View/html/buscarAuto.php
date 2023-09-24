@@ -18,7 +18,7 @@ require_once("../../View/Structure/header.php");
                             <div class="form-row">
                                 <div class="col-md-4 mb-3">
                                     <label class="mb-2">Ingrese la patente: </label><br>
-                                    <input id="Patente" name="Patente" type="text" class="form-control" required>
+                                    <input id="Patente" name="Patente" type="text" class="form-control" maxlength="7">
                                 </div>
                             </div>
                             <button class="btn btn-primary" type="submit" id="enviar" name="enviar">Buscar</button>
