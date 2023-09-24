@@ -162,7 +162,7 @@ class Persona {
       Domicilio = '" . $this->getDomicilio() . "' 
       WHERE NroDni = '" . $this->getNroDni() . "'";
       if ($database->Start()) {
-         if ($database->Execute($query) > -1) {
+         if ($database->Execute($query)) {
              $res = true;
          } else {
              $this->setMensaje("Persona->Modify: " . $database->getError());

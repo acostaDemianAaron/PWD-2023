@@ -5,25 +5,19 @@ class Auto
     private $patente;
     private $marca;
     private $modelo;
-    private $dniDuenio;
     private $objDuenio;
     private $mensaje;
 
 
-
-
-    //Magic Methods
+    //Magic Method
     public function __construct()
     {
         $this->patente = "";
         $this->marca = "";
         $this->modelo = "";
         $this->objDuenio = "";
-        $this->objDuenio = "";
+        $this->mensaje = "";
     }
-
-
-
 
     //Setters
     public function setPatente($patente)
@@ -41,12 +35,6 @@ class Auto
         $this->modelo = $modelo;
     }
 
-    public function setDniDuenio($dniDuenio)
-    {
-        $this->dniDuenio = $dniDuenio;
-    }
-
-
     public function setObjDuenio($objDuenio)
     {
         $this->objDuenio = $objDuenio;
@@ -56,9 +44,6 @@ class Auto
     {
         $this->mensaje = $mensaje;
     }
-
-
-
 
     //Getters
     public function getPatente()
@@ -76,11 +61,6 @@ class Auto
         return $this->modelo;
     }
 
-    public function getDniDuenio()
-    {
-        return $this->dniDuenio;
-    }
-
     public function getObjDuenio()
     {
         return $this->objDuenio;
@@ -91,19 +71,14 @@ class Auto
         return $this->mensaje;
     }
 
-
-
-
     //Methods
     public function setValues($patente, $marca, $modelo, $objDuenio)
     {
         $this->setPatente($patente);
         $this->setMarca($marca);
         $this->setModelo($modelo);
-        $this->setDniDuenio($objDuenio->getNroDni());
         $this->setObjDuenio($objDuenio);
     }
-
 
     public function Load()
     {
@@ -113,7 +88,7 @@ class Auto
 
         if ($database->Start()) {
             $start = $database->Execute($query);
-            if ($start > -1 && $start > 0) {
+            if ($start > 0) {
                 $row = $database->Register();
 
                 $objDuenio = new Persona();
@@ -131,9 +106,9 @@ class Auto
         } else {
             $this->setMensaje("Auto->load: " . $database->getError());
         }
+
         return $res;
     }
-
 
     public function Insert()
     {
@@ -143,7 +118,7 @@ class Auto
             $this->getPatente() . "', '" .
             $this->getMarca() . "', '" .
             $this->getModelo() . "', '" .
-            $this->getDniDuenio() . "');";
+            $this->getObjDuenio()->getNroDni() . "');";
 
         if ($database->Start()) {
             if ($database->Execute($query)) {
@@ -154,9 +129,9 @@ class Auto
         } else {
             $this->setMensaje("Auto->Insert: " . $database->getError());
         }
+
         return $res;
     }
-
 
     public function Modify()
     {
@@ -165,7 +140,7 @@ class Auto
         $query = "UPDATE auto SET
         Marca = '" . $this->getMarca() . "',
         Modelo = '" . $this->getModelo() . "',
-        DniDuenio = '" . $this->getDniDuenio() . "'
+        DniDuenio = '" . $this->getObjDuenio()->getNroDni() . "'
         WHERE Patente = '" . $this->getPatente() . "'";
 
         if ($database->Start()) {
@@ -177,9 +152,9 @@ class Auto
         } else {
             $this->setMensaje("Auto->Modify: " . $database->getError());
         }
+
         return $res;
     }
-
 
     public function Delete()
     {
@@ -196,9 +171,9 @@ class Auto
         } else {
             $this->setMensaje("Persona->Delete: " . $database->getError());
         }
+
         return $res;
     }
-
 
     public function List($condicion = "")
     {
@@ -227,9 +202,9 @@ class Auto
         } else {
             $this->setMensaje("Auto->List: " . $database->getError());
         }
+
         return $array;
     }
-
 
     public function __toString()
     {
