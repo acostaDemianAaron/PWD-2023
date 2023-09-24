@@ -65,6 +65,6 @@ $(document).ready(function () {
     }, "Tiene que ser mayor a 10.000.000 y menor a 99.999.999.");
 
     jQuery.validator.addMethod("validAlfaNumerico", function (value, element) {
-        return this.optional(element) || (/^([a-zA-Z0-9]+$)/.test(value));
+        return this.optional(element) || (/^([a-zA-Z0-9ñÑ]+|\s$)/.test(value));
      }, "Solo se aceptan valores alfanumérico");
 });
