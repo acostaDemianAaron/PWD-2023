@@ -14,7 +14,7 @@ require_once("../../View/Structure/header.php");
                 <div class="card shadow-lg p-3 mb-5">
                     <div class="bg-bg-dark pb-3">Buscar Persona</div>
                     <div class="card-body">
-                        <form action="../Action/buscarPersona.php" method="POST" id="form_control" name="form_control" class="needs-validation">
+                        <form action="../Action/buscarPersona.php" method="POST" id="form_persona" name="form_persona" class="needs-validation">
                             <div class="form-row">
                                 <div class="col-md-4 mb-3">
                                     <label class="mb-2">Ingrese su documento: </label><br>
@@ -23,7 +23,7 @@ require_once("../../View/Structure/header.php");
                             </div>
                             <button class="btn btn-primary" type="submit" id="enviar" name="enviar">Buscar Persona</button>
                         </form>
-                        <script src="../js/validateSearchPerson.js"></script>
+                        <script src="../js/validadRefactorizadas.js"></script>
                     </div>
                 </div>
             </div>

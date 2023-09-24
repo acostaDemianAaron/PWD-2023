@@ -14,7 +14,7 @@ require_once("../../View/Structure/header.php");
                 <div class="card shadow-lg p-3 mb-5">
                     <div class="bg-bg-dark pb-3">Agregar Auto</div>
                     <div class="card-body">
-                        <form action="../Action/nuevoAuto.php" method="POST" id="form_control" name="form_control" class="needs-validation" novalidate>
+                        <form action="../Action/nuevoAuto.php" method="POST" id="form_auto" name="form_auto" class="needs-validation" novalidate>
                             <div class="form-row">
                                 <div class="col-md-4 mb-3">
                                     <label class="mb-2">Ingrese la Patente </label><br>
@@ -46,7 +46,7 @@ require_once("../../View/Structure/header.php");
             </div>
         </div>
     </div>
-    <script src="../js/validateNewCar.js"></script>
+    <script src="../js/validadRefactorizadas.js"></script>
 </body>
 
 <?php

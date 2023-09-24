@@ -14,7 +14,7 @@ require_once("../../View/Structure/header.php");
                 <div class="card shadow-lg p-3 mb-5">
                     <div class="bg-bg-dark pb-3">Buscar por patente</div>
                     <div class="card-body">
-                        <form action="../Action/cambioDuenio.php" method="POST" id="cambio-duenio" name="cambio-duenio" class="needs-validation" novalidate>
+                        <form action="../Action/cambioDuenio.php" method="POST" id="form_auto" name="form_auto" class="needs-validation" novalidate>
                             <div class="form-row">
                                 <div class="col-md-4 mb-3">
                                     <label class="mb-2">Ingrese la patente: </label><br>
@@ -22,7 +22,7 @@ require_once("../../View/Structure/header.php");
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label class="mb-2">Ingrese el DNI del nuevo dueño: </label><br>
-                                    <input id="NroDni" name="NroDni" type="text" class="form-control" maxlength="8">
+                                    <input id="DniDuenio" name="DniDuenio" type="text" class="form-control" maxlength="8">
                                 </div>
                             </div>
                             <button class="btn btn-primary" type="submit" id="enviar">Buscar</button>
@@ -32,7 +32,7 @@ require_once("../../View/Structure/header.php");
             </div>
         </div>
     </div>
-    <script src="../js/validateChangeDuenio.js"></script>
+    <script src="../js/validadRefactorizadas.js"></script>
 </body>
 
 <?php

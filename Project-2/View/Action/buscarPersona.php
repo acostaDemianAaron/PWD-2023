@@ -20,7 +20,7 @@ $persona = $AbmPersona->loadObjId($data);
                         <?php
                         if (isset($persona) && gettype($persona) != "boolean") {
                         ?>
-                            <form action="../Action/actualizarPersona.php" method="POST" id="form_control" name="form_control" class="needs-validation">
+                            <form action="../Action/actualizarPersona.php" method="POST" id="form_persona" name="form_persona" class="needs-validation">
                                 <div class="form-row">
                                     <div class="col-md-4 mb-3">
                                         <label class="mb-2">Ingrese su nombre: </label><br>
@@ -69,7 +69,7 @@ $persona = $AbmPersona->loadObjId($data);
             </div>
         </div>
     </div>
-    <script src="../js/validateNewPerson.js"></script>
+    <script src="../js/validadRefactorizadas.js"></script>
 </body>
 
 <?php

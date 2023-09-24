@@ -6,25 +6,25 @@ $(document).ready(function () {
                 required: true,
                 maxlength: 20,
                 minlength: 3,
-                validAlfaNumerico: { validAlfaNumerico: true}
+                validAlfaNumerico: { validAlfaNumerico: true }
             },
             Apellido: {
                 required: true,
                 maxlength: 20,
                 minlength: 3,
-                validAlfaNumerico: { validAlfaNumerico: true}
+                validAlfaNumerico: { validAlfaNumerico: true }
             },
             NroDni: {
                 required: true,
                 number: true,
                 validDni: { validDni: true },
-                validDniRango: { validDniRango: true}
+                validDniRango: { validDniRango: true }
             },
             Domicilio: {
                 required: true,
                 maxlength: 20,
                 minlength: 3,
-                validAlfaNumerico: { validAlfaNumerico: true}
+                validAlfaNumerico: { validAlfaNumerico: true }
             },
             Telefono: {
                 required: true,
@@ -91,8 +91,8 @@ jQuery.validator.addMethod("validFechaNac", function (value, element) {
 
 jQuery.validator.addMethod("validDniRango", function (value, element) {
     return this.optional(element) || (/^([1-9][0-9]{7}$)/.test(value));
- }, "Tiene que ser mayor a 10.000.000 y menor a 99.999.999.");
+}, "Tiene que ser mayor a 10.000.000 y menor a 99.999.999.");
 
- jQuery.validator.addMethod("validAlfaNumerico", function (value, element) {
+jQuery.validator.addMethod("validAlfaNumerico", function (value, element) {
     return this.optional(element) || (/^([a-zA-Z0-9ñÑ\s]+$)/.test(value));
- }, "Solo se aceptan valores alfanumérico");
+}, "Solo se aceptan valores alfanumérico");
