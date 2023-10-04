@@ -1,0 +1,15 @@
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/pdfgeneratorapi/php-client.git"
+        }
+    ],
+    "require": {
+        "mercadopago/dx-php": "2.6.1",
+        "pdfgeneratorapi/php-client": "dev-master",
+        "web-token/jwt-framework": "3.2.8",
+        "web-token/jwt-key-mgmt": "*",
+        "web-token/jwt-signature": "*"
+    }
+}
