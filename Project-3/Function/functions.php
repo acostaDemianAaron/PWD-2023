@@ -17,7 +17,6 @@ function data_submitted()
     return $_AAux;
 }
 
-echo "This route: " . $_SESSION['ROOT'] . '/Function/';
 spl_autoload_register(function ($class_name) { //Se ejecuta automáticamente cada vez que se llame el script configuracion.php que tiene incluido a este script funciones.php
     //echo "class ".$class_name ;
     $directorys = array( //Guarda las carpetas con clases (su creación) que usaremos

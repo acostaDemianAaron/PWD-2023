@@ -6,7 +6,7 @@ header ("Cache-Control: no-cache, must-revalidate ");
 // CONFIGURACION APP //
 /////////////////////////////
 
-// Si no funciona probar $PROYECTO = 'Project-2';
+// Si no funciona probar $PROYECTO = 'Project-3';
 $PROYECTO ='';
 $ROOT = $_SERVER['DOCUMENT_ROOT'].$PROYECTO;
 
