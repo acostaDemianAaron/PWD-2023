@@ -16,7 +16,7 @@ function generatePDF($data){
     } else {
       $date = date("Y-m-d");
     }
-
+echo '{"template":{"id":"799876","data":{"name":"' . $data['name'] . '","DueDate":"' . $date . '"}},"format":"pdf","output":"url","name":"' . $data['documentName'] . '"}';
     // Set cURL values
     curl_setopt_array($curl, [
       CURLOPT_URL => "https://us1.pdfgeneratorapi.com/api/v4/documents/generate",
@@ -26,7 +26,7 @@ function generatePDF($data){
       CURLOPT_TIMEOUT => 30,
       CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
       CURLOPT_CUSTOMREQUEST => "POST",
-      CURLOPT_POSTFIELDS => '{"template":{"id":"799876","data":{"name":"' . $data["name"] . '","DueDate":"' . $date . '"}},"format":"pdf","output":"url","name":"' . $data['document'] . '"}',
+      CURLOPT_POSTFIELDS => '{"template":{"id":"799876","data":{"name":"' . $data['name'] . '","DueDate":"' . $date . '"}},"format":"pdf","output":"url","name":"' . $data['documentName'] . '"}',
       CURLOPT_HTTPHEADER => ["Authorization: Bearer $jwt", "Content-Type: application/json"]
     ]);
 

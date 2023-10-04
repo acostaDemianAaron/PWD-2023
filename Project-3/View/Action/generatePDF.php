@@ -5,13 +5,19 @@ require_once('../Structure/header.php');
 require_once('../../Controller/PDFGenerator.php');
 require_once('../../Controller/JWT.php');
 
-if(empty(data_submitted())){
-    header('Location: ../../View/html/newPDF.php?error=bad-form');
-    exit;
-} else if(property_exists(generatePDF(data_submitted()), "message")){
-    header('Location: ../../View/html/newPDF.php?error=no-jwt');
-    exit;
-}
+// if (empty(data_submitted())) {
+//     header('Location: ../../View/html/newPDF.php?error=bad-form');
+//     exit;
+// } else if (is_object(generatePDF(data_submitted()))) {
+//     if (property_exists(generatePDF(data_submitted()), "message")) {
+//         header('Location: ../../View/html/newPDF.php?error=no-jwt');
+//         exit;
+//     }
+// } else {
+//     header('Location: ../../View/html/newPDF.php?error=bad-form');
+//     exit;
+// }
+print_r(generatePDF(data_submitted()));
 ?>
 
 <body>
@@ -26,7 +32,7 @@ if(empty(data_submitted())){
                         <div class="card-body">
                             <blockquote class="blockquote mb-0">
                                 <?php
-                                print_r($json);
+                                // print_r($json);
                                 // if ($json) {
                                 //     if ($persona->Add($data)) {
                                 //         echo '<h6 class="m-4">Se cargo la persona</h6>';

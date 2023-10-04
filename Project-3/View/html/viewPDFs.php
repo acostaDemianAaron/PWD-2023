@@ -6,6 +6,7 @@ require_once('../../Controller/PDFGenerator.php');
 require_once('../../Controller/JWT.php');
 $json = getPDFs();
 ?>
+
 <body>
    <div class="container">
       <div class="container-fluid">
@@ -16,22 +17,25 @@ $json = getPDFs();
                   <div class="table-responsive small">
                      <table class="table table-striped table-sm fs-4">
                         <thead id="table-header">
-                           <?php        
-                              if($json->message != null){
+                           <?php
+                           if (!is_object($json)) {
+                              echo '<div class="bg-bg-dark pb-2 fs-3 text-danger-emphasis">There was an error.</div>';
+                           } else {
+                              if ($json->message != null) {
                                  echo "<tr><th><h2>Se encontro un error: " . $json->message . "</h2></th></tr>";
                               } else {
                            ?>
-                           <tr>
-                              <th scope="col">Document ID</th>
-                              <th scope="col">Date Made</th>
-                              <th scope="col">Visualizar</th>
-                           </tr>
+                                 <tr>
+                                    <th scope="col">Document ID</th>
+                                    <th scope="col">Date Made</th>
+                                    <th scope="col">Visualizar</th>
+                                 </tr>
                         </thead>
                         <tbody id="table-body">
-                           <?php
+                     <?php
                                  $documents = $json->response;
 
-                                 foreach($documents as $document){
+                                 foreach ($documents as $document) {
                                     echo '<tr>
                                        <td>' . $document->public_id . '</td>
                                        <td>' . $document->created_at . '</td>
@@ -39,7 +43,8 @@ $json = getPDFs();
                                     </tr>';
                                  }
                               }
-                           ?>
+                           }
+                     ?>
                         </tbody>
                      </table>
                   </div>
