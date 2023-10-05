@@ -7,16 +7,19 @@ function generatePDF($data){
     // Initiate cURL.
     $curl = curl_init();
 
-    // Login/Manually insert keys.
+    // Login/Manually insert keys.print_
     $jwt = generateJWT();
 
     // Set date to current date.
-    if(key_exists("documentDate", $data)){
+    if($data['documentDate'] != "null"){
       $date = $data["documentDate"];
     } else {
       $date = date("Y-m-d");
     }
-echo '{"template":{"id":"799876","data":{"name":"' . $data['name'] . '","DueDate":"' . $date . '"}},"format":"pdf","output":"url","name":"' . $data['documentName'] . '"}';
+
+    // TODO Set pdf values like template and values needed for that template, maybe use Model for classes.
+    // {"id":"799876","data":{"Name":"' . $data['name'] . ' ' . $data['surname'] . '","DueDate":"' . $date . '"}}
+
     // Set cURL values
     curl_setopt_array($curl, [
       CURLOPT_URL => "https://us1.pdfgeneratorapi.com/api/v4/documents/generate",
@@ -26,7 +29,7 @@ echo '{"template":{"id":"799876","data":{"name":"' . $data['name'] . '","DueDate
       CURLOPT_TIMEOUT => 30,
       CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
       CURLOPT_CUSTOMREQUEST => "POST",
-      CURLOPT_POSTFIELDS => '{"template":{"id":"799876","data":{"name":"' . $data['name'] . '","DueDate":"' . $date . '"}},"format":"pdf","output":"url","name":"' . $data['documentName'] . '"}',
+      CURLOPT_POSTFIELDS => '{"template":{"id":"799876","data":{"Name":"' . $data['name'] . ' ' . $data['surname'] . '","DueDate":"' . $date . '"}},"format":"pdf","output":"url","name":"' . $data['documentName'] . '"}',
       CURLOPT_HTTPHEADER => ["Authorization: Bearer $jwt", "Content-Type: application/json"]
     ]);
 
@@ -69,6 +72,44 @@ function getPDFs($page = 1){
      CURLOPT_HTTPHEADER => [
      "Authorization: Bearer $jwt"
      ],
+  ]);
+
+  $response = curl_exec($curl);
+  $err = curl_error($curl);
+
+  curl_close($curl);
+
+  if ($err) {
+    return array(["error" => $err]);
+  } else {
+     $json = json_decode($response);
+     return $json;
+  }
+}
+
+/**
+ * Gets a collection of documents saved.
+ * @param int
+ */
+function getTemplates($page = 1){
+  // Initiate cURL.
+  $curl = curl_init();
+
+  // Login/Manually insert keys.
+  $jwt = generateJWT();
+
+  // Set cURL values
+  curl_setopt_array($curl, [
+    CURLOPT_URL => "https://us1.pdfgeneratorapi.com/api/v4/templates?page=1&per_page=20",
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => "",
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 30,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => "GET",
+    CURLOPT_HTTPHEADER => [
+      "Authorization: Bearer $jwt"
+    ],
   ]);
 
   $response = curl_exec($curl);

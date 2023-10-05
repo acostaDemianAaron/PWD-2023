@@ -5,19 +5,21 @@ require_once('../Structure/header.php');
 require_once('../../Controller/PDFGenerator.php');
 require_once('../../Controller/JWT.php');
 
-// if (empty(data_submitted())) {
-//     header('Location: ../../View/html/newPDF.php?error=bad-form');
-//     exit;
-// } else if (is_object(generatePDF(data_submitted()))) {
-//     if (property_exists(generatePDF(data_submitted()), "message")) {
-//         header('Location: ../../View/html/newPDF.php?error=no-jwt');
-//         exit;
-//     }
-// } else {
-//     header('Location: ../../View/html/newPDF.php?error=bad-form');
-//     exit;
-// }
-print_r(generatePDF(data_submitted()));
+if (empty(data_submitted())) {
+    header('Location: ../../View/html/newPDF.php?error=bad-form');
+    exit;
+} else {
+    $response = generatePDF(data_submitted());
+    if (is_object($response)) {
+        if (property_exists($response, "message")) {
+            header('Location: ../../View/html/newPDF.php?error=no-jwt');
+            exit;
+        }
+    } else {
+        header('Location: ../../View/html/newPDF.php?error=bad-form');
+        exit;
+    }
+}
 ?>
 
 <body>
@@ -27,22 +29,12 @@ print_r(generatePDF(data_submitted()));
                 <div class="card-body">
                     <div class="card">
                         <div class="card-header">
-                            <h6 class="m-2">Respuesta del servidor</h6>
+                            <h6 class="m-2">Response</h6>
                         </div>
                         <div class="card-body">
                             <blockquote class="blockquote mb-0">
-                                <?php
-                                // print_r($json);
-                                // if ($json) {
-                                //     if ($persona->Add($data)) {
-                                //         echo '<h6 class="m-4">Se cargo la persona</h6>';
-                                //     } else {
-                                //         echo '<h6 class="m-4">No se pudo cargar el dato en la base de datos</h6>';
-                                //     }
-                                // } else {
-                                //     echo '<h6 class="m-4">Ya existe una persona con ese DNI</h6>';
-                                // }
-                                ?>
+                                <h6 class="m-4">The PDF was created successfully</h6>
+                                <a href="<?php echo $response->response ?>" target="_blank" class="btn btn-primary mx-4 mb-4" role="button">View PDF</a>
                             </blockquote>
                         </div>
                     </div>
