@@ -4,8 +4,6 @@ class PDFGenerator extends JWTGenerator
    private $apiKey;
    private $workspaceID;
    private $secretKey;
-   private String $template;
-   private object $documents; // Array of documents found as a stdClass object.
    private object $response;
 
    /**
@@ -34,14 +32,6 @@ class PDFGenerator extends JWTGenerator
       return $this->secretKey;
    }
 
-   // private function getTemplate(){
-   //    return $this->template;
-   // }
-
-   // public function getDocuments(){
-   //    return $this->template;
-   // }
-
    public function getResponse()
    {
       return $this->response;
@@ -62,14 +52,6 @@ class PDFGenerator extends JWTGenerator
    {
       $this->secretKey = base64_encode($secretKey);
    }
-
-   // private function setTemplate($template){
-   //    return $this->template = $template;
-   // }
-
-   // private function setDocuments($template){
-   //    return $this->template = $template;
-   // }
 
    private function setResponse($response)
    {
