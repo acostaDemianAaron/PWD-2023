@@ -144,13 +144,10 @@ class PDFGenerator extends JWTGenerator
       $cURL = curl_init();
 
       // Adding parameters to request URL.
-      $url = "https://us1.pdfgeneratorapi.com/api/v4/templates?";
+      $url = "https://us1.pdfgeneratorapi.com/api/v4/templates";
       if (isset($options)) {
-         foreach ($options as $name => $filter) {
-            $url .= $name . "=" . urlencode($filter) . "&";
-         }
+         $url .= "/" . $options['templateId'] . "/";
       }
-      $url .= "per_page=10";
 
       // Login/Manually insert keys.
       $jwt = new JWTGenerator();
@@ -190,8 +187,8 @@ class PDFGenerator extends JWTGenerator
       // Initiate cURL.
       $cURL = curl_init();
       
-      // $postfields = $this->genPostFields($cURL, $data);
-
+      $postfields = $this->genPostFields($cURL, $data);
+      
       // Login/Manually insert keys.
       $jwt = new JWTGenerator();
       $jwt->generateKey($this->getapiKey(), $this->getWorkspaceID(), $this->getSecretKey());
@@ -206,7 +203,7 @@ class PDFGenerator extends JWTGenerator
          CURLOPT_TIMEOUT => 30,
          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
          CURLOPT_CUSTOMREQUEST => "POST",
-         CURLOPT_POSTFIELDS => "",
+         CURLOPT_POSTFIELDS => $postfields,
          CURLOPT_HTTPHEADER => ["Authorization: Bearer $auth", "Content-Type: application/json"]
       ]);
 
@@ -255,22 +252,26 @@ class PDFGenerator extends JWTGenerator
          $response = json_decode($json);
       }
 
-      // $params = "";
-
-      // foreach($response->response as $fields => $aux){
-      //    $params .= "\"$fields\":\"{$data[$fields]}\","; 
-      // }
-      // if(str_contains($params, '"DueDate":"null"')){
-      //    $params = substr_replace($params, $date = date("Y-m-d"), 11, 4);
-      // }
-      // substr($params, 0, -1);
-
-      // echo "<br>";
-      // print_r($params);
-      // echo "<br>";
-
-      // $postfields = '{"template":{"id":"' . $data['templateId'] .'","data":{"Name":"' . $data['name'] . ' ' . $data['surname'] . '","DueDate":"' . $date . '"}},"format":"pdf","output":"url","name":"' . $data['documentName'] . '"}';
 
       $this->setResponse($response);
+   }
+
+   private function genPostFields($cURL, $data){
+      $this->getPostFields($data['templateId']);
+      $response = $this->getResponse();
+
+      $params = "";
+
+      foreach($response->response as $fields => $aux){
+         $params .= "\"$fields\":\"{$data[$fields]}\","; 
+      }
+      if(str_contains($params, '"DueDate":"null"')){
+         $params = substr_replace($params, $date = date("Y-m-d"), 11, 4);
+      }
+      $params = substr($params, 0, -1);
+
+      $postfields = '{"template":{"id":"' . $data['templateId'] .'","data":{' . $params . '}},"format":"pdf","output":"url","name":"' . $data['documentName'] . '"}';
+
+      return $postfields;
    }
 }

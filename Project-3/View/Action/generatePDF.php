@@ -8,17 +8,21 @@ if (empty(data_submitted())) {
     header('Location: ../../View/html/newPDF.php?error=bad-form');
     exit;
 } else {
-    $pdfObj = connectPDF($_SESSION['apiKey'],$_SESSION['workspaceID'],$_SESSION['secretKey'] );
-    $response = createPDF($pdfObj, data_submitted());
-    // if (is_object($response)) {
-    //     if (property_exists($response, "message")) {
-    //         header('Location: ../../View/html/newPDF.php?error=no-jwt');
-    //         exit;
-    //     }
-    // } else {
-    //     header('Location: ../../View/html/newPDF.php?error=bad-form&Puto=true' );
-    //     exit;
-    // }
+    $pdfControl = connectPDF(
+        $_SESSION['apiKey'],
+        $_SESSION['workspaceID'],
+        $_SESSION['secretKey']
+    );
+    $response = createPDF($pdfControl, data_submitted());
+    if (is_object($response)) {
+        if (property_exists($response, "message")) {
+            header('Location: ../../View/html/newPDF.php?error=no-jwt');
+            exit;
+        }
+    } else {
+        header('Location: ../../View/html/newPDF.php?error=bad-form');
+        exit;
+    }
 }
 ?>
 

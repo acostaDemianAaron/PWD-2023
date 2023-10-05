@@ -11,6 +11,9 @@ $pdfControl = connectPDF(
 );
 
 if(data_submitted()){
+   echo "this: ";
+   print_r(data_submitted());
+   echo "<br>";
    $templateFields = getTemplateFields($pdfControl, data_submitted());
 ?>
    <body>
@@ -54,7 +57,13 @@ if(data_submitted()){
                               }
                            }
                            ?>
-                           <button class="btn btn-primary" type="submit" id="enviar">Create PDF</button>
+                           <div class="form-row">
+                              <div class="col-md-4 mb-3">
+                                 <label class="mb-2">DocumentName: </label><br>
+                                 <input id="documentName" name="documentName" type="text" class="form-control" maxlength="25">
+                              </div>
+                           </div>
+                           <button class="btn btn-primary" type="submit" name="templateId" value="<?php echo data_submitted()['templateId']; ?>">Create PDF</button>
                         </form>
                      </div>
                   </div>

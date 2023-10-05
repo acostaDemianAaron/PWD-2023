@@ -15,8 +15,23 @@ function getTemplates($pdfObject){
    return $pdfObject->getResponse();
 }
 
+function findTemplate($pdfObject, $options){
+   $pdfObject->loadTemplates($options);
+   print_r($pdfObject->getResponse());
+
+   return $pdfObject->getResponse();
+}
+
 function createPDF($pdfObject, $data){
-   return $pdfObject->generateDocument($data);
+   $fieldsObject = getTemplateFields($pdfObject, $data);
+   $fields = [];
+
+   foreach($fieldsObject->response as $fieldName => $fieldValue){
+      $fields[$fieldName] = $data[$fieldName];
+   }
+   $pdfObject->generateDocument($data);
+
+   return $pdfObject->getResponse();
 }
 
 function checkTemplate($pdfObject, $data){
@@ -33,4 +48,7 @@ function getTemplateFields($pdfObject, $data){
    }
 
    return $pdfObject->getResponse();
+}
+
+function completeFields($pdfObject, $data){
 }
