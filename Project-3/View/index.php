@@ -1,14 +1,8 @@
 <?php
 require_once('../Config/config.php');
-require_once('../View/Structure/header.php');
+createHeader("Menu");
 ?>
-
-<head>
-   <title>Pagina principal</title>
-</head>
-
 <body>
-
    <div class="container mt-5">
       <div class="row">
          <!-- View PDFs saved -->
@@ -27,7 +21,7 @@ require_once('../View/Structure/header.php');
                </div>
             </div>
          </div>
-         <div>
+         <div class="col-xl-12 col-md-12 mb-4">
             <div class="card border-0 shadow">
                <div class="card-body text-center">
                   <a href="./html/mpCompra.php" class="btn btn-primary">Mercado Pago</a>
@@ -37,7 +31,6 @@ require_once('../View/Structure/header.php');
       </div>
    </div>
 </body>
-
 <?php
-require_once("../View/Structure/footer.php");
+createFooter();
 ?>

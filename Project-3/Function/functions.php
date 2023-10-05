@@ -18,12 +18,13 @@ function data_submitted()
 }
 
 spl_autoload_register(function ($class_name) { //Se ejecuta automáticamente cada vez que se llame el script configuracion.php que tiene incluido a este script funciones.php
-    //echo "class ".$class_name ;
+    // echo "class ".$class_name ;
     $directorys = array( //Guarda las carpetas con clases (su creación) que usaremos
         $_SESSION['ROOT'] . '/Model/Class/',
         $_SESSION['ROOT'] . '/Model/Connection/',
         $_SESSION['ROOT'] . '/Controller/',
-        $_SESSION['ROOT'] . '/Function/'
+        $_SESSION['ROOT'] . '/Function/',
+        $_SESSION['ROOT'] . '/View/Structure/'
         //  $GLOBALS['ROOT'].'util/class/',
     );
     foreach ($directorys as $directory) { //Busca la BaseDatos o las clases que esten siendo usadas, para que funcione TODAS LAS CLASES DEBEN TENER EL MISMO NOMBRE QUE SU SCRIPT 
@@ -34,3 +35,11 @@ spl_autoload_register(function ($class_name) { //Se ejecuta automáticamente cad
         }
     }
 });
+
+function createHeader($title){
+    Header::addHeader($title);
+}
+
+function createFooter(){
+    Footer::addFooter();
+}

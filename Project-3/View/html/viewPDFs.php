@@ -1,11 +1,17 @@
 <?php
 require_once('../../Config/config.php');
 require_once('../../vendor/autoload.php');
-require_once('../Structure/header.php');
-require_once('../../Controller/PDFGenerator.php');
-require_once('../../Controller/JWT.php');
-$json = getPDFs();
-$templates = getTemplates();
+require_once('../../Controller/PDFControl.php');
+createHeader("Documents saved");
+
+$pdfGenerator = connectPDF(
+   $_SESSION['apiKey'],
+   $_SESSION['workspaceID'],
+   $_SESSION['secretKey']
+);
+
+$response = getDocuments($pdfGenerator);
+$templates = getTemplates($pdfGenerator);
 ?>
 
 <body>
@@ -19,11 +25,11 @@ $templates = getTemplates();
                      <table class="table table-striped table-sm fs-4">
                         <thead id="table-header">
                            <?php
-                           if (!is_object($json)) {
+                           if (!is_object($response)) {
                               echo '<div class="bg-bg-dark pb-2 fs-3 text-danger-emphasis">There was an error.</div>';
                            } else {
-                              if ($json->message != null) {
-                                 echo "<tr><th><h2>Se encontro un error: " . $json->message . "</h2></th></tr>";
+                              if ($response->message != null) {
+                                 echo "<tr><th><h2>Se encontro un error: " . $response->message . "</h2></th></tr>";
                               } else {
                            ?>
                                  <tr>
@@ -34,11 +40,13 @@ $templates = getTemplates();
                         </thead>
                         <tbody id="table-body">
                            <?php
-                                 $documents = $json->response;
+                                 $documents = $response->response;
 
+                                 // Iterate over all documents found.
                                  foreach ($documents as $document) {
-                                    $templateFound = false;
+                                    $templateFound = false; // Boolean to stop searching on template found.
                                     $i = 0;
+                                    // Find correct template name.
                                     while(!$templateFound){
                                        if($templates->response[$i]->id == $document->template_id) {
                                           $template = $templates->response[$i];
@@ -64,3 +72,7 @@ $templates = getTemplates();
       </div>
    </div>
 </body>
+
+<?php
+createFooter();
+?>

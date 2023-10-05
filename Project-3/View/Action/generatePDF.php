@@ -1,9 +1,7 @@
 <?php
 require_once('../../Config/config.php');
 require_once('../../vendor/autoload.php');
-require_once('../Structure/header.php');
-require_once('../../Controller/PDFGenerator.php');
-require_once('../../Controller/JWT.php');
+createHeader("Generate PDF");
 
 if (empty(data_submitted())) {
     header('Location: ../../View/html/newPDF.php?error=bad-form');
@@ -43,3 +41,7 @@ if (empty(data_submitted())) {
         </div>
     </div>
 </body>
+
+<?php
+createFooter();
+?>

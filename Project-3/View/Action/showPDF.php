@@ -1,7 +1,7 @@
 <?php
 require_once('../../Config/config.php');
 require_once('../../vendor/autoload.php');
-require_once('../Structure/header.php');
+createHeader("Show PDF");
 $data = data_submitted();
 ?>
 
@@ -32,3 +32,7 @@ $data = data_submitted();
       </div>
    </div>
 </body>
+
+<?php
+createFooter();
+?>
