@@ -1,10 +1,9 @@
 <?php
 require_once("../../Config/config.php");
 require_once('../Structure/header.php');
-//require_once('../../vendor/autoload.php')
+require_once('../../vendor/autoload.php');
 require_once("../../Controller/mercadoPago.php");
 $preferenceId = MercadoPagoModel::createPreference();
-
 ?>
 
 

@@ -1,8 +1,4 @@
 <?php
-require_once("../Config/config.php");
-require_once('../vendor/autoload.php');
-require_once("../Model/Item.php");
-
 class MercadoPagoModel
 {
     public static function createPreference()
