@@ -13,7 +13,7 @@ class MercadoPagoModel
             $producto2 = $carrito[1];
         }
 
-        MercadoPago\SDK::setAccessToken('AccessToken');
+        MercadoPago\SDK::setAccessToken('TEST-4307504918349233-092817-7ae06736d506a6745ba0a0d6e7ccf1a9-1492918253');
 
         $preference = new MercadoPago\Preference();
 
