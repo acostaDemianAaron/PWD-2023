@@ -143,18 +143,19 @@ class PDFGenerator extends JWTGenerator
       // Initiate cURL.
       $cURL = curl_init();
 
+      // Adding parameters to request URL.
+      $url = "https://us1.pdfgeneratorapi.com/api/v4/templates?";
+      if (isset($options)) {
+         foreach ($options as $name => $filter) {
+            $url .= $name . "=" . urlencode($filter) . "&";
+         }
+      }
+      $url .= "per_page=10";
+
       // Login/Manually insert keys.
       $jwt = new JWTGenerator();
       $jwt->generateKey($this->getapiKey(), $this->getWorkspaceID(), $this->getSecretKey());
       $auth = $jwt->getToken();
-
-      $url = "https://us1.pdfgeneratorapi.com/api/v4/templates?";
-      if (isset($options)) {
-         foreach ($options as $name => $filter) {
-            $url .= $name . "=" . urldecode($filter) . "&";
-         }
-      }
-      $url .= "per_page=10";
 
       // Set cURL values
       curl_setopt_array($cURL, [
@@ -186,23 +187,16 @@ class PDFGenerator extends JWTGenerator
 
    public function generateDocument($data)
    {
-      print_r($data);
       // Initiate cURL.
       $cURL = curl_init();
       
+      // $postfields = $this->genPostFields($cURL, $data);
+
       // Login/Manually insert keys.
       $jwt = new JWTGenerator();
       $jwt->generateKey($this->getapiKey(), $this->getWorkspaceID(), $this->getSecretKey());
       $auth = $jwt->getToken();
 
-      if($data['documentDate'] != "null"){
-         $date = $data["documentDate"];
-       } else {
-         $date = date("Y-m-d");
-       }
-
-      $aux = '{"template":{"id":"' . $data['templateId'] .'","data":{"Name":"' . $data['name'] . ' ' . $data['surname'] . '","DueDate":"' . $date . '"}},"format":"pdf","output":"url","name":"' . $data['documentName'] . '"}';
-print_r($aux);
       // Set cURL values
       curl_setopt_array($cURL, [
          CURLOPT_URL => "https://us1.pdfgeneratorapi.com/api/v4/documents/generate",
@@ -212,7 +206,7 @@ print_r($aux);
          CURLOPT_TIMEOUT => 30,
          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
          CURLOPT_CUSTOMREQUEST => "POST",
-         CURLOPT_POSTFIELDS => $aux,
+         CURLOPT_POSTFIELDS => "",
          CURLOPT_HTTPHEADER => ["Authorization: Bearer $auth", "Content-Type: application/json"]
       ]);
 
@@ -230,5 +224,53 @@ print_r($aux);
       $this->setResponse($response);
    }
 
-   
+   // Get all postfields of template
+   public function getPostFields($templateId){
+      // Initiate cURL.
+      $cURL = curl_init();
+
+      $jwt = new JWTGenerator();
+      $jwt->generateKey($this->getapiKey(), $this->getWorkspaceID(), $this->getSecretKey());
+      $auth = $jwt->getToken();
+      
+      curl_setopt_array($cURL, [
+         CURLOPT_URL => "https://us1.pdfgeneratorapi.com/api/v4/templates/" . $templateId . "/data",
+         CURLOPT_RETURNTRANSFER => true,
+         CURLOPT_ENCODING => "",
+         CURLOPT_MAXREDIRS => 10,
+         CURLOPT_TIMEOUT => 30,
+         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+         CURLOPT_CUSTOMREQUEST => "GET",
+         CURLOPT_HTTPHEADER => [
+           "Authorization: Bearer $auth"
+         ],
+      ]);
+
+      $json = curl_exec($cURL);
+      $err = curl_error($cURL);
+
+      if ($err) {
+         $response = $err;
+      } else {
+         $response = json_decode($json);
+      }
+
+      // $params = "";
+
+      // foreach($response->response as $fields => $aux){
+      //    $params .= "\"$fields\":\"{$data[$fields]}\","; 
+      // }
+      // if(str_contains($params, '"DueDate":"null"')){
+      //    $params = substr_replace($params, $date = date("Y-m-d"), 11, 4);
+      // }
+      // substr($params, 0, -1);
+
+      // echo "<br>";
+      // print_r($params);
+      // echo "<br>";
+
+      // $postfields = '{"template":{"id":"' . $data['templateId'] .'","data":{"Name":"' . $data['name'] . ' ' . $data['surname'] . '","DueDate":"' . $date . '"}},"format":"pdf","output":"url","name":"' . $data['documentName'] . '"}';
+
+      $this->setResponse($response);
+   }
 }

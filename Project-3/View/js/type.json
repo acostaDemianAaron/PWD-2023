@@ -1,0 +1,68 @@
+{
+   "template": {
+      "id": "TEMPLATE_ID",
+      "data": {
+         "shop_name": "El Pepito",
+         "shop_dir": "Chocon 1562",
+         "shop_contact": "299 56783982",
+         "line_items": [
+            {
+               "title": "Item number 1",
+               "unit_price": "4,080.00",
+               "quantity": 2
+            },
+            {
+               "title": "Item number 2",
+               "unit_price": "230.00",
+               "quantity": 1
+            },
+            {
+               "title": "Item number 3",
+               "unit_price": "220.00",
+               "quantity": 234
+            },
+            {
+               "title": "Item number 5",
+               "unit_price": "21,230.00",
+               "quantity": 6
+            }
+         ]
+      }
+   }
+}
+
+{
+   "template": {
+      "id": "TEMPLATE_ID",
+      "data": {
+         "Name": "Juanito Perez",
+         "DueDate": "2020-12-10"
+      }
+   },
+   "format": "pdf",
+   "output": "url",
+   "name": "document"
+}
+
+{
+   "shop_name": "El Pepito",
+   "shop_dir": "Chocon 1562",
+   "shop_contact": "299 56783982",
+   "line_items": {
+      "item1": {
+         "title": "Test1",
+         "unit_price": 123978,
+         "quantity": 1
+      },
+      "item2": {
+         "title": "Test2",
+         "unit_price": 234,
+         "quantity": 10
+      },
+      "item3": {
+         "title": "Test3",
+         "unit_price": 5643,
+         "quantity": 4
+      }
+   }
+}

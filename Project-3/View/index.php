@@ -17,7 +17,7 @@ createHeader("Menu");
          <div class="col-xl-6 col-md-6 mb-4">
             <div class="card border-0 shadow">
                <div class="card-body text-center">
-                  <a href="./html/newPDF.php" class="btn btn-primary">Create new PDF</a>
+                  <a href="./html/selectTemplate.php" class="btn btn-primary">Create new PDF</a>
                </div>
             </div>
          </div>

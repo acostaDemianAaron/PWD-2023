@@ -10,11 +10,27 @@ function getDocuments($pdfObject){
 }
 
 function getTemplates($pdfObject){
-   $pdfObject->loadTemplates();
+   $pdfObject->loadTemplates(['access' => $_SESSION['access']]);
 
    return $pdfObject->getResponse();
 }
 
 function createPDF($pdfObject, $data){
    return $pdfObject->generateDocument($data);
+}
+
+function checkTemplate($pdfObject, $data){
+   if(key_exists("templateName", $data)){
+      $pdfObject->loadTemplates(['access' => $_SESSION['access'], 'name' => $data['templateName']]);
+   }
+
+   return key_exists(0, $pdfObject->getResponse()->response);
+}
+
+function getTemplateFields($pdfObject, $data){
+   if(key_exists("templateId", $data)){
+      $pdfObject->getPostFields($data['templateId']);
+   }
+
+   return $pdfObject->getResponse();
 }
