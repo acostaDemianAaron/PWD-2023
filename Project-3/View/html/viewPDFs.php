@@ -5,6 +5,7 @@ require_once('../Structure/header.php');
 require_once('../../Controller/PDFGenerator.php');
 require_once('../../Controller/JWT.php');
 $json = getPDFs();
+$templates = getTemplates();
 ?>
 
 <body>
@@ -26,25 +27,34 @@ $json = getPDFs();
                               } else {
                            ?>
                                  <tr>
-                                    <th scope="col">Document ID</th>
+                                    <th scope="col">Template Used</th>
                                     <th scope="col">Date Made</th>
                                     <th scope="col">Visualizar</th>
                                  </tr>
                         </thead>
                         <tbody id="table-body">
-                     <?php
+                           <?php
                                  $documents = $json->response;
 
                                  foreach ($documents as $document) {
+                                    $templateFound = false;
+                                    $i = 0;
+                                    while(!$templateFound){
+                                       if($templates->response[$i]->id == $document->template_id) {
+                                          $template = $templates->response[$i];
+                                          $templateFound = true;
+                                       }
+                                       $i++;
+                                    }
                                     echo '<tr>
-                                       <td>' . $document->public_id . '</td>
+                                       <td>' . $template->name . '</td>
                                        <td>' . $document->created_at . '</td>
                                        <td><button class="btn btn-primary" name="url" value="' . $document->public_url . '">View</button></td>
                                     </tr>';
                                  }
                               }
                            }
-                     ?>
+                           ?>
                         </tbody>
                      </table>
                   </div>
