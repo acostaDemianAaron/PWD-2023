@@ -27,6 +27,13 @@ require_once('../View/Structure/header.php');
                </div>
             </div>
          </div>
+         <div>
+            <div class="card border-0 shadow">
+               <div class="card-body text-center">
+                  <a href="./html/mpCompra.php" class="btn btn-primary">Mercado Pago</a>
+               </div>
+            </div>
+         </div>
       </div>
    </div>
 </body>
