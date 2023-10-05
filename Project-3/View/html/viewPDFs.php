@@ -10,7 +10,15 @@ $pdfGenerator = connectPDF(
    $_SESSION['secretKey']
 );
 
-$response = getDocuments($pdfGenerator);
+if(!empty(data_submitted())){
+   $data = data_submitted();
+   $page = $data['page'];
+} else {
+   $data = [];
+   $page = 0;
+}
+
+$response = getDocuments($pdfGenerator, $data);
 $templates = getTemplates($pdfGenerator);
 ?>
 
@@ -66,6 +74,12 @@ $templates = getTemplates($pdfGenerator);
                         </tbody>
                      </table>
                   </div>
+               </form>
+               <form action="./viewPDFs.php" method="POST">
+               <?php if($page > 1) { ?>
+                  <button class="btn btn-primary" onclick="history.back()">Go Back</button>
+               <?php } ?>
+                  <button class="btn btn-primary" type="submit" name="page" value="<?php if($page >= 0){ echo $page + 1; } ?>">Next Page</button>
                </form>
             </div>
          </div>

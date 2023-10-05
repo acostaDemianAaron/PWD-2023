@@ -3,8 +3,8 @@ function connectPDF($apiKey, $workspaceID, $secretKey){
    return new PDFGenerator($apiKey, $workspaceID, $secretKey);
 }
 
-function getDocuments($pdfObject){
-   $pdfObject->loadDocuments();
+function getDocuments($pdfObject, $options = []){
+   $pdfObject->loadDocuments($options);
 
    return $pdfObject->getResponse();
 }
