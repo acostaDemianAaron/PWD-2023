@@ -2,21 +2,23 @@
 require_once('../../Config/config.php');
 require_once('../../vendor/autoload.php');
 createHeader("Generate PDF");
+require_once("../../Controller/PDFControl.php");
 
 if (empty(data_submitted())) {
     header('Location: ../../View/html/newPDF.php?error=bad-form');
     exit;
 } else {
-    $response = generatePDF(data_submitted());
-    if (is_object($response)) {
-        if (property_exists($response, "message")) {
-            header('Location: ../../View/html/newPDF.php?error=no-jwt');
-            exit;
-        }
-    } else {
-        header('Location: ../../View/html/newPDF.php?error=bad-form');
-        exit;
-    }
+    $pdfObj = connectPDF($_SESSION['apiKey'],$_SESSION['workspaceID'],$_SESSION['secretKey'] );
+    $response = createPDF($pdfObj, data_submitted());
+    // if (is_object($response)) {
+    //     if (property_exists($response, "message")) {
+    //         header('Location: ../../View/html/newPDF.php?error=no-jwt');
+    //         exit;
+    //     }
+    // } else {
+    //     header('Location: ../../View/html/newPDF.php?error=bad-form&Puto=true' );
+    //     exit;
+    // }
 }
 ?>
 

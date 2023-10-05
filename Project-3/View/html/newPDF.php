@@ -44,6 +44,12 @@ $templates = getTemplates($pdfGenerator);
                         </div>
                         <div class="form-row">
                            <div class="col-md-4 mb-3">
+                              <label class="mb-2">Surname: </label><br>
+                              <input id="templateId" name="templateId" type="text" class="form-control" maxlength="25" hidden value="799876">
+                           </div>
+                        </div>
+                        <div class="form-row">
+                           <div class="col-md-4 mb-3">
                               <label class="mb-2">Document name: </label><br>
                               <input id="documentName" name="documentName" type="text" class="form-control" maxlength="25">
                            </div>

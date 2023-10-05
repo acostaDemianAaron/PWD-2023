@@ -28,7 +28,7 @@ $templates = getTemplates($pdfGenerator);
                            if (!is_object($response)) {
                               echo '<div class="bg-bg-dark pb-2 fs-3 text-danger-emphasis">There was an error.</div>';
                            } else {
-                              if ($response->message != null) {
+                              if ($response == null) {
                                  echo "<tr><th><h2>Se encontro un error: " . $response->message . "</h2></th></tr>";
                               } else {
                            ?>

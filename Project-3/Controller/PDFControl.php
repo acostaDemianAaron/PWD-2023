@@ -15,6 +15,6 @@ function getTemplates($pdfObject){
    return $pdfObject->getResponse();
 }
 
-function createPDF(){
-   
+function createPDF($pdfObject, $data){
+   return $pdfObject->generateDocument($data);
 }

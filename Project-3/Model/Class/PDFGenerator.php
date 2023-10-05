@@ -1,5 +1,6 @@
 <?php
-class PDFGenerator extends JWTGenerator{
+class PDFGenerator extends JWTGenerator
+{
    private $apiKey;
    private $workspaceID;
    private $secretKey;
@@ -18,15 +19,18 @@ class PDFGenerator extends JWTGenerator{
    }
 
    // Getters
-   private function getapiKey(){
+   private function getapiKey()
+   {
       return $this->apiKey;
    }
-   
-   private function getWorkspaceID(){
+
+   private function getWorkspaceID()
+   {
       return $this->workspaceID;
    }
 
-   private function getSecretKey(){
+   private function getSecretKey()
+   {
       return $this->secretKey;
    }
 
@@ -38,20 +42,24 @@ class PDFGenerator extends JWTGenerator{
    //    return $this->template;
    // }
 
-   public function getResponse(){
+   public function getResponse()
+   {
       return $this->response;
    }
 
    // Setters
-   private function setApiKey($apiKey){
+   private function setApiKey($apiKey)
+   {
       $this->apiKey = $apiKey;
    }
-   
-   private function setWorkspaceID($workspaceID){
+
+   private function setWorkspaceID($workspaceID)
+   {
       $this->workspaceID = $workspaceID;
    }
 
-   private function setSecretKey($secretKey){
+   private function setSecretKey($secretKey)
+   {
       $this->secretKey = base64_encode($secretKey);
    }
 
@@ -63,7 +71,8 @@ class PDFGenerator extends JWTGenerator{
    //    return $this->template = $template;
    // }
 
-   private function setResponse($response){
+   private function setResponse($response)
+   {
       return $this->response = $response;
    }
 
@@ -75,7 +84,8 @@ class PDFGenerator extends JWTGenerator{
     * @param array $options
     * @return object|string
     */
-   public function loadDocuments($options = []){
+   public function loadDocuments($options = [])
+   {
       // Initiate cURL.
       $cURL = curl_init();
 
@@ -85,14 +95,15 @@ class PDFGenerator extends JWTGenerator{
       $auth = $jwt->getToken();
 
       $url = "https://us1.pdfgeneratorapi.com/api/v4/documents?";
-      if(isset($options)){
-         foreach($options as $name => $filter){
+      if (isset($options)) {
+         foreach ($options as $name => $filter) {
             $url .= $name . "=" . urldecode($filter) . "&";
          }
       }
       $url .= "per_page=10";
 
-      curl_setopt_array($cURL,
+      curl_setopt_array(
+         $cURL,
          [
             CURLOPT_URL => $url,
             CURLOPT_RETURNTRANSFER => true,
@@ -102,7 +113,7 @@ class PDFGenerator extends JWTGenerator{
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_HTTPHEADER => [
-            "Authorization: Bearer $auth"
+               "Authorization: Bearer $auth"
             ],
          ]
       );
@@ -111,7 +122,7 @@ class PDFGenerator extends JWTGenerator{
       $err = curl_error($cURL);
 
       curl_close($cURL);
-   
+
       if ($err) {
          $response = $err;
       } else {
@@ -127,7 +138,8 @@ class PDFGenerator extends JWTGenerator{
     * @param array $options
     * @return object|string
     */
-   public function loadTemplates($options = []){
+   public function loadTemplates($options = [])
+   {
       // Initiate cURL.
       $cURL = curl_init();
 
@@ -137,32 +149,32 @@ class PDFGenerator extends JWTGenerator{
       $auth = $jwt->getToken();
 
       $url = "https://us1.pdfgeneratorapi.com/api/v4/templates?";
-      if(isset($options)){
-         foreach($options as $name => $filter){
+      if (isset($options)) {
+         foreach ($options as $name => $filter) {
             $url .= $name . "=" . urldecode($filter) . "&";
          }
       }
       $url .= "per_page=10";
-      
+
       // Set cURL values
       curl_setopt_array($cURL, [
-        CURLOPT_URL => $url,
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_ENCODING => "",
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 30,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => "GET",
-        CURLOPT_HTTPHEADER => [
-          "Authorization: Bearer $auth"
-        ],
+         CURLOPT_URL => $url,
+         CURLOPT_RETURNTRANSFER => true,
+         CURLOPT_ENCODING => "",
+         CURLOPT_MAXREDIRS => 10,
+         CURLOPT_TIMEOUT => 30,
+         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+         CURLOPT_CUSTOMREQUEST => "GET",
+         CURLOPT_HTTPHEADER => [
+            "Authorization: Bearer $auth"
+         ],
       ]);
 
       $json = curl_exec($cURL);
       $err = curl_error($cURL);
-    
+
       curl_close($cURL);
-   
+
       if ($err) {
          $response = $err;
       } else {
@@ -172,8 +184,51 @@ class PDFGenerator extends JWTGenerator{
       $this->setResponse($response);
    }
 
-   // public function generateDocument(){
+   public function generateDocument($data)
+   {
+      print_r($data);
+      // Initiate cURL.
+      $cURL = curl_init();
+      
+      // Login/Manually insert keys.
+      $jwt = new JWTGenerator();
+      $jwt->generateKey($this->getapiKey(), $this->getWorkspaceID(), $this->getSecretKey());
+      $auth = $jwt->getToken();
 
-   //    $this->setResponse($response);
-   // }
+      if($data['documentDate'] != "null"){
+         $date = $data["documentDate"];
+       } else {
+         $date = date("Y-m-d");
+       }
+
+      $aux = '{"template":{"id":"' . $data['templateId'] .'","data":{"Name":"' . $data['name'] . ' ' . $data['surname'] . '","DueDate":"' . $date . '"}},"format":"pdf","output":"url","name":"' . $data['documentName'] . '"}';
+print_r($aux);
+      // Set cURL values
+      curl_setopt_array($cURL, [
+         CURLOPT_URL => "https://us1.pdfgeneratorapi.com/api/v4/documents/generate",
+         CURLOPT_RETURNTRANSFER => true,
+         CURLOPT_ENCODING => "",
+         CURLOPT_MAXREDIRS => 10,
+         CURLOPT_TIMEOUT => 30,
+         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+         CURLOPT_CUSTOMREQUEST => "POST",
+         CURLOPT_POSTFIELDS => $aux,
+         CURLOPT_HTTPHEADER => ["Authorization: Bearer $auth", "Content-Type: application/json"]
+      ]);
+
+      $json = curl_exec($cURL);
+      $err = curl_error($cURL);
+
+      curl_close($cURL);
+
+      if ($err) {
+         $response = $err;
+      } else {
+         $response = json_decode($json);
+      }
+
+      $this->setResponse($response);
+   }
+
+   
 }
