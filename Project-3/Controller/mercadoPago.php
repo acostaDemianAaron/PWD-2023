@@ -5,7 +5,7 @@ class MercadoPagoModel
     {
         $carrito = json_decode($_POST["carrito"], true);
 
-        MercadoPago\SDK::setAccessToken('TEST-4307504918349233-092817-7ae06736d506a6745ba0a0d6e7ccf1a9-1492918253');
+        MercadoPago\SDK::setAccessToken('access_token');
 
         $preference = new MercadoPago\Preference();
 
