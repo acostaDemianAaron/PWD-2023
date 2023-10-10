@@ -3,12 +3,12 @@ header('Content-Type: text/html; charset=utf-8;');
 header ("Cache-Control: no-cache, must-revalidate ");
 
 /////////////////////////////
-// CONFIGURACION APP //
+//    CONFIGURACION APP    //
 /////////////////////////////
 
 // Si no funciona probar $PROYECTO = 'Project-3';
-$PROYECTO ='';
-$ROOT = $_SERVER['DOCUMENT_ROOT'].$PROYECTO;
+$PROYECTO = 'PWD-2023/Project-3';
+$ROOT = $_SERVER['DOCUMENT_ROOT'] . "/" . $PROYECTO;
 
 $FUNCIONES = $ROOT.'/Function/functions.php';
 
@@ -16,8 +16,8 @@ require($FUNCIONES);
 // Variable que define la pagina de autenticacion del proyecto
 $INICIO = "Location:http://". $_SERVER['HTTP_HOST'] . "/$PROYECTO/View/index.php";
 
-// variable que define la pagina principal del proyecto (menu principal)
-$PRINCIPAL = "Location:http://". $_SERVER['HTTP_HOST'] . "/$PROYECTO/View/index.php";
+// Location of Libraries.
+$LIBS = "/$PROYECTO/View/Libs/";
 
 $_SESSION['ROOT']=$ROOT;
 

@@ -36,10 +36,10 @@ spl_autoload_register(function ($class_name) { //Se ejecuta automáticamente cad
     }
 });
 
-function createHeader($title){
-    Header::addHeader($title);
-}
+// function createHeader($title, $LIBS, $INICIO){
+//     Header::addHeader($title, $LIBS, $INICIO);
+// }
 
-function createFooter(){
-    Footer::addFooter();
-}
+// function createFooter(){
+//     Footer::addFooter();
+// }

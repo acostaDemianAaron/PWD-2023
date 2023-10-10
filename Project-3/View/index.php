@@ -1,6 +1,6 @@
 <?php
 require_once('../Config/config.php');
-createHeader("Menu");
+new Header("Menu", $LIBS, $INICIO);
 ?>
 <body>
    <div class="container mt-5">
@@ -32,5 +32,5 @@ createHeader("Menu");
    </div>
 </body>
 <?php
-createFooter();
+new Footer($INICIO);
 ?>
