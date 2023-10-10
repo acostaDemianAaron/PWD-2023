@@ -23,7 +23,6 @@ spl_autoload_register(function ($class_name) { //Se ejecuta automáticamente cad
         $_SESSION['ROOT'] . '/Model/Class/',
         $_SESSION['ROOT'] . '/Model/Connection/',
         $_SESSION['ROOT'] . '/Controller/',
-        $_SESSION['ROOT'] . '/Function/',
         $_SESSION['ROOT'] . '/View/Structure/'
         //  $GLOBALS['ROOT'].'util/class/',
     );
@@ -35,11 +34,3 @@ spl_autoload_register(function ($class_name) { //Se ejecuta automáticamente cad
         }
     }
 });
-
-// function createHeader($title, $LIBS, $INICIO){
-//     Header::addHeader($title, $LIBS, $INICIO);
-// }
-
-// function createFooter(){
-//     Footer::addFooter();
-// }

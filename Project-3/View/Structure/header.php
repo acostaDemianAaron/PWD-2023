@@ -24,12 +24,13 @@ class Header{
    <body data-bs-theme="dark">
       <div class="container">
          <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-            <a href={$index}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <a href="{$index}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
                <i class="fa-solid fa-users-rectangle fa-2xl px-2"></i> <!-- Icon -->
                <span class="fs-4">Librerias</span>
             </a>
             <ul class="nav nav-pills">
-               <li class="nav-item"><a href={$index}" class="nav-link active" aria-current="page">Home</a></li>
+               <li class="nav-item"><a href="{$index}" class="nav-link active me-2" aria-current="page">Opciones TP</a></li>
+               <li class="nav-item"><a href="/PWD-2023/" class="nav-link active" aria-current="page">Home</a></li>
             </ul>
          </header>
       </div>

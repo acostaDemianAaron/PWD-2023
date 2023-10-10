@@ -1,6 +1,7 @@
 <?php
 require_once("../../Config/config.php");
-require_once('../Structure/header.php');
+
+new Header("Mercado Pago", $LIBS, $INICIO);
 ?>
 
 <body>
@@ -38,9 +39,7 @@ require_once('../Structure/header.php');
 
     <script src="../js/carrito.js"></script>
 </body>
-</html>
-
 
 <?php
-require_once('../Structure/footer.php');
+new Footer($INICIO);
 ?>

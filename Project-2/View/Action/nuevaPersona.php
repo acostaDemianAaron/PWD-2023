@@ -1,6 +1,7 @@
 <?php
 require_once("../../Config/configuracion.php");
-require_once("../../View/Structure/header.php");
+
+new Header("Pagina Principal", $LIBS, $INICIO, $PRINCIPAL);
 $persona = new AbmPersona;
 $data = data_submitted();
 ?>

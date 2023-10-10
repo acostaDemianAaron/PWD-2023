@@ -1,6 +1,7 @@
 <?php
 require_once("../../Config/configuracion.php");
-require_once("../../View/Structure/header.php");
+
+new Header("Pagina Principal", $LIBS, $INICIO, $PRINCIPAL);
 ?>
 
 <head>
@@ -50,5 +51,5 @@ require_once("../../View/Structure/header.php");
 </body>
 
 <?php
-require_once("../Structure/footer.php");
+new Footer($INICIO);
 ?>

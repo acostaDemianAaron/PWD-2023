@@ -2,7 +2,7 @@
 require_once('../../Config/config.php');
 require_once('../../vendor/autoload.php');
 require_once('../../Controller/PDFControl.php');
-createHeader("Documents saved");
+new Header("Documents saved", $LIBS, $INICIO);
 
 $pdfGenerator = connectPDF(
    $_SESSION['apiKey'],
@@ -19,7 +19,6 @@ if(!empty(data_submitted())){
 }
 
 $response = getDocuments($pdfGenerator, $data);
-$templates = getTemplates($pdfGenerator);
 ?>
 
 <body>
@@ -33,41 +32,41 @@ $templates = getTemplates($pdfGenerator);
                      <table class="table table-striped table-sm fs-4">
                         <thead id="table-header">
                            <?php
-                           if (!is_object($response)) {
+                           if (!is_object($response) || is_null($response)) {
                               echo '<div class="bg-bg-dark pb-2 fs-3 text-danger-emphasis">There was an error.</div>';
+                              print_r($response);
                            } else {
-                              if ($response == null) {
-                                 echo "<tr><th><h2>Se encontro un error: " . $response->message . "</h2></th></tr>";
-                              } else {
                            ?>
-                                 <tr>
-                                    <th scope="col">Template Used</th>
-                                    <th scope="col">Date Made</th>
-                                    <th scope="col">Visualizar</th>
-                                 </tr>
+                              <tr>
+                                 <th scope="col">Template Used</th>
+                                 <th scope="col">Date Made</th>
+                                 <th scope="col">Visualizar</th>
+                              </tr>
                         </thead>
                         <tbody id="table-body">
                            <?php
-                                 $documents = $response->response;
+                              $documents = $response->response;
+                              $templates = getTemplates($pdfGenerator);
 
-                                 // Iterate over all documents found.
-                                 foreach ($documents as $document) {
-                                    $templateFound = false; // Boolean to stop searching on template found.
-                                    $i = 0;
-                                    // Find correct template name.
-                                    while(!$templateFound){
-                                       if($templates->response[$i]->id == $document->template_id) {
-                                          $template = $templates->response[$i];
-                                          $templateFound = true;
-                                       }
-                                       $i++;
+                              // Iterate over all documents found.
+                              foreach ($documents as $document) {
+                                 $templateFound = false; // Boolean to stop searching on template found.
+                                 $i = 0;
+                                 // Find correct template name.
+                                 while(!$templateFound){
+                                    if($templates->response[$i]->id == $document->template_id) {
+                                       $template = $templates->response[$i];
+                                       $templateFound = true;
                                     }
-                                    echo '<tr>
-                                       <td>' . $template->name . '</td>
-                                       <td>' . $document->created_at . '</td>
-                                       <td><button class="btn btn-primary" name="url" value="' . $document->public_url . '">View</button></td>
-                                    </tr>';
+                                    $i++;
                                  }
+                                 echo <<<HTML
+                                 <tr>
+                                    <td>{$template->name}</td>
+                                    <td>{$document->created_at}</td>
+                                    <td><button class="btn btn-primary" name="url" value="{$document->public_url}">View</button></td>
+                                 </tr>
+                                 HTML;
                               }
                            }
                            ?>
@@ -88,5 +87,5 @@ $templates = getTemplates($pdfGenerator);
 </body>
 
 <?php
-createFooter();
+new Footer($INICIO);
 ?>

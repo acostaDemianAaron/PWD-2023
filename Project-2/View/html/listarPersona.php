@@ -1,6 +1,7 @@
 <?php
 require_once("../../Config/configuracion.php");
-require_once("../../View/Structure/header.php");
+
+new Header("Pagina Principal", $LIBS, $INICIO, $PRINCIPAL);
 $AbmPersona = new AbmPersona;
 $personas = $AbmPersona->Search();
 //print_r($personas);
@@ -60,5 +61,5 @@ $personas = $AbmPersona->Search();
 </body>
 
 <?php
-require_once("../Structure/footer.php");
+new Footer($INICIO);
 ?>

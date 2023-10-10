@@ -1,10 +1,10 @@
 <?php
 class PDFGenerator extends JWTGenerator
 {
-   private $apiKey;
-   private $workspaceID;
-   private $secretKey;
-   private object $response;
+   private string $apiKey;
+   private string $workspaceID;
+   private string $secretKey;
+   private object|string $response;
 
    /**
     * Start a transaction.
@@ -127,7 +127,7 @@ class PDFGenerator extends JWTGenerator
 
       // Adding parameters to request URL.
       $url = "https://us1.pdfgeneratorapi.com/api/v4/templates";
-      if (isset($options)) {
+      if (key_exists('templateId', $options)) {
          $url .= "/" . $options['templateId'] . "/";
       }
 
@@ -169,7 +169,7 @@ class PDFGenerator extends JWTGenerator
       // Initiate cURL.
       $cURL = curl_init();
       
-      $postfields = $this->genPostFields($cURL, $data);
+      $postfields = $this->genPostFields($data);
       
       // Login/Manually insert keys.
       $jwt = new JWTGenerator();
@@ -238,7 +238,7 @@ class PDFGenerator extends JWTGenerator
       $this->setResponse($response);
    }
 
-   private function genPostFields($cURL, $data){
+   private function genPostFields($data){
       $this->getPostFields($data['templateId']);
       $response = $this->getResponse();
 

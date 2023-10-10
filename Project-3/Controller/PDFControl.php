@@ -10,7 +10,11 @@ function getDocuments($pdfObject, $options = []){
 }
 
 function getTemplates($pdfObject){
-   $pdfObject->loadTemplates(['access' => $_SESSION['access']]);
+   if(key_exists('access', $_SESSION)){
+      $pdfObject->loadTemplates(['access' => $_SESSION['access']]);
+   } else {
+      $pdfObject->loadTemplates();
+   }
 
    return $pdfObject->getResponse();
 }

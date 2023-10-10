@@ -1,6 +1,7 @@
 <?php
 require_once("../../Config/configuracion.php");
-require_once("../../View/Structure/header.php");
+
+new Header("Pagina Principal", $LIBS, $INICIO, $PRINCIPAL);
 
 if(data_submitted()){
    $Abmauto = new AbmAuto;
@@ -54,5 +55,5 @@ if(data_submitted()){
 </body>
 
 <?php
-require_once("../Structure/footer.php");
+new Footer($INICIO);
 ?>

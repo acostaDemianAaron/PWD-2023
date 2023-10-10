@@ -76,12 +76,11 @@ function mostrarCarrito() {
 
 mostrarCarrito();
 
-
 function enviarCarrito() {
     // Crear un formulario en el DOM
     const form = document.createElement('form');
     form.method = 'POST';
-    form.action = '/View/Action/mercado-respuesta.php'; // La URL correcta de tu página PHP
+    form.action = '../Action/mercado-respuesta.php'; // La URL correcta de tu página PHP
 
     // Crear un campo oculto que contenga el carrito completo como JSON
     const carritoInput = document.createElement('input');
@@ -94,4 +93,3 @@ function enviarCarrito() {
     document.body.appendChild(form);
     form.submit();
 }
-

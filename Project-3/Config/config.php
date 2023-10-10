@@ -6,15 +6,19 @@ header ("Cache-Control: no-cache, must-revalidate ");
 //    CONFIGURACION APP    //
 /////////////////////////////
 
-// Si no funciona probar $PROYECTO = 'Project-3';
+// Variable de rooteo de proyecto.
 $PROYECTO = 'PWD-2023/Project-3';
-$ROOT = $_SERVER['DOCUMENT_ROOT'] . "/" . $PROYECTO;
+$ROOT = $_SERVER['DOCUMENT_ROOT'] . "/$PROYECTO";
 
+// Cargar funciones necesarias para forms y classes.
 $FUNCIONES = $ROOT.'/Function/functions.php';
-
 require($FUNCIONES);
-// Variable que define la pagina de autenticacion del proyecto
-$INICIO = "Location:http://". $_SERVER['HTTP_HOST'] . "/$PROYECTO/View/index.php";
+
+// Location of index
+$INICIO = "http://". $_SERVER['HTTP_HOST'] . "/$PROYECTO/View/index.php";
+
+// Location of menu (repo index)
+$PRINCIPAL = "http://". $_SERVER['HTTP_HOST'] . "/PWD-2023/";
 
 // Location of Libraries.
 $LIBS = "/$PROYECTO/View/Libs/";
@@ -22,9 +26,8 @@ $LIBS = "/$PROYECTO/View/Libs/";
 $_SESSION['ROOT']=$ROOT;
 
 // Setting keys on browser's session, so it can be deleted after closing it.
-$_SESSION['apiKey'] = "660e9c4863d6c4a18c66f56f8b783ec0df9853fc4176971f70a6fb3f0ed4c0e8";
-$_SESSION['workspaceID'] = "alan.vera@est.fi.uncoma.edu.ar";
-$_SESSION['secretKey'] = "";
-// Debug every variable on screen.
-// print_r("Getting PROYECTO: $PROYECTO <br>Getting ROOT: $ROOT <br>Getting INICIO: $INICIO <br>Getting PRINCIPAL: $PRINCIPAL <br>Getting functions: $FUNCIONES");
+$_SESSION['apiKey'] = ""; // Agregar Key
+$_SESSION['workspaceID'] = ""; // Agregar mail o Workspace ID
+$_SESSION['secretKey'] = ""; // Agregar Secret
+// $_SESSION['access'] = "private"; // Opcional, si se quiere restringir la vista.
 ?>

@@ -2,7 +2,7 @@
 require_once('../../Config/config.php');
 require_once('../../vendor/autoload.php');
 require_once('../../Controller/PDFControl.php');
-createHeader("New PDF");
+new Header("New PDF", $LIBS, $INICIO);
 
 $pdfControl = connectPDF(
    $_SESSION['apiKey'],
@@ -11,9 +11,6 @@ $pdfControl = connectPDF(
 );
 
 if(data_submitted()){
-   echo "this: ";
-   print_r(data_submitted());
-   echo "<br>";
    $templateFields = getTemplateFields($pdfControl, data_submitted());
 ?>
    <body>
@@ -74,5 +71,5 @@ if(data_submitted()){
    </body>
 <?php
 }
-createFooter();
+new Footer($INICIO);
 ?>
