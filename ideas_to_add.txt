@@ -1,0 +1,4 @@
+1 - Cambiar el Readme de PWD-2023, con simplemente instrucciones para abrir la pagina inicialmente.
+
+2 - Dentro de el menu principal dar instrucciones y requisitos para cada Proyecto. Para no sobrecargar con instrucciones un solo README.
+ a - Quizas cargar los README en un span dentro de cada accordion item, o simplemente un poco de texto y un link de redirect al readme real.
