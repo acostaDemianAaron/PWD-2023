@@ -15,7 +15,7 @@ $FUNCIONES = $ROOT.'/Function/functions.php';
 require($FUNCIONES);
 
 // Location of index
-$INICIO = "http://". $_SERVER['HTTP_HOST'] . "/$PROYECTO/View/index.php";
+$INICIO = "http://". $_SERVER['HTTP_HOST'] . "/$PROYECTO/View/";
 
 // Location of menu (repo index)
 $PRINCIPAL = "http://". $_SERVER['HTTP_HOST'] . "/PWD-2023/";

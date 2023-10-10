@@ -8,9 +8,9 @@ if($_SERVER['REQUEST_URI'] === "/PWD-2023"){
 
 // If libraries directory changes, set the variable accordingly.
 $libs_dir = "./Project-3/View/Libs/";
+?>
 
-// HEAD, integration of used libraries. In this case, only visual changes.
-echo <<<HTML
+<!-- HEAD, integration of used libraries. In this case, only visual changes. -->
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,8 +23,6 @@ echo <<<HTML
    <script src="{$libs_dir}FontAwesome-6.4.2/js/all.min.js"></script>
    <title>Menu</title>
 </head>
-HTML;
-?>
 
 <body data-bs-theme="dark" class="d-flex flex-column min-vh-100">
 <!-- Body of nav-bar -->
@@ -113,7 +111,7 @@ HTML;
       </div>
    </div>
 
-<!-- Body of footer -->
+   <!-- Body of footer -->
    <div class="container mt-auto">
       <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
          <div class="col-md-4 d-flex align-items-center">
