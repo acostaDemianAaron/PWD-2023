@@ -9,22 +9,52 @@ $pdfControl = connectPDF(
    $_SESSION['workspaceID'],
    $_SESSION['secretKey']
 );
+
+$response = getTemplates($pdfControl);
 ?>
 <body>
    <div class="container">
       <div class="row">
-         <div class="col-lg-12">
-               <div class="card shadow-lg p-3 mb-5">
-                  <div class="bg-bg-dark pb-3 fs-2 fw-bold">Choose a template</div>
+      <div class="col-lg-12">
+            <div class="card shadow-lg p-3 mb-5">
+               <?php
+               if (!is_object($response)) {
+                  echo <<<HTML
                   <div class="card-body">
-                  <!-- Action in other page -->
-                     <form action="./newPDF.php" method="POST" id="form-control" name="form-control" class="needs-validation">
-                        <?php foreach(getTemplates($pdfControl)->response as $template){ ?>
-                        <button class="btn btn-primary" type="submit" name="templateId" value="<?php echo $template->id; ?>"><?php echo $template->name; ?></button>
-                        <?php } ?>
-                     </form>
+                     <div class="bg-bg-dark pb-2 fs-3 text-danger-emphasis">There was an error.</div>
+                     <button class="btn btn-primary" onclick="location.href = '$INICIO'">Go Back</button>
                   </div>
+                  HTML;
+               } else {
+                  if(property_exists($response, "message")){
+                     echo <<<HTML
+                     <div class="card-body">
+                        <div class="bg-bg-dark pb-2 fs-3 text-danger-emphasis">There was an error.</div>
+                        <div class="bg-bg-dark pb-2 fs-5 text-danger-emphasis">{$response->message}</div>
+                        <button class="btn btn-primary" onclick="location.href = '$INICIO'">Go Back</button>
+                     </div>
                </div>
+               HTML;
+                  } else {
+                  echo <<<HTML
+                  <div class="bg-bg-dark pb-3 fs-2 fw-bold">Choose a template</div>
+                     <div class="card-body">
+                     <!-- Action in other page -->
+                        <form action="./newPDF.php" method="POST" id="form-control" name="form-control" class="needs-validation">
+                  HTML;
+                           foreach(getTemplates($pdfControl)->response as $template){
+                           echo <<<HTML
+                           <button class="btn btn-primary" type="submit" name="templateId" value="$template->id">$template->name</button>
+                           HTML;
+                           }
+                           echo <<<HTML
+                        </form>
+                     </div>
+                  </div>
+                  HTML;
+                  }
+               }
+            ?>
          </div>
       </div>
    </div>

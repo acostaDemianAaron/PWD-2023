@@ -30,21 +30,36 @@ $response = getDocuments($pdfGenerator, $data);
                <form action="../Action/showPDF.php" method="POST">
                   <div class="table-responsive small">
                      <table class="table table-striped table-sm fs-4">
-                        <thead id="table-header">
-                           <?php
-                           if (!is_object($response) || is_null($response)) {
-                              echo '<div class="bg-bg-dark pb-2 fs-3 text-danger-emphasis">There was an error.</div>';
-                              print_r($response);
+                        <?php
+                        if (!is_object($response)) {
+                           echo <<<HTML
+                           <div class="bg-bg-dark pb-2 fs-3 text-danger-emphasis">There was an error.</div>
+                     </table>
+                  </div>
+               </form>
+               <button class="btn btn-primary" onclick="location.href = '$INICIO'">Go Back</button>
+               HTML;
+                        } else {
+                           if(property_exists($response, "message")){
+                              echo <<<HTML
+                              <div class="bg-bg-dark pb-2 fs-3 text-danger-emphasis">There was an error.</div>
+                              <div class="bg-bg-dark pb-2 fs-5 text-danger-emphasis">{$response->message}</div>
+                     </table>
+                  </div>
+               </form>
+               <button class="btn btn-primary" onclick="location.href = '$INICIO'">Go Back</button>
+               HTML;
                            } else {
-                           ?>
-                              <tr>
-                                 <th scope="col">Template Used</th>
-                                 <th scope="col">Date Made</th>
-                                 <th scope="col">Visualizar</th>
-                              </tr>
-                        </thead>
-                        <tbody id="table-body">
-                           <?php
+                           echo <<<HTML
+                     <thead id="table-header">
+                        <tr>
+                           <th scope="col">Template Used</th>
+                           <th scope="col">Date Made</th>
+                           <th scope="col">Visualizar</th>
+                        </tr>
+                     </thead>
+                     <tbody id="table-body">
+                     HTML;
                               $documents = $response->response;
                               $templates = getTemplates($pdfGenerator);
 
@@ -68,18 +83,24 @@ $response = getDocuments($pdfGenerator, $data);
                                  </tr>
                                  HTML;
                               }
-                           }
-                           ?>
-                        </tbody>
-                     </table>
-                  </div>
-               </form>
-               <form action="./viewPDFs.php" method="POST">
-               <?php if($page > 1) { ?>
+                              echo <<<HTML
+                     </tbody>
+                  </table>
+               </div>
+            </form>
+            <form action="./viewPDFs.php" method="POST">
+            HTML;
+               if($page > 1) {
+                  echo <<<HTML
                   <button class="btn btn-primary" onclick="history.back()">Go Back</button>
-               <?php } ?>
-                  <button class="btn btn-primary" type="submit" name="page" value="<?php if($page >= 0){ echo $page + 1; } ?>">Next Page</button>
-               </form>
+                  HTML;
+               }
+               echo <<<HTML
+               <button class="btn btn-primary" type="submit" name="page" value="<?php if($page >= 0){ echo $page + 1; } ?>">Next Page</button>
+               HTML;
+               }
+            }
+            ?>
             </div>
          </div>
       </div>
