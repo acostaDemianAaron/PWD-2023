@@ -19,6 +19,10 @@ echo <<<HTML
    <link rel="stylesheet" href="{$libs_dir}Bootstrap-5.3.1/css/bootstrap.min.css">
    <script src="{$libs_dir}Bootstrap-5.3.1/js/bootstrap.min.js"></script>
    <script src="{$libs_dir}Bootstrap-5.3.1/js/bootstrap.bundle.min.js"></script>
+   <!-- Jquery -->
+   <script src="{$libs_dir}jQuery/jquery-3.7.1.min.js"></script>
+   <script src="{$libs_dir}jQuery/jquery.validate-1.19.5.min.js"></script>
+   <script src="{$libs_dir}jQuery/translate-jQuery.js"></script>
    <!-- Font Awesome -->
    <link rel="stylesheet" href="{$libs_dir}FontAwesome-6.4.2/css/all.min.css">
    <script src="{$libs_dir}FontAwesome-6.4.2/js/all.min.js"></script>
@@ -104,8 +108,38 @@ echo <<<HTML
             </h2>
             <div id="TPn3" class="accordion-collapse collapse" data-bs-parent="#accordionTPs">
                <div class="accordion-body">
-                  Descripcion trabajo practico
-                  <br><a href="./Project-3/View/" class="btn btn-primary">Ir al TP</a>
+                     Requisitos de TP3:
+                  <br>- Para ejecutar:
+                     <ul>
+                        <li>PHP (Recomendamos v8.1<) <a target="_blank" href="https://windows.php.net/download#php-8.2">Windows</a> u <a target="_blank" href="https://www.php.net/downloads.php">Otro OS<a></li>
+                        <ul>
+                           <li>Extensiones:</li>
+                           <ul>
+                              <li>cURL</li>
+                              <li>fileinfo</li>
+                              <li>MBString</li>
+                              <li>openSSL</li>
+                              <li>Sodium</li>
+                              <li>ZIP</li>
+                           </ul>
+                        </ul>
+                        <li>Para conseguir tus propias credenciales:</li>
+                        <ul>
+                           <li>Cuenta de <a target="_blank" href="https://pdfgeneratorapi.com/">PDFGenerator</a></li>
+                           <li>Cuenta de <a target="_blank" href="https://www.mercadopago.com.ar/">MercadoPago</a></li>
+                        </ul>
+                     </ul>
+                     - Para <strong>crear</strong> tu proyecto (Sumado con requisitor para ejecutar):
+                     <ul>
+                        <li>Composer</li>
+                        <li>Librerias:</li>
+                        <ul>
+                           <li><a target="_blank" href="https://github.com/mercadopago/sdk-php">MercadoPago SDK</a> o sus <a target="_blank" href="https://www.mercadopago.com.ar/developers/es/docs/sdks-library/server-side">opciones en otros lenguajes</a></li>
+                           <li><a target="_blank" href="https://github.com/pdfgeneratorapi/php-client">PDFGenerator</a></li>
+                           <li><a target="_blank" href="https://github.com/web-token/jwt-framework">JWT</a> (Opcional) o en <a target="_blank" href="https://jwt.io/libraries">otros lenguajes</a></li>
+                        </ul>
+                     </ul>
+                     <br><a href="./Project-3/View/" class="btn btn-primary">Ir al TP</a> <a target="_blank" href="https://github.com/acostaDemianAaron/PWD-2023/blob/main/Project-3/README.md" class=" ms-3 btn btn-primary">Ver README detallado</a>
                </div>
             </div>
          </div>
