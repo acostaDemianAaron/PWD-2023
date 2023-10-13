@@ -2,11 +2,21 @@
   <img src="https://i.postimg.cc/jdMhhYmM/Portada.png" />
 </p>
 
-## Estructura de las carpetas
-Cada proyecto tiene su propio .md con instrucciones para visualizar en github o tambien se puede encontrar un .txt para ver una version en texto.
+## Para Ejecutar proyecto
+<ol>
+  <li>Tener instalado PHP o un stack (XAMPP, LAMP, WAMP).</li>
+  <li>Clonar/descargar repositorio en la carpeta que más prefiera. En caso de usar un stack, clonar dentro de htdocs (XAMPP) o www (WAMPserver) o html (LAMP).</li>
+  <ul>
+    <li>Para abrir servidor con PHP, ejecutar "php -S localhost:8000" en la carpeta donde se descargo el repositorio y abrir <a href="http://localhost:8080/PWD-2023/">localhost:8000/PWD-2023/</a>.</li>
+    <li>Para abrir servidor con un stack, ejecutar los servicios del stack en uso.</li>
+  </ul>
+  <li>Cada trabajo practico tiene una descripcion en el Menú con instrucciones extendidas si se requiere extensiones o librerias.</li>
+</ol>
 
+## Estructura de las carpetas
 - Project-1 contiene los TPs 1,2 y 3.
-- Project-2 es todo del TP4
+- Project-2 es todo del TP4.
+- Project-3 es todo del TP de Librerias Útiles.
 
 <p align="center">
   <img src="https://i.postimg.cc/MTBdjxWP/PWD-1.png" />
