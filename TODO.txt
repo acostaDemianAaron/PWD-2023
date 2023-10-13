@@ -7,3 +7,5 @@
 4 - TP 2 falta refactorizar. 
 
 5 - TP 3 falta asegurar funcionamiento y refactorizar.
+
+6 - Agregar en TP 3 una descripcion de las librerias, algo breve para tener a mano. En el PDF se va a contener toda la explicación detallada de las librerias y el proyecto.
