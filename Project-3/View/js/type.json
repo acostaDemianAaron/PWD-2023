@@ -1,11 +1,13 @@
+// Template de FACTURA con datos
 {
    "template": {
-      "id": "TEMPLATE_ID",
+      "id": "805423", // TEMPLATE_ID
       "data": {
          "shop_name": "El Pepito",
          "shop_dir": "Chocon 1562",
          "shop_contact": "299 56783982",
          "line_items": [
+            // Datos de testeo para la template.
             {
                "title": "Item number 1",
                "unit_price": "4,080.00",
@@ -30,10 +32,10 @@
       }
    }
 }
-
+// Template Base de Certificado
 {
    "template": {
-      "id": "TEMPLATE_ID",
+      "id": "799876", // TEMPLATE_ID
       "data": {
          "Name": "Juanito Perez",
          "DueDate": "2020-12-10"
@@ -42,27 +44,4 @@
    "format": "pdf",
    "output": "url",
    "name": "document"
-}
-
-{
-   "shop_name": "El Pepito",
-   "shop_dir": "Chocon 1562",
-   "shop_contact": "299 56783982",
-   "line_items": {
-      "item1": {
-         "title": "Test1",
-         "unit_price": 123978,
-         "quantity": 1
-      },
-      "item2": {
-         "title": "Test2",
-         "unit_price": 234,
-         "quantity": 10
-      },
-      "item3": {
-         "title": "Test3",
-         "unit_price": 5643,
-         "quantity": 4
-      }
-   }
 }

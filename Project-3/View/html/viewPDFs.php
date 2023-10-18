@@ -95,8 +95,12 @@ $response = getDocuments($pdfGenerator, $data);
                   <button class="btn btn-primary" onclick="history.back()">Go Back</button>
                   HTML;
                }
+               if($page >= 0) {
+                  if($page == 0) $page++; 
+                  $nextPage = $page + 1;
+               }
                echo <<<HTML
-               <button class="btn btn-primary" type="submit" name="page" value="<?php if($page >= 0){ echo $page + 1; } ?>">Next Page</button>
+               <button class="btn btn-primary" type="submit" name="page" value="{$nextPage}">Next Page</button>
                HTML;
                }
             }
