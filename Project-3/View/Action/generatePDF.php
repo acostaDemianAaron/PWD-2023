@@ -1,7 +1,7 @@
 <?php
 require_once('../../Config/config.php');
 require_once('../../vendor/autoload.php');
-createHeader("Generate PDF");
+new Header("Pdf Generado", $LIBS ,$INICIO);
 require_once("../../Controller/PDFControl.php");
 
 if (empty(data_submitted())) {
@@ -49,5 +49,5 @@ if (empty(data_submitted())) {
 </body>
 
 <?php
-createFooter();
+new Footer($INICIO);
 ?>

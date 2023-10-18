@@ -1,7 +1,7 @@
 <?php
 require_once('../../Config/config.php');
 require_once('../../vendor/autoload.php');
-createHeader("Show PDF");
+new Header("Lista Pdf", $LIBS ,$INICIO);
 $data = data_submitted();
 ?>
 
@@ -34,5 +34,5 @@ $data = data_submitted();
 </body>
 
 <?php
-createFooter();
+new Footer($INICIO);
 ?>
