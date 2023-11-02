@@ -10,7 +10,7 @@ class Session
     //Magic Methods
     public function __construct()
     {
-        if (@session_start()) {
+        if (isset($_SESSION['usnombre']) && isset($_SESSION['uspass'])) {
         }
     }
 
@@ -28,7 +28,7 @@ class Session
     //Setters Session
     public function setUserNameSession()
     {
-        $_SESSION['username'] = $this->getUserName();
+        $_SESSION['usnombre'] = $this->getUserName();
     }
 
     public function setPassSession()
@@ -57,7 +57,7 @@ class Session
     //Getters Session
     public function getUserNameSession()
     {
-        return $_SESSION['username'];
+        return $_SESSION['usnombre'];
     }
 
     public function getPassSession()
