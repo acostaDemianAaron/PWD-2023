@@ -16,7 +16,7 @@ CREATE TABLE
     `usuario` (
         `idusuario` bigint(20) NOT NULL AUTO_INCREMENT,
         `usnombre` varchar(50) NOT NULL,
-        `uspass` int(11) NOT NULL,
+        `uspass` varchar(32) NOT NULL,
         `usmail` varchar(50) NOT NULL,
         `usdeshabilitado` BOOLEAN DEFAULT FALSE,
         PRIMARY KEY (`idusuario`)
@@ -86,7 +86,7 @@ INSERT INTO
  ),(
     2,
     'Cliente'
- )
+ );
 
 
 -- -------------------------------------------------------- --
@@ -118,7 +118,7 @@ INSERT INTO
  ),(
     4,
     1
- )
+ );
 
 
 -- -------------------------------------------------------- --
