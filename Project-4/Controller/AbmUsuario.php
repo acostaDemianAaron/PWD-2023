@@ -2,7 +2,7 @@
 
 class AbmUsuario
 {
-    public function loadObj($array)
+    public function LoadObj($array)
     {
         $usuario = NULL;
         if (array_key_exists('idusuario', $array) && array_key_exists('usnombre', $array) && array_key_exists('uspass', $array) && array_key_exists('usmail', $array) && array_key_exists('usdeshabilitado', $array)) {
@@ -13,7 +13,7 @@ class AbmUsuario
     }
 
 
-    public function loadObjId($array)
+    public function LoadObjId($array)
     {
         $usuario = NULL;
         if (isset($array['idusuario'])) {
@@ -40,7 +40,7 @@ class AbmUsuario
     public function Add($array)
     {
         $res = FALSE;
-        $usuario = $this->loadObj($array);
+        $usuario = $this->LoadObj($array);
         if ($usuario != NULL && $usuario->Insert()) {
             $res = TRUE;
         }
@@ -52,7 +52,7 @@ class AbmUsuario
     {
         $res = FALSE;
         if ($this->Verify($array)) {
-            $usuario = $this->loadObjId($array);
+            $usuario = $this->LoadObjId($array);
             if ($usuario != NULL && $usuario->Delete()) {
                 $res =  TRUE;
             }
@@ -66,7 +66,7 @@ class AbmUsuario
         $res = FALSE;
         if ($this->Verify($array)) {
             $usuario = $this->Search($array);
-            $usuario = $this->loadObj($array);
+            $usuario = $this->LoadObj($array);
             if ($usuario != NULL && $usuario->Modify()) {
                 $res = TRUE;
             }
