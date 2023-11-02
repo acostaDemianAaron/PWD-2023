@@ -37,28 +37,28 @@ VALUES
     (
         1,
         'acostaDemianAaron',
-        '1111',
+        'b59c67bf196a4758191e42f76670ceba',
         'demian.acosta@est.fi.uncoma.edu.ar',
         0
     ),
     (
         2,
         'veraAlan',
-        '2222',
+        '934b535800b1cba8f96a5d72f72f1611',
         'alan.vera@est.fi.uncoma.edu.ar',
         0
     ),
     (
         3,
         'SantiagoYaitul',
-        '3333',
+        '2be9bd7a3434f7038ca27d1918de58bd',
         'demian.acosta@est.fi.uncoma.edu.ar',
         0
     ),
     (
         4,
         'mausawicki7',
-        '4444',
+        'dbc4d84bfcfe2284ba11beffb853a8c4',
         'mauricio.sawicki@est.fi.uncoma.edu.ar',
         0
     );
@@ -73,6 +73,22 @@ CREATE TABLE
         PRIMARY KEY (`idrol`)
     ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
+
+INSERT INTO
+`rol` (
+    `idrol`,
+    `roldescripcion`
+ )
+ VALUES
+ (
+    1,
+    'Admin'
+ ),(
+    2,
+    'Cliente'
+ )
+
+
 -- -------------------------------------------------------- --
 -- Se crea la tabla usuariorol
 -- -------------------------------------------------------- --
@@ -83,6 +99,27 @@ CREATE TABLE
         FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`idusuario`) ON UPDATE CASCADE,
         FOREIGN KEY (`idrol`) REFERENCES `rol` (`idrol`) ON UPDATE CASCADE
     ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+
+INSERT INTO
+`usuariorol` (
+    `idusuario`,
+    `idrol`
+ )
+ VALUES
+ (
+    1,
+    1
+ ),(
+    2,
+    1
+ ),(
+    3,
+    1
+ ),(
+    4,
+    1
+ )
+
 
 -- -------------------------------------------------------- --
 -- Ver tablas
