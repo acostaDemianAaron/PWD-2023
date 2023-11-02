@@ -10,7 +10,7 @@ class Session
     //Magic Methods
     public function __construct()
     {
-        if (isset($_SESSION['usnombre']) && isset($_SESSION['uspass'])) {
+        if (@session_start()) {
         }
     }
 
@@ -116,6 +116,11 @@ class Session
         return $success;
     }
 
+    public function onSesion()
+    {
+        @session_start();
+        return isset($_SESSION['usnombre']) && isset($_SESSION['pass']);
+    }
 
     public function close()
     {
