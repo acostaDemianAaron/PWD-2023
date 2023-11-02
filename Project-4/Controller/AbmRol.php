@@ -2,7 +2,7 @@
 
 class AbmRol
 {
-    public function loadObj($array)
+    public function LoadObj($array)
     {
         $rol = NULL;
         if (array_key_exists('idrol', $array) && array_key_exists('roldescripcion', $array)) {
@@ -13,7 +13,7 @@ class AbmRol
     }
 
 
-    public function loadObjId($array)
+    public function LoadObjId($array)
     {
         $rol = NULL;
         if (isset($array['idrol'])) {
@@ -40,7 +40,7 @@ class AbmRol
     public function Add($array)
     {
         $res = FALSE;
-        $rol = $this->loadObj($array);
+        $rol = $this->LoadObj($array);
         if ($rol != NULL && $rol->Insert()) {
             $res = TRUE;
         }
@@ -52,7 +52,7 @@ class AbmRol
     {
         $res = FALSE;
         if ($this->Verify($array)) {
-            $rol = $this->loadObjId($array);
+            $rol = $this->LoadObjId($array);
             if ($rol != NULL && $rol->Delete()) {
                 $res = TRUE;
             }
@@ -66,7 +66,7 @@ class AbmRol
         $res = FALSE;
         if ($this->Verify($array)) {
             $rol = $this->Search($array);
-            $rol = $this->loadObj($array);
+            $rol = $this->LoadObj($array);
             if ($rol != NULL && $rol->Modify()) {
                 $res = TRUE;
             }
