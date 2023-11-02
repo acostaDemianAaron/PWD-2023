@@ -33,11 +33,17 @@ class UsuarioRol
     }
 
     //Getters
+    /**
+     * @return Rol
+     */
     public function getObjRol()
     {
         $this->objRol;
     }
 
+    /**
+     * @return Usuario
+     */
     public function getObjUsuario()
     {
         $this->objUsuario;
@@ -57,18 +63,25 @@ class UsuarioRol
         $this->setObjUsuario($objUsuario);
     }
 
-
+    /**
+     * Get values of object UsuarioRol respect of idusuario and (if needed) IdRol.
+     * @return Boolean|Integer
+     */
     public function Load()
     {
         $res = false;
         $database = new Database();
-        $query = "SELECT * FROM 'usuario' WHERE idusuario= " . $this->getObjUsuario()->getIdUsuario() . " AND idrol= " . $this->getObjRol()->getIdRol();
+
+        $query = "SELECT * FROM 'usuario' WHERE idusuario= " . $this->getObjUsuario()->getIdUsuario();
+        if($this->getObjRol()->getIdRol() != NULL) $query .= " AND idrol= " . $this->getObjRol()->getIdRol();
+
         if ($database->Start()) {
             $status = $database->Execute($query);
             if ($status > 0) {
                 $objRol = NULL;
                 $objUsuario = NULL;
                 $row = $database->Register();
+
                 if ($row['idrol'] != NULL) {
                     $objRol = new Rol();
                     $objRol->setIdRol($row['idrol']);
@@ -110,9 +123,7 @@ class UsuarioRol
     {
         $res = false;
         $database = new Database();
-        $query = " UPDATE usuariorol SET ";
-        $query .= " idrol = " . $this->getObjRol()->getIdRol();
-        $query .= " WHERE idusuario =" . $this->getObjUsuario()->getIdUsuario();
+        $query = " UPDATE usuariorol SET idrol = " . $this->getObjRol()->getIdRol() . " WHERE idusuario =" . $this->getObjUsuario()->getIdUsuario();
         if ($database->Start()) {
             if ($database->Execute($query) > -1) {
                 $res = true;
