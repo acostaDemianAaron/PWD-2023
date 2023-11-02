@@ -15,5 +15,83 @@ class AbmUsuario
 
     public function loadObjId($array)
     {
+        $usuario = NULL;
+        if (isset($array['idusuario'])) {
+            $usuario = new Usuario();
+            $usuario->setIdUsuario($array['idusuario']);
+            if (!$usuario->Load()) {
+                $usuario = NULL;
+            }
+        }
+        return $usuario;
+    }
+
+
+    public function Verify($array)
+    {
+        $res = FALSE;
+        if (isset($array['idusuario'])) {
+            $res = TRUE;
+        }
+        return $res;
+    }
+
+
+    public function Add($array)
+    {
+        $res = FALSE;
+        $usuario = $this->loadObj($array);
+        if ($usuario != NULL && $usuario->Insert()) {
+            $res = TRUE;
+        }
+        return $res;
+    }
+
+
+    public function Delete($array)
+    {
+        $res = FALSE;
+        if ($this->Verify($array)) {
+            $usuario = $this->loadObjId($array);
+            if ($usuario != NULL && $usuario->Delete()) {
+                $res =  TRUE;
+            }
+        }
+        return $res;
+    }
+
+
+    public function Edit($array)
+    {
+        $res = FALSE;
+        if ($this->Verify($array)) {
+            $usuario = $this->Search($array);
+            $usuario = $this->loadObj($array);
+            if ($usuario != NULL && $usuario->Modify()) {
+                $res = TRUE;
+            }
+        }
+        return $res;
+    }
+
+
+    public function Search($array = NULL)
+    {
+        $on = " true ";
+        if ($array <> NULL) {
+            if (isset($array['idusuario']))
+                $on .= " and idusuario =" . $array['idusuario'];
+            if (isset($array['usnombre']))
+                $on .= " and usnombre =" . $array['usnombre'];
+            if (isset($array['uspass']))
+                $on .= " and uspass =" . $array['uspass'];
+            if (isset($array['usmail']))
+                $on .= " and usmail =" . $array['usmail'];
+            if (isset($array['usdeshabilitado']))
+                $on .= " and usdeshabilitado =" . $array['usdeshabilitado'];
+        }
+        $usuario = new Usuario();
+        $arrayList = $usuario->List($on);
+        return $arrayList;
     }
 }

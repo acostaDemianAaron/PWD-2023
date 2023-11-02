@@ -65,6 +65,7 @@ class AbmRol
     {
         $res = FALSE;
         if ($this->Verify($array)) {
+            $rol = $this->Search($array);
             $rol = $this->loadObj($array);
             if ($rol != NULL && $rol->Modify()) {
                 $res = TRUE;
