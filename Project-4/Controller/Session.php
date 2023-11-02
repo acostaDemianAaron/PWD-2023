@@ -10,7 +10,7 @@ class Session
     //Magic Methods
     public function __construct()
     {
-        if (@session_start()) {
+        if (isset($_SESSION['username']) && isset($_SESSION['password'])) {
         }
     }
 
