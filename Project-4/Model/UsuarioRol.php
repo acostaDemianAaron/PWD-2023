@@ -72,7 +72,7 @@ class UsuarioRol
         $res = false;
         $database = new Database();
 
-        $query = "SELECT * FROM 'usuario' WHERE idusuario= " . $this->getObjUsuario()->getIdUsuario();
+        $query = "SELECT * FROM 'usuariorol' WHERE idusuario= " . $this->getObjUsuario()->getIdUsuario();
         if($this->getObjRol()->getIdRol() != NULL) $query .= " AND idrol= " . $this->getObjRol()->getIdRol();
 
         if ($database->Start()) {
